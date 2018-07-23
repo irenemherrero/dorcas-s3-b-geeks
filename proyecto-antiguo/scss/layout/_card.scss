@@ -1,0 +1,225 @@
+.section-card {
+  display: flex;
+  flex-direction: column;
+  background-image: url('../images/pattern-glasses.svg'), linear-gradient(#fccf31, #f55555);
+  background-repeat: repeat;
+  background-position: center;
+  align-items: center;
+  padding-bottom: 30px;
+
+  @media all and (min-width: 768px) {
+    flex-grow: 1;
+    flex-basis: 60%;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+
+.card__container {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  background-color: $color-light;
+}
+
+.contact__link--inactive {
+  color: $color-medium;
+}
+
+.paleta-azul {
+  .contact__link--active {
+    color: $color-paleta1-primary;
+
+    &:hover {
+      color: $color-paleta1-secondary;
+    }
+  }
+
+  .font-color {
+    color: $color-paleta1-primary;
+  }
+
+  .info-personal__container {
+    border-left: 5px solid $color-paleta1-terciary;
+  }
+
+  .icon__contact {
+    border: 2px solid $color-paleta1-terciary;
+  }
+
+  .skills__list {
+    border-top: 2px solid rgba($color-paleta1-primary, 0.2);
+  }
+
+  .skills__item {
+    background-color: $color-paleta1-primary;
+  }
+}
+
+.paleta-roja {
+  .contact__link--active {
+    color: $color-paleta2-primary;
+
+    &:hover {
+      color: $color-paleta2-secondary;
+    }
+  }
+
+  .font-color {
+    color: $color-paleta2-primary;
+  }
+
+  .info-personal__container {
+    border-left: 5px solid $color-paleta2-terciary;
+  }
+
+  .icon__contact {
+    border: 2px solid $color-paleta2-terciary;
+  }
+
+  .skills__list {
+    border-top: 2px solid rgba($color-paleta2-secondary, 0.2);
+  }
+
+  .skills__item {
+    background-color: $color-paleta2-secondary;
+  }
+}
+
+.paleta-gris {
+  .contact__link--active {
+    color: $color-paleta3-primary;
+
+    &:hover {
+      color: $color-paleta3-terciary;
+    }
+  }
+
+  .font-color {
+    color: $color-paleta3-primary;
+  }
+
+  .info-personal__container {
+    border-left: 5px solid $color-paleta3-terciary;
+  }
+
+  .icon__contact {
+    border: 2px solid $color-paleta3-terciary;
+  }
+
+  .skills__list {
+    border-top: 2px solid rgba($color-paleta3-secondary, 0.2);
+  }
+
+  .skills__item {
+    background-color: $color-paleta3-secondary;
+  }
+}
+
+.info-personal__container {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+}
+
+.contact {
+  padding: 10px 0 10px 15px;
+}
+
+.personal-image__container {
+  width: 240px;
+}
+
+.personal-image {
+  width: 100%;
+  display: block;
+}
+
+.icon__contact {
+  padding: 7px;
+  border: 2px solid $color-paleta1-terciary;
+  border-radius: 50%;
+}
+
+.icon-mobile {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.contact__link {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.skills__list {
+  display: flex;
+  padding: 10px 0 10px 20px;
+  border-top: 2px solid rgba($color-paleta1-primary, 0.2);
+}
+
+.skills__item {
+  display: flex;
+  list-style: none;
+  height: 18px;
+  padding: 0 5px;
+  background-color: $color-paleta1-primary;
+  border-radius: 4px;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-created {
+  margin-bottom: 30px;
+  border-bottom: 1px solid $color-medium-light;
+  text-align: center;
+
+  @media all and (min-width:768px) {
+    margin-bottom: 20px;
+  }
+}
+
+.card-created__title {
+  margin: 0;
+  text-transform: none;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
+.card-link {
+  color: $color-primary;
+}
+
+.icon-twitter {
+  padding-right: 10px;
+}
+
+.hidden__item {
+  display: none;
+}
+
+input[type='radio'] {
+    display:none;
+}
+
+.label-design {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type='radio'] + label span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: $color-light;
+    border: 1px solid $color-medium-light;
+    border-radius: 20px;
+    margin-right: 5px;
+}
+
+input[type='radio']:checked + label span {
+    background-image: linear-gradient(#fccf31, #f55555);
+}

@@ -1,0 +1,53 @@
+.footer {
+  background-color: $color-light;
+  width: 100vw;
+  align-self: flex-end;
+}
+
+.footer__content {
+  padding-bottom: 20px;
+  text-align: center;
+  border-top: 1px solid $color-medium-light;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__copyrigth {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.adalab-logo {
+  width: 103px;
+  height: 40px;
+}
+
+@media all and (min-width: 768px) {
+  .footer__content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer__copyrigth {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.footer--adalab-logo {
+  width: 102px;
+}
+
+.pyb-logo {
+  height: 40px;
+  width: auto;
+  margin: 10px 0;
+}

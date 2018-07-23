@@ -1,0 +1,198 @@
+// FORMULARIO DISEÑA
+
+.form__fieldset-design {
+  border-bottom: 1px solid $color-medium-light;
+}
+
+.legend__container {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon__primary--medium {
+  padding-right: 10px;
+}
+
+.icon__rotation {
+  transition: all 2s ease;
+  &:hover {
+    transform: rotate(180deg);
+  }
+}
+
+.design__container {
+  margin: 25px 0px 30px 0px;
+}
+
+.item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.item-container--color {
+  margin-bottom: 36px;
+}
+
+.radio-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-design {
+  margin-left: 4px;
+}
+
+.palette {
+  display: flex;
+  align-items: center;
+}
+
+.palette--margin {
+  margin-bottom: 20px;
+}
+
+.font {
+  display: flex;
+  align-items: center;
+}
+
+.font--margin {
+  margin-bottom: 9px;
+}
+
+.label-design {
+  display: flex;
+}
+
+.palette-box {
+  width: 30px;
+  height: 25px;
+}
+
+.colorp1 {
+  background-color: $color-paleta1-primary;
+}
+
+.colorp2 {
+  background-color: $color-paleta1-secondary;
+}
+
+.colorp3 {
+  background-color: $color-paleta1-terciary;
+}
+
+.colorp4 {
+  background-color: $color-paleta2-primary;
+}
+
+.colorp5 {
+  background-color: $color-paleta2-secondary;
+}
+
+.colorp6 {
+  background-color: $color-paleta2-terciary;
+}
+
+.colorp7 {
+  background-color: $color-paleta3-primary;
+}
+
+.colorp8 {
+  background-color: $color-paleta3-secondary;
+}
+
+.colorp9 {
+  background-color: $color-paleta3-terciary;
+}
+
+//RELLENA
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom: solid 1px $color-medium-light;
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.legend__arrow {
+  font-size: $size-m;
+  color: $color-medium-dark-dark;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item__addfile {
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.item__input {
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: solid 1px $color-paleta1-terciary;
+}
+
+.item__select-container {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+//COMPARTE
+
+.share__header {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.share__icon-title {
+  display: flex;
+  flex-direction: row;
+}
+
+.share__icon {
+  color: $color-primary;
+}
+
+.share__content {
+  border-bottom: 1px solid $color-medium-light;
+}
+
+.icon-card {
+  padding-right: 10px;
+}
+
+.item-preview {
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+}
+
+.item-preview__img {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid $color-paleta1-terciary;
+}
