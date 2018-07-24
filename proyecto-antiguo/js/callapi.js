@@ -1,4 +1,5 @@
 'use strict';
+
 const listOfChosenSelects = document.getElementsByTagName('select');
 const submitButton = document.querySelector('#submit');
 const responseURL = document.querySelector('.response');
@@ -8,15 +9,13 @@ const form = document.querySelector('#form');
 const cardCreated = document.querySelector('.card-created');
 let twitterURL;
 
-
-
 const sendData = () => {
   const inputs = Array.from(form.elements);
   const json = getJSONFromInputs(inputs);
   json.skills = [];
   console.log(`json ${json}`);
   for (const oneSelect of listOfChosenSelects){
-    json.skills.push(listOfChosenSelects[i].value);
+    json.skills.push(oneSelect.value);
   }
   json.photo = fr.result;
   console.log(`json justo antes enviar datos ${json}`);
