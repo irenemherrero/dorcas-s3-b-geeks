@@ -9,8 +9,8 @@ class CardGenerator extends Component {
     return (
       <div className="CardGenerator">
         <Header/>
-        { /*<Preview/>
-        <Form/>    
+        <Preview/>
+        { /*<Form/>    
         <Footer/>*/} 
       </div>
     );
