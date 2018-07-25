@@ -1,0 +1,170 @@
+// Card
+
+.font-card--comicsans {
+  .font-card--bold {
+    font-size: $size-m;
+    font-family: $font-optional-2;
+    font-weight: $weight-bold;
+    text-transform: capitalize;
+  }
+
+  .font-card {
+    font-size: $size-sm;
+    font-family: $font-optional-2;
+    font-weight: $weight-regular;
+  }
+}
+
+.font-card--ubuntu {
+  .font-card--bold {
+    font-size: $size-m;
+    font-family: $font-optional-1;
+    font-weight: $weight-bold;
+    text-transform: capitalize;
+  }
+
+  .font-card {
+    font-size: $size-sm;
+    font-family: $font-optional-1;
+    font-weight: $weight-regular;
+  }
+}
+
+.font-card--montserrat {
+  .font-card--bold {
+    font-size: $size-m;
+    font-family: $font-optional-3;
+    font-weight: $weight-bold;
+    text-transform: capitalize;
+  }
+
+  .font-card {
+    font-size: $size-sm;
+    font-family: $font-optional-3;
+    font-weight: $weight-regular;
+  }
+}
+
+.button-reset__text {
+  font: $weight-regular $size-xxs $font-primary;
+  text-transform: uppercase;
+}
+
+.text__skills {
+  font-size: $size-xs;
+  color: $color-light;
+}
+
+// Color primary
+
+.icon__primary--medium {
+  font-size: $size-m;
+  color: $color-primary;
+} // text style
+
+.icon__primary--extra-large {
+  font-size: $size-xl;
+  color: $color-primary;
+} // text style 4
+
+.text-style--medium-large {
+  font-family: $font-secondary;
+  font-size: $size-ml;
+  font-weight: $weight-bold;
+  color: $color-primary;
+} // text style 2
+
+// Color dark-dark
+
+.icon__dark--medium {
+  font-size: $size-m;
+}
+
+.text__dark--regular {
+  font-family: $font-optional-2;
+  font-size: $size-sm;
+} // text style 6
+
+.text__dark--semibold {
+  font-size: $size-sm;
+  font-weight: $weight-semibold;
+} // text style 5 - dark!
+
+.text__dark--small {
+  font-size: $size-s;
+  text-transform: uppercase;
+} // colores, fuentes - esther
+
+.text__dark--title {
+  font-size: $size-m;
+  font-weight: $weight-semibold;
+  text-transform: uppercase;
+} // titulos del formulario diseña, rellena, comparte
+
+// Optional fonts
+
+.text__optional--ubuntu {
+  font-family: $font-optional-1;
+  font-size: $size-sm;
+}
+
+.text__optional--comic {
+  font-family: $font-optional-2;
+  font-size: $size-sm;
+}
+
+.text__optional--mont {
+  font-family: $font-optional-3;
+  font-size: $size-sm;
+}
+
+// Otros
+
+.text-style--extra-small {
+  font-family: $font-primary;
+  font-size: $size-xs;
+  color: $color-paleta1-primary;
+} // text style 3
+
+.item__label {
+  color: $color-paleta1-primary;
+  font-size: $size-s;
+  line-height: 20px;
+ }
+
+ .item__button-label {
+  font: $weight-regular $size-s $font-primary;
+  color: $color-light;
+ }
+
+.btn-card--text {
+  font: $weight-semibold $size-m $font-primary;
+  text-transform: uppercase;
+}
+
+.icon-card {
+  font-size: 22px;
+}
+
+.text__card-link {
+  font-weight: $weight-semibold;
+  font-size: $size-xxs;
+}
+
+.btn-twitter--text {
+  font-family: $font-primary;
+  font-size: $size-s;
+  font-weight: $weight-regular;
+}
+
+.icon-twitter {
+  font-size: $size-m;
+}
+
+// footer
+
+.text__footer {
+  font-size: $size-s;
+  color: $color-medium-dark;
+  opacity: 0.5;
+}

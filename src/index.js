@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './scss/main.css';
 import CardGenerator from './CardGenerator';
 import registerServiceWorker from './registerServiceWorker';
 

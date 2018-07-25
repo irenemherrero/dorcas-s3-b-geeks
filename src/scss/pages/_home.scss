@@ -1,0 +1,42 @@
+.wrapper {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 30px;
+}
+
+@media all and (min-width:768px) {
+  .main__form {
+    background: linear-gradient($color-medium-light-light, $color-light);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: stretch;
+    align-content: space-between;
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .wrapper {
+    max-width: 400px;
+    margin-right: 30px;
+    margin-left: 0;
+    flex-shrink: 1;
+    flex-basis: 40%;
+  }
+}
+
+//ESTILOS PARA LOS COLAPSABLES
+
+.js__dropdown-title {
+  cursor: pointer;
+}
+
+.js__dropdown-content {
+  display: none;
+}
+
+.visible{
+  .js__dropdown-content {
+    display: block;
+  }
+}
