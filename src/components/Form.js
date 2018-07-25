@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Fontawesome from  
+import Fontawesome from '@fortawesome/fontawesome-free/css/all.css';
 
 class Form extends Component {
   render() {
