@@ -4,7 +4,7 @@ import './scss/main.css';
 import CardGenerator from './CardGenerator';
 import Fontawesome from '@fortawesome/fontawesome-free/css/all.css';
 import registerServiceWorker from './registerServiceWorker';
-import Fontawesome from '@fortawesome/fontawesome-free/css/all.css';
+
 
 ReactDOM.render(<CardGenerator />, document.getElementById('root'));
 registerServiceWorker();
