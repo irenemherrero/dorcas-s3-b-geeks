@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import peakyLogo from '../images/pyb-logo.png';
 import adalabLogo from '../images/logo-adalab.png';
@@ -17,4 +18,5 @@ class Footer extends Component {
 }
 
 
-export default Footer;
+
+// export default Footer;

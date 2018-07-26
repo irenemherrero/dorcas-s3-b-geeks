@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+
+import React, { Component } from 'react';
 
 class Form extends Component {
   render() {
@@ -122,6 +123,7 @@ class Form extends Component {
                                     </div>
                                   </section>
 
+
                                   {/* <!-- Sección Comparte --> */}
 
                                   <section className="share js__dropdown">
@@ -155,4 +157,4 @@ class Form extends Component {
 }
 
 
-export default Form;
+ export default Form;
