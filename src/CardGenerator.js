@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import './components/Header.js';
-import './components/Form.js';
-import './components/Preview.js';
-import './components/Footer.js';
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
 import './CardGenerator.css';
 
 class CardGenerator extends Component {
@@ -10,8 +9,7 @@ class CardGenerator extends Component {
     return (
       <div className="CardGenerator">
         <Header/>
-        <Preview/>
-        <Form/>    
+        <Main/>
         <Footer/>
       </div>
     );
