@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 
+=======
+
+import React, { Component } from 'react';
+>>>>>>> a40a6e1d53e9b78c9c0eada6f325e2d46de32af7
 
 class Form extends Component {
   render() {
@@ -157,4 +162,8 @@ class Form extends Component {
 }
 
 
+<<<<<<< HEAD
 export default Form;
+=======
+ export default Form;
+>>>>>>> a40a6e1d53e9b78c9c0eada6f325e2d46de32af7
