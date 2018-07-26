@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react';
 import Fontawesome from  
 
@@ -123,6 +124,7 @@ class Form extends Component {
                                     </div>
                                   </section>
 
+
                                   {/* <!-- Sección Comparte --> */}
 
                                   <section className="share js__dropdown">
@@ -156,4 +158,4 @@ class Form extends Component {
 }
 
 
-export default Form;
+// export default Form;

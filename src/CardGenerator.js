@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 //import './components/Header.js';
 import Form from './components/Form';
 //import './components/Preview.js';
@@ -12,6 +13,9 @@ class CardGenerator extends Component {
         {/* <Preview/> */}
         <Form/>
       <Footer/>
+        <Header/>
+        { /*<Preview/>
+
       </div>
     );
   }
