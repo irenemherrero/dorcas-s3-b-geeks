@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import './Preview.css';
+// import React, { Component } from 'react';
+// import './Preview.css';
 
-class Preview extends Component {
-  render () {
-    return ();
-  }
-}
+// class Preview extends Component {
+//   render () {
+//     return ();
+//   }
+// }
 
 
-export default Preview;
+// export default Preview;

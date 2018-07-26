@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-//import './components/Header.js';
-import Form from './components/Form';
-//import './components/Preview.js';
+import Header from './components/Header';
+import Main from './components/Main';
 import Footer from './components/Footer';
+import './CardGenerator.css';
 
 class CardGenerator extends Component {
   render() {
     return (
       <div className="CardGenerator">
-        {/* <Header/> */}
-        {/* <Preview/> */}
-        <Form/>
-      <Footer/>
+        <Header/>
+        <Main/>
+        <Footer/>
       </div>
     );
   }
