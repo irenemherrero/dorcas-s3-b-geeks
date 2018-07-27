@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import React, { Component } from 'react';
-
-=======
-
-import React, { Component } from 'react';
->>>>>>> a40a6e1d53e9b78c9c0eada6f325e2d46de32af7
+import Collapsible from './Collapsible';
 
 class Form extends Component {
   render() {
@@ -12,13 +7,13 @@ class Form extends Component {
       <div className="wrapper">
       <form id="form" className="form" action="index.html" method="post" name="form">
         <section className="form__fieldset-design js__dropdown visible">
-          <div className="legend__container js__dropdown-title">
+          <Collapsible>
             <legend className="fieldset__legend">
-              <i className="far fa-object-ungroup icon__primary--medium"></i>
-              <span className="text__dark--title">diseña</span>
+            <i className="far fa-object-ungroup icon__primary--medium"></i>
+            <span className="text__dark--title">Diseña</span>
             </legend>
             <i className="fas fa-angle-up arrow legend__arrow icon__rotation"></i>
-          </div>
+          </Collapsible>
           <div className="design__container js__dropdown-content">
             <div className="item-container item-container--color">
               <div className="text__dark--small">colores</div>
@@ -161,9 +156,4 @@ class Form extends Component {
   }
 }
 
-
-<<<<<<< HEAD
 export default Form;
-=======
- export default Form;
->>>>>>> a40a6e1d53e9b78c9c0eada6f325e2d46de32af7
