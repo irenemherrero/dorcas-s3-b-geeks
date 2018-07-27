@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import cardImage from "../images/card-image.png";
+import BotonRedesCard from "./BotonRedesCard";
 
 class Preview extends Component {
+
+/* ¿Hace falta poner constructor para pasarle los datos de los botones de las redes sociales al componente BotonRedesCard?*/
+
   render () {
     return (
         <section className="section-card">
@@ -26,12 +30,53 @@ class Preview extends Component {
                   </div>
                   <img className="personal-image" src= {this.props.data.photo} alt="foto personal"/>
 
-                  
+{/*Botones redes sociales con componente hijo*/}
+
                   <div className="contact">
-                    <a id="element-tel" className="contact-link contact__link--inactive contact__mobile" href="" target="_blank"><i className="fas fa-mobile-alt icon-mobile icon__contact"></i></a>
-                    <a id="element-mail" className="contact-link contact__link--inactive contact__envelope" href="" target="_blank"><i className="far fa-envelope icon-mail icon__contact"></i></a>
-                    <a id="element-lin" className="contact-link contact__link--inactive contact__linkedin" href="" target="_blank"><i className="fab fa-linkedin-in icon-linkedin icon__contact"></i></a>
-                    <a id="element-gh" className="contact-link contact__link--inactive contact__github" href="" target="_blank"><i className="fab fa-github-alt icon-github icon__contact"></i></a>
+                    
+                    <BotonRedesCard 
+                      id="element-tel" 
+                      className="contact-link contact__link--inactive contact__mobile" 
+                      href="" 
+                      target="_blank">
+                    
+                      <i className="fas fa-mobile-alt icon-mobile icon__contact">
+                      </i>
+
+                    </BotonRedesCard>
+
+                    <BotonRedesCard 
+                      id="element-mail" 
+                      className="contact-link contact__link--inactive contact__envelope" 
+                      href="" 
+                      target="_blank">
+                      
+                      <i className="far fa-envelope icon-mail icon__contact">
+                      </i>
+
+                    </BotonRedesCard>
+
+                    <BotonRedesCard 
+                      id="element-lin" 
+                      className="contact-link contact__link--inactive contact__linkedin" 
+                      href="" 
+                      target="_blank">
+                      
+                      <i className="fab fa-linkedin-in icon-linkedin icon__contact">
+                      </i>
+
+                    </BotonRedesCard>
+
+                    <BotonRedesCard 
+                      id="element-gh" 
+                      className="contact-link contact__link--inactive contact__github" 
+                      href="" 
+                      target="_blank">
+                      
+                      <i className="fab fa-github-alt icon-github icon__contact">
+                      </i>
+                      
+                    </BotonRedesCard>
                   </div>
                   <div className="skills">
                   </div>
