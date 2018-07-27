@@ -6,6 +6,9 @@ import previewPhoto from '../images/card-image.png';
 class Main extends Component {
   constructor(){
     super()
+
+{/*¿Hace falta pasar todo esto aunque algunas no tengan datos?*/}
+
     this.data = {
       email: "",
       github: "",
@@ -14,7 +17,7 @@ class Main extends Component {
       name: "Nombre Apellidos",
       palette:"1",
       phone: "",
-      photo: {previewPhoto},
+      photo: previewPhoto,
       skills: [],
       typography: "2"
     }
