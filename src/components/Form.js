@@ -19,8 +19,8 @@ class Form extends Component {
               <div className="text__dark--small">colores</div>
               <div className="radio-container">
                 <div className="palette palette--margin">
-                  <input id="color1" className="input__storage" type="radio" name="palette" radio-cual="1" value="1" defaultChecked="checked"/>
-                  <label htmlFor="color1" className="label-design">
+                  <input id="color1" className="input__storage" type="radio" name="palette" radio-cual="1" value="1" checked="checked"/>
+                  <label for="color1" className="label-design">
                     <span></span>
                     <div className="palette-box colorp1"></div>
                     <div className="palette-box colorp2"></div>
@@ -29,7 +29,7 @@ class Form extends Component {
                 </div>
                 <div className="palette palette--margin">
                   <input id="color2" className="input__storage" type="radio" name="palette" radio-cual="2" value="2"/>
-                    <label htmlFor="color2" className="label-design">
+                    <label for="color2" className="label-design">
                       <span></span>
                       <div className="palette-box colorp4"></div>
                       <div className="palette-box colorp5"></div>
@@ -38,7 +38,7 @@ class Form extends Component {
                   </div>
                   <div className="palette">
                     <input id="color3" className="input__storage" type="radio" name="palette" radio-cual="3" value="3"/>
-                      <label htmlFor="color3" className="label-design">
+                      <label for="color3" className="label-design">
                         <span></span>
                         <div className="palette-box colorp7"></div>
                         <div className="palette-box colorp8"></div>
@@ -52,19 +52,19 @@ class Form extends Component {
                   <div className="radio-container">
                     <div className="font font--margin">
                       <input id="font1" className="input__storage" type="radio" name="typography" radio-cual="4" value="1"/>
-                        <label htmlFor="font1" className="text__optional--ubuntu label-design">
+                        <label for="font1" className="text__optional--ubuntu label-design">
                           <span></span>
                           Ubuntu</label>
                       </div>
                       <div className="font font--margin">
-                        <input id="font2" className="input__storage" type="radio" name="typography" radio-cual="5" value="2" defaultChecked="checked"/>
-                          <label htmlFor="font2" className="text__optional--comic label-design">
+                        <input id="font2" className="input__storage" type="radio" name="typography" radio-cual="5" value="2" checked="checked"/>
+                          <label for="font2" className="text__optional--comic label-design">
                             <span></span>
                             Comic Sans</label>
                         </div>
                         <div className="font">
                           <input id="font3" className="input__storage" type="radio" name="typography" radio-cual="6" value="3"/>
-                            <label htmlFor="font3" className="text__optional--mont label-design">
+                            <label for="font3" className="text__optional--mont label-design">
                               <span></span>
                               Montserrat</label>
                           </div>
@@ -84,15 +84,15 @@ class Form extends Component {
                       </div>
                       <div className="js__dropdown-content">
                         <div className="item">
-                          <label className="item__label" htmlFor="name">Nombre completo</label>
+                          <label className="item__label" for="name">Nombre completo</label>
                           <input className="input item__input form-field--name input__storage " id="name" type="text" name="name" placeholder="Ej: Sally Jill" data-donde="element-name" required="required"/>
                         </div>
                           <div className="item">
-                            <label className="item__label" htmlFor="job">Puesto</label>
+                            <label className="item__label" for="job">Puesto</label>
                             <input className="input item__input form-field--role input__storage" id="job" type="text" name="job" placeholder="Ej: Front-end unicorn" data-donde="element-role" required="required"/>
                           </div>
                             <div className="item">
-                              <label className="item__label" htmlFor="image">Imagen de perfil</label>
+                              <label className="item__label" for="image">Imagen de perfil</label>
                               <div className="item__addfile">
                                 <button className="item__button-file item__button-label" type="button">Añadir imagen</button>
                                 <input className="input input__file--hidden input__storage" id="image" type="file" name="photo" required="required"/>
@@ -102,23 +102,23 @@ class Form extends Component {
                                 </div>
                               </div>
                               <div className="item">
-                                <label className="item__label" htmlFor="email">Email</label>
+                                <label className="item__label" for="email">Email</label>
                                 <input className="input item__input form-field--mail input__storage" id="email" type="email" name="email" placeholder="Ej: sally-hill@gmail.com" data-donde="element-mail" required="required"/>
                               </div>
                                 <div className="item">
-                                  <label className="item__label" htmlFor="phone">Teléfono</label>
+                                  <label className="item__label" for="phone">Teléfono</label>
                                   <input className="input item__input form-field--tel input__storage" id="phone" type="tel" name="phone" placeholder="Ej: 555 55 55 55" data-donde="element-tel" required="required"/>
                                 </div>
                                   <div className="item">
-                                    <label className="item__label" htmlFor="linkedin">Linkedin</label>
+                                    <label className="item__label" for="linkedin">Linkedin</label>
                                     <input className="input item__input form-field--lin input__storage" id="linkedin" type="url" name="linkedin" placeholder="Ej: sally.hill" data-donde="element-lin" required="required"/>
                                   </div>
                                     <div className="item">
-                                      <label className="item__label" htmlFor="github">Github</label>
+                                      <label className="item__label" for="github">Github</label>
                                       <input className="input item__input form-field--gh input__storage" id="github" type="text" name="github" placeholder="Ej: sally-hill" data-donde="element-gh" required="required"/>
                                     </div>
                                       <div className="item js__select-container">
-                                        <label className="item__label" htmlFor="abilities">Habilidades (máximo 3)</label>
+                                        <label className="item__label" for="abilities">Habilidades (máximo 3)</label>
                                       </div>
                                     </div>
                                   </section>
@@ -156,8 +156,4 @@ class Form extends Component {
   }
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> aeb31939b83767346e7adf0ae7ef1ba193eabdcb
 export default Form;
