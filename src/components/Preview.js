@@ -20,7 +20,7 @@ class Preview extends Component {
                   <div id="card__info" className="info-personal__container font-card--comicsans">
 
 {/*Datos por props de Main*/}
-//////// hemos quitado .data pq ya lo tiene en el Main.js
+{/*//////// hemos quitado .data pq ya lo tiene en el Main.js*/}
                     <p id="element-name" className="font-card--bold font-color">{this.props.name}</p>
                     <p id="element-role" className="font-card">{this.props.job}</p>
                   </div>

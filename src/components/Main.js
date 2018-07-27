@@ -38,7 +38,7 @@ class Main extends Component {
     return (
     <div className="main__form">
       <Preview
-      /////estamos probando si funcionan los elmentos comentados 
+      {/*/////estamos probando si funcionan los elmentos comentados */}
           palette = {paletteTypes[this.data.palette]}
           typography = {typographyTypes[this.data.typography]}
           name = "Nombre Apellidos"
