@@ -7,7 +7,7 @@ class Preview extends Component {
         <section className="section-card">
           <div className="section-card__container">
             <button className="button-reset">
-              <i class="far fa-trash-alt button-reset__icon"></i>
+              <i className="far fa-trash-alt button-reset__icon"></i>
                 <span className="button-reset__text">reset</span>
             </button>
               <div id="card" className="card__container paleta-azul">
