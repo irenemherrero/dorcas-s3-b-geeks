@@ -8,7 +8,8 @@ class Main extends Component {
     <div className="main__form">
       <Preview/>
       <Form/>
-    </div>);
+    </div>
+  );
   }
 }
 
