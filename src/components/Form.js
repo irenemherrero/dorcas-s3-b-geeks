@@ -7,13 +7,13 @@ class Form extends Component {
       <div className="wrapper">
       <form id="form" className="form" action="index.html" method="post" name="form">
         <section className="form__fieldset-design js__dropdown visible">
-          <div className="legend__container js__dropdown-title">
+          <Collapsible>
             <legend className="fieldset__legend">
-              <i className="far fa-object-ungroup icon__primary--medium"></i>
-              <span className="text__dark--title">diseña</span>
+            <i className="far fa-object-ungroup icon__primary--medium"></i>
+            <span className="text__dark--title">Diseña</span>
             </legend>
             <i className="fas fa-angle-up arrow legend__arrow icon__rotation"></i>
-          </div>
+          </Collapsible>
           <div className="design__container js__dropdown-content">
             <div className="item-container item-container--color">
               <div className="text__dark--small">colores</div>
@@ -155,6 +155,5 @@ class Form extends Component {
                               );
   }
 }
-
 
 export default Form;
