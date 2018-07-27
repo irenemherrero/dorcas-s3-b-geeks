@@ -13,10 +13,10 @@ class Preview extends Component {
               <div id="card" className="card__container paleta-azul">
                 <div className="info-personal">
                   <div id="card__info" className="info-personal__container font-card--comicsans">
-                    <p id="element-name" className="font-card--bold font-color">nombre apellido</p>
-                    <p id="element-role" className="font-card">Front-end developer</p>
+                    <p id="element-name" className="font-card--bold font-color">{this.props.data.name}</p>
+                    <p id="element-role" className="font-card">{this.props.data.job}</p>
                   </div>
-                  <img className="personal-image" src= {cardImage} alt="foto personal"/>
+                  <img className="personal-image" src= {this.props.data.photo} alt="foto personal"/>
                   <div className="contact">
                     <a id="element-tel" className="contact-link contact__link--inactive contact__mobile" href="" target="_blank"><i className="fas fa-mobile-alt icon-mobile icon__contact"></i></a>
                     <a id="element-mail" className="contact-link contact__link--inactive contact__envelope" href="" target="_blank"><i className="far fa-envelope icon-mail icon__contact"></i></a>
