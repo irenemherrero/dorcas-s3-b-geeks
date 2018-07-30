@@ -10,7 +10,7 @@ class Preview extends Component {
 {/*Componente botón */}
 
             <button className="button-reset">
-              <i class="far fa-trash-alt button-reset__icon"></i>
+              <i className="far fa-trash-alt button-reset__icon"></i>
                 <span className="button-reset__text">reset</span>
             </button>
 

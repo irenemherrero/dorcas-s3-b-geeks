@@ -16,8 +16,9 @@ const typographyTypes = {
 }
 
 class Main extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
+    console.log(props);
     this.state = {
       data: {
         email: "",
@@ -35,10 +36,11 @@ class Main extends Component {
   }
 
   render() {
+    console.log(this.props);
+    const {optionsSkills} = this.props;
     return (
     <div className="main__form">
-      <Preview
-
+    <Preview
           palette = {paletteTypes[this.state.data.palette]}
           typography = {typographyTypes[this.state.data.typography]}
           name = "Nombre Apellidos"
@@ -49,8 +51,11 @@ class Main extends Component {
           linkedin = ""
           // skills = ["HTML", "SASS"]
           />
-      <Form/>
-    </div>);
+     <Preview data= {this.data}/>
+     
+     <Form optionsSkills={optionsSkills} />
+    </div>
+  );
   }
 }
 

@@ -9,8 +9,8 @@ class Footer extends Component {
       <div className="footer">
         <div className="footer__content">
           <p className="footer__copyrigth">Awesome profile-cards @2018</p>
-          <img src={peakyLogo} alt="Peak-y-blinded logo" class="pyb-logo"/>
-          <a className="footer__link-adalab" href="http://adalab.es/" target="_blank"> <img class="adalab-logo" src={adalabLogo} alt="adalab-logo"/> </a>
+          <img src={peakyLogo} alt="Peak-y-blinded logo" className="pyb-logo"/>
+          <a className="footer__link-adalab" href="http://adalab.es/" target="_blank"> <img className="adalab-logo" src={adalabLogo} alt="adalab-logo"/> </a>
         </div>
       </div>
     );
