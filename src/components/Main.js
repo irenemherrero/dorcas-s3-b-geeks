@@ -4,11 +4,10 @@ import Preview from './Preview';
 import previewPhoto from '../images/card-image.png';
 
 class Main extends Component {
-  constructor(){
-    super()
-
+  constructor(props){
+    super(props)
 {/*¿Hace falta pasar todo esto aunque algunas no tengan datos?*/}
-
+  console.log(props);
     this.data = {
       email: "",
       github: "",
@@ -23,10 +22,12 @@ class Main extends Component {
     }
   }
   render() {
+    console.log(this.props);
+    const {optionsSkills} = this.props;
     return (
     <div className="main__form">
       <Preview data= {this.data}/>
-      <Form/>
+      <Form optionsSkills={optionsSkills} />
     </div>
   );
   }

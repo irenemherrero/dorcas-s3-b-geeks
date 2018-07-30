@@ -3,6 +3,7 @@ import Collapsible from './Collapsible';
 
 class Form extends Component {
   render() {
+    console.log(this.props);
     return (
       <div className="wrapper">
       <form id="form" className="form" action="index.html" method="post" name="form">
