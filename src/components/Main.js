@@ -18,35 +18,35 @@ const typographyTypes = {
 class Main extends Component {
   constructor(){
     super()
-
-{/*¿Hace falta pasar todo esto aunque algunas no tengan datos?*/}
-
-    this.data = {
-      email: "",
-      github: "",
-      job: "Front-end developer",
-      linkedin:"",
-      name: "Nombre Apellidos",
-      palette:"1",
-      phone: "",
-      photo: previewPhoto,
-      skills: [],
-      typography: "2"
+    this.state = {
+      data: {
+        email: "",
+        github: "",
+        job: "Front-end developer",
+        linkedin:"",
+        name: "Nombre Apellidos",
+        palette:"1",
+        phone: "",
+        photo: previewPhoto,
+        skills: [],
+        typography: "2"
+      }
     }
   }
+
   render() {
     return (
     <div className="main__form">
       <Preview
-      {/*/////estamos probando si funcionan los elmentos comentados */}
-          palette = {paletteTypes[this.data.palette]}
-          typography = {typographyTypes[this.data.typography]}
+
+          palette = {paletteTypes[this.state.data.palette]}
+          typography = {typographyTypes[this.state.data.typography]}
           name = "Nombre Apellidos"
           job = "Front-end developer"
           photo = {previewPhoto}
-          // email = "holi"
-          // github = "lol"
-          // linkedin = ""
+          email = ""
+          github = ""
+          linkedin = ""
           // skills = ["HTML", "SASS"]
           />
       <Form/>
