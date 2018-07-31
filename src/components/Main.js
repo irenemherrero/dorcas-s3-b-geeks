@@ -51,8 +51,6 @@ class Main extends Component {
           linkedin = ""
           // skills = ["HTML", "SASS"]
           />
-     <Preview data= {this.data}/>
-     
      <Form optionsSkills={optionsSkills} />
     </div>
   );
