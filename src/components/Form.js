@@ -6,12 +6,26 @@ class Form extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      name: "",
-      
-
+      name: '',
+      image:'http://placehold.it/29x29/ffffff/ffffff'
     }
-
+    this.handleLoadPhoto = this.handleLoadPhoto.bind(this);
+    this.fileInput = React.createRef();
   }
+
+
+  handleLoadPhoto (event) {
+    console.log(event.target.file)
+    event.preventDefault();
+    const fr = new FileReader();
+    fr.addEventListener('load', () => {
+       this.setState({image: fr.result});
+  });
+  fr.readAsDataURL(event.target.files);
+    console.log(event.target.files);
+}
+
+
   render() {
     console.log(this.props);
     console.log(this.props);
@@ -103,10 +117,10 @@ class Form extends Component {
       <div className="item">
       <label className="item__label" htmlFor="image">Imagen de perfil</label>
       <div className="item__addfile">
-      <button className="item__button-file item__button-label" type="button">Añadir imagen</button>
-      <input className="input input__file--hidden input__storage" id="image" type="file" name="photo" required="required"/>
+      <button className="item__button-file item__button-label" type="button" onClick={this.handleLoadPhoto}>Añadir imagen</button>
+      <input className="input input__file--hidden input__storage" id="image" type="file" ref={this.fileInput} name="photo" required="required"/>
       <div className="item-preview">
-      <img className="item-preview__img" src="http://placehold.it/29x29/ffffff/ffffff"></img>
+      <img className="item-preview__img" src={this.state.image}></img>
       </div>
       </div>
       </div>
