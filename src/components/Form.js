@@ -10,6 +10,7 @@ class Form extends Component {
           <div className="legend__container js__dropdown-title">
             <legend className="fieldset__legend">
               <i className="far fa-object-ungroup icon__primary--medium"></i>
+              <i className="icon__primary--medium far fa-keyboard"></i>
               <span className="text__dark--title">diseña</span>
             </legend>
             <i className="fas fa-angle-up arrow legend__arrow icon__rotation"></i>

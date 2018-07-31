@@ -9,7 +9,7 @@ class CardGenerator extends Component {
     return (
       <div className="CardGenerator">
         <Header/>
-        <Main/>
+        <Main />
         <Footer/>
       </div>
     );
