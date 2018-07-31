@@ -3,6 +3,15 @@ import Collapsible from './Collapsible';
 import SelectSkills from './SelectSkills';
 
 class Form extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      name: "",
+      
+
+    }
+
+  }
   render() {
     console.log(this.props);
     console.log(this.props);
@@ -85,7 +94,7 @@ class Form extends Component {
       <div className="js__dropdown-content">
       <div className="item">
       <label className="item__label" htmlFor="name">Nombre completo</label>
-      <input className="input item__input form-field--name input__storage " id="name" type="text" name="name" placeholder="Ej: Sally Jill" data-donde="element-name" required="required"/>
+      <input className="input item__input form-field--name input__storage " value={this.state.name} id="name" type="text" name="name" placeholder="Ej: Sally Jill" data-donde="element-name" required="required"/>
       </div>
       <div className="item">
       <label className="item__label" htmlFor="job">Puesto</label>
