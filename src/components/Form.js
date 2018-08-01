@@ -29,8 +29,6 @@ class Form extends Component {
   fr.readAsDataURL(event.target.files[0]);
     console.log(event.target.files[0]);
 }
-
-
   render() {
     const {name, email, github, job, linkedin, phone, image} = this.props.dataObject;
   
