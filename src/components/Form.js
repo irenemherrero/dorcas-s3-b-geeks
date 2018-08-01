@@ -9,8 +9,14 @@ class Form extends Component {
       name: '',
       image:'http://placehold.it/29x29/ffffff/ffffff'
     }
+    this.falseClick = this.falseClick.bind(this);
     this.handleLoadPhoto = this.handleLoadPhoto.bind(this);
     this.fileInput = React.createRef();
+  }
+
+  falseClick (event) {
+    this.fileInput.current.click()
+
   }
 
 
@@ -21,8 +27,8 @@ class Form extends Component {
     fr.addEventListener('load', () => {
        this.setState({image: fr.result});
   });
-  fr.readAsDataURL(event.target.files);
-    console.log(event.target.files);
+  fr.readAsDataURL(event.target.files[0]);
+    console.log(event.target.files[0]);
 }
 
 
@@ -117,8 +123,8 @@ class Form extends Component {
       <div className="item">
       <label className="item__label" htmlFor="image">Imagen de perfil</label>
       <div className="item__addfile">
-      <button className="item__button-file item__button-label" type="button" onClick={this.handleLoadPhoto}>Añadir imagen</button>
-      <input className="input input__file--hidden input__storage" id="image" type="file" ref={this.fileInput} name="photo" required="required"/>
+      <button className="item__button-file item__button-label" type="button" onClick={this.falseClick}>Añadir imagen</button>
+      <input className="input input__file--hidden input__storage" id="image" type="file" ref={this.fileInput} onChange={this.handleLoadPhoto} name="photo" required="required"/>
       <div className="item-preview">
       <img className="item-preview__img" src={this.state.image}></img>
       </div>
