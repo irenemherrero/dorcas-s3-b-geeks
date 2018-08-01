@@ -118,7 +118,7 @@ class Form extends Component {
       </div>
       <div className="item">
       <label className="item__label" htmlFor="job">Puesto</label>
-      <input className="input item__input form-field--role input__storage" id="job" type="text" name="job" placeholder="Ej: Front-end unicorn" data-donde="element-role" required="required"/>
+      <input className="input item__input form-field--role input__storage" value={this.state.job} id="job" type="text" name="job" placeholder="Ej: Front-end unicorn" data-donde="element-role" required="required"/>
       </div>
       <div className="item">
       <label className="item__label" htmlFor="image">Imagen de perfil</label>
@@ -132,19 +132,19 @@ class Form extends Component {
       </div>
       <div className="item">
       <label className="item__label" htmlFor="email">Email</label>
-      <input className="input item__input form-field--mail input__storage" id="email" type="email" name="email" placeholder="Ej: sally-hill@gmail.com" data-donde="element-mail" required="required"/>
+      <input className="input item__input form-field--mail input__storage" value={this.state.email} id="email" type="email" name="email" placeholder="Ej: sally-hill@gmail.com" data-donde="element-mail" required="required"/>
       </div>
       <div className="item">
       <label className="item__label" htmlFor="phone">Teléfono</label>
-      <input className="input item__input form-field--tel input__storage" id="phone" type="tel" name="phone" placeholder="Ej: 555 55 55 55" data-donde="element-tel" required="required"/>
+      <input className="input item__input form-field--tel input__storage" value={this.state.phone} id="phone" type="tel" name="phone" placeholder="Ej: 555 55 55 55" data-donde="element-tel" required="required"/>
       </div>
       <div className="item">
       <label className="item__label" htmlFor="linkedin">Linkedin</label>
-      <input className="input item__input form-field--lin input__storage" id="linkedin" type="url" name="linkedin" placeholder="Ej: sally.hill" data-donde="element-lin" required="required"/>
+      <input className="input item__input form-field--lin input__storage" value={this.state.linkedin} id="linkedin" type="url" name="linkedin" placeholder="Ej: sally.hill" data-donde="element-lin" required="required"/>
       </div>
       <div className="item">
       <label className="item__label" htmlFor="github">Github</label>
-      <input className="input item__input form-field--gh input__storage" id="github" type="text" name="github" placeholder="Ej: sally-hill" data-donde="element-gh" required="required"/>
+      <input className="input item__input form-field--gh input__storage" value={this.state.github} id="github" type="text" name="github" placeholder="Ej: sally-hill" data-donde="element-gh" required="required"/>
       </div>
 
       <SelectSkills optionsSkills={optionsSkills}/>
