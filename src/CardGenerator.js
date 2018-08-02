@@ -14,7 +14,6 @@ class CardGenerator extends Component {
     })
     .then((json) => {
       this.setState({arraySkills: json.skills})
-      console.log(json.skills);
     })
 
   this.state = {
@@ -25,7 +24,7 @@ class CardGenerator extends Component {
       "2": "paleta-roja",
       "3": "paleta-gris",
     },
-    
+
     typographyTypes: {
       "1":"font-card--ubuntu",
       "2":"font-card--comicsans",
@@ -46,18 +45,36 @@ class CardGenerator extends Component {
       typography: "2"
     }
   }
+  this.writeData=this.writeData.bind(this);
+  this.writeSocialMedia=this.writeSocialMedia.bind(this);
 }
+
+  writeData(event) {
+    console.log('hola nasi');
+    const dataTarget = event.target;
+    this.setState({
+      data: {
+        ...this.state.data,
+        name: dataTarget.value
+      }
+    });
+  }
+
+  writeSocialMedia(event) {
+    console.log(event);
+  }
 
   render() {
 
     return (
       <div className="CardGenerator">
         <Header/>
-        <Main 
+        <Main
           optionsPalettes={this.state.paletteTypes}
           optionsTypography={this.state.typographyTypes}
           dataObject={this.state.data}
           optionsSkills={this.state.arraySkills}
+          changeInputsData={this.state.writeData}
           />
         <Footer/>
       </div>

@@ -6,13 +6,12 @@ class Form extends Component {
   constructor (props) {
     super(props);
 
-    console.log(props);
     this.falseClick = this.falseClick.bind(this);
     this.handleLoadPhoto = this.handleLoadPhoto.bind(this);
     this.fileInput = React.createRef();
   }
 
-  
+
   falseClick (event) {
     this.fileInput.current.click()
 
@@ -20,22 +19,19 @@ class Form extends Component {
 
 
   handleLoadPhoto (event) {
-    console.log(event.target.file)
+
     event.preventDefault();
     const fr = new FileReader();
     fr.addEventListener('load', () => {
        this.setState({image: fr.result});
   });
   fr.readAsDataURL(event.target.files[0]);
-    console.log(event.target.files[0]);
 }
   render() {
     const {name, email, github, job, linkedin, phone, image} = this.props.dataObject;
-  
-    console.log(this.props);
-    console.log(this.props);
+
     const {optionsSkills} = this.props;
-    console.log(optionsSkills);
+    const {changeInputsData}= this.props;
     return (
       <div className="wrapper">
       <form id="form" className="form" action="index.html" method="post" name="form">
@@ -113,11 +109,11 @@ class Form extends Component {
       <div className="js__dropdown-content">
       <div className="item">
       <label className="item__label" htmlFor="name">Nombre completo</label>
-      <input className="input item__input form-field--name input__storage " value={name} id="name" type="text" name="name" placeholder="Ej: Sally Jill" data-donde="element-name" required="required"/>
+      <input className="input item__input form-field--name input__storage " value={name} id="name" type="text" name="name" placeholder="Ej: Sally Jill" data-donde="element-name" required="required" onChange={changeInputsData}/>
       </div>
       <div className="item">
       <label className="item__label" htmlFor="job">Puesto</label>
-      <input className="input item__input form-field--role input__storage" id="job" type="text" name="job" placeholder="Ej: Front-end unicorn" data-donde="element-role" required="required" value={job}/>
+      <input className="input item__input form-field--role input__storage" id="job" type="text" name="job" placeholder="Ej: Front-end unicorn" data-donde="element-role" required="required" value={job} onChange={this.writeData}/>
       </div>
       <div className="item">
       <label className="item__label" htmlFor="image">Imagen de perfil</label>
@@ -131,19 +127,19 @@ class Form extends Component {
       </div>
       <div className="item">
       <label className="item__label" htmlFor="email">Email</label>
-      <input className="input item__input form-field--mail input__storage" id="email" type="email" name="email" placeholder="Ej: sally-hill@gmail.com" data-donde="element-mail" required="required" value={email}/>
+      <input className="input item__input form-field--mail input__storage" id="email" type="email" name="email" placeholder="Ej: sally-hill@gmail.com" data-donde="element-mail" required="required" value={email} onChange={this.writeSocialMedia}/>
       </div>
       <div className="item">
       <label className="item__label" htmlFor="phone">Teléfono</label>
-      <input className="input item__input form-field--tel input__storage" id="phone" type="tel" name="phone" placeholder="Ej: 555 55 55 55" data-donde="element-tel" required="required" value={phone}/>
+      <input className="input item__input form-field--tel input__storage" id="phone" type="tel" name="phone" placeholder="Ej: 555 55 55 55" data-donde="element-tel" required="required" value={phone} onChange={this.writeSocialMedia}/>
       </div>
       <div className="item">
       <label className="item__label" htmlFor="linkedin">Linkedin</label>
-      <input className="input item__input form-field--lin input__storage" id="linkedin" type="url" name="linkedin" placeholder="Ej: sally.hill" data-donde="element-lin" required="required" value={linkedin}/>
+      <input className="input item__input form-field--lin input__storage" id="linkedin" type="url" name="linkedin" placeholder="Ej: sally.hill" data-donde="element-lin" required="required" value={linkedin} onChange={this.writeSocialMedia}/>
       </div>
       <div className="item">
       <label className="item__label" htmlFor="github">Github</label>
-      <input className="input item__input form-field--gh input__storage" id="github" type="text" name="github" placeholder="Ej: sally-hill" data-donde="element-gh" required="required" value={github}/>
+      <input className="input item__input form-field--gh input__storage" id="github" type="text" name="github" placeholder="Ej: sally-hill" data-donde="element-gh" required="required" value={github} onChange={this.writeSocialMedia}/>
       </div>
 
       <SelectSkills optionsSkills={optionsSkills}/>

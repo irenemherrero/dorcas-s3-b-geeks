@@ -5,13 +5,11 @@ import Preview from './Preview';
 class Main extends Component {
   constructor(props){
     super(props);
-    console.log(props);
   }
 
   render() {
-    console.log(this.props);
     const {optionsSkills, optionsPalettes, optionsTypography, dataObject} = this.props;
-
+    const {changeInputsData}= this.props;
     return (
     <div className="main__form">
     {/*} <Preview
@@ -25,11 +23,12 @@ class Main extends Component {
     //       linkedin = ""
     //       // skills = ["HTML", "SASS"]
     //       />*/}
-     <Form 
+     <Form
       optionsPalettes={optionsPalettes}
       optionsTypography={optionsTypography}
       dataObject={dataObject}
-      optionsSkills={optionsSkills} />
+      optionsSkills={optionsSkills}
+      changeInputsData={changeInputsData} />
     </div>
   );
   }
