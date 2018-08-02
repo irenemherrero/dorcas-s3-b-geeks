@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import cardImage from "../images/card-image.png";
 
 class Preview extends Component {
-  render () { console.log(this.props);
+  render () 
+  {console.log(this.props);
+    const {email, github, image, job, linkedin, name, palette, phone, photo,skills, typography} = this.props.dataObject;
     return (
         <section className="section-card">
           <div className="section-card__container">
@@ -21,18 +22,19 @@ class Preview extends Component {
 
 {/*Datos por props de Main*/}
 
-                    <p id="element-name" className="font-card--bold font-color">{this.props.name}</p>
-                    <p id="element-role" className="font-card">{this.props.job}</p>
+                    <p id="element-name" className="font-card--bold font-color">{name}</p>
+                    <p id="element-role" className="font-card">{job}</p>
                   </div>
-                  <img className="personal-image" src= {this.props.photo} alt="foto personal"/>
+                  <img className="personal-image" src= {photo} alt="foto personal"/>
 
 
                   <div className="contact">
-                    <a id="element-tel" className="contact-link contact__link--inactive contact__mobile" href="" target="_blank"><i className="fas fa-mobile-alt icon-mobile icon__contact"></i></a>
-                    <a id="element-mail" className="contact-link contact__link--inactive contact__envelope" href={this.props.email} target="_blank"><i className="far fa-envelope icon-mail icon__contact"></i></a>
-                    <a id="element-lin" className="contact-link contact__link--inactive contact__linkedin" href={this.props.linkedin} target="_blank"><i className="fab fa-linkedin-in icon-linkedin icon__contact"></i></a>
-                    <a id="element-gh" className="contact-link contact__link--inactive contact__github" href={this.props.github} target="_blank"><i className="fab fa-github-alt icon-github icon__contact"></i></a>
+                    <a id="element-tel" className="contact-link contact__link--inactive contact__mobile" href={phone} target="_blank"><i className="fas fa-mobile-alt icon-mobile icon__contact"></i></a>
+                    <a id="element-mail" className="contact-link contact__link--inactive contact__envelope" href={email} target="_blank"><i className="far fa-envelope icon-mail icon__contact"></i></a>
+                    <a id="element-lin" className="contact-link contact__link--inactive contact__linkedin" href={linkedin} target="_blank"><i className="fab fa-linkedin-in icon-linkedin icon__contact"></i></a>
+                    <a id="element-gh" className="contact-link contact__link--inactive contact__github" href={github} target="_blank"><i className="fab fa-github-alt icon-github icon__contact"></i></a>
                   </div>
+{/*Faltan las Skills*/}
                   <div className="skills">
                   </div>
                 </div>
