@@ -14,17 +14,11 @@ class Main extends Component {
 
     return (
     <div className="main__form">
-    {/*} <Preview
-    //       palette = {paletteTypes[this.state.data.palette]}
-    //       typography = {typographyTypes[this.state.data.typography]}
-    //       name = "Nombre Apellidos"
-    //       job = "Front-end developer"
-    //       photo = {previewPhoto}
-    //       email = ""
-    //       github = ""
-    //       linkedin = ""
-    //       // skills = ["HTML", "SASS"]
-    //       />*/}
+    <Preview
+      optionsPalettes={optionsPalettes}
+      optionsTypography={optionsTypography}
+      dataObject={dataObject}
+      optionsSkills={optionsSkills}/>
      <Form 
       optionsPalettes={optionsPalettes}
       optionsTypography={optionsTypography}
