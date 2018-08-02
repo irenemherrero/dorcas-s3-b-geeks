@@ -6,7 +6,7 @@ class Form extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      name: '',
+      //name: '',
       image:'http://placehold.it/29x29/ffffff/ffffff'
     }
     this.falseClick = this.falseClick.bind(this);
