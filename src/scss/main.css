@@ -188,31 +188,31 @@ select {
   width: 30px;
   height: 25px; }
 
-.colorp1 {
+.paletteColours1 .colorp1 {
   background-color: #114e4e; }
 
-.colorp2 {
+.paletteColours1 .colorp2 {
   background-color: #438792; }
 
-.colorp3 {
+.paletteColours1 .colorp3 {
   background-color: #a2deaf; }
 
-.colorp4 {
+.paletteColours2 .colorp1 {
   background-color: #420101; }
 
-.colorp5 {
+.paletteColours2 .colorp2 {
   background-color: #bd1010; }
 
-.colorp6 {
+.paletteColours2 .colorp3 {
   background-color: #e95626; }
 
-.colorp7 {
+.paletteColours3 .colorp1 {
   background-color: #3e5b65; }
 
-.colorp8 {
+.paletteColours3 .colorp2 {
   background-color: #dfe5eb; }
 
-.colorp9 {
+.paletteColours3 .colorp3 {
   background-color: #a0c0cf; }
 
 .fieldset {
