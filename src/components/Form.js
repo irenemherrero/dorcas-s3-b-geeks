@@ -33,7 +33,7 @@ class Form extends Component {
   }
   render() {
     const { name, email, github, job, linkedin, phone, image } = this.props.dataObject;
-
+    const {sendRadio}=this.props;
     console.log(this.props);
     console.log(this.props);
     const { optionsSkills } = this.props;
@@ -56,7 +56,7 @@ class Form extends Component {
 
 
                 {/*-----------------------------RADIOBUTTONS COLORES
-  
+
   Falta que salgan los colores en lo cuadraditos y que seleccione por defecto la primera opción,a parte de la funcionalidad*/}
 
 
@@ -77,7 +77,7 @@ class Form extends Component {
                 <TypographyButton id="font2" radioCual="5" value="2" className="text__optional--comic label-design" label="Comic Sans"/>
 
                 <TypographyButton id="font3" radioCual="6" value="3" className="text__optional--mont label-design" label="Montserrat"/>
-                
+
               </div>
             </div>
           </Collapsible>
