@@ -45,22 +45,32 @@ class CardGenerator extends Component {
       typography: "2"
     }
   }
-  this.writeData=this.writeData.bind(this);
-  this.writeSocialMedia=this.writeSocialMedia.bind(this);
+  this.writeDataName=this.writeDataName.bind(this);
+  this.writeDataJob=this.writeDataJob.bind(this);
+  this.writeSocialMediaEmail=this.writeSocialMediaEmail.bind(this);
 }
 
-  writeData(event) {
-    console.log('hola nasi');
-    const dataTarget = event.target;
+  writeDataName(event) {
+    const dataTargetName = event.target;
     this.setState({
       data: {
         ...this.state.data,
-        name: dataTarget.value
+        name: dataTargetName.value
       }
     });
   }
 
-  writeSocialMedia(event) {
+  writeDataJob(event) {
+    const dataTargetJob = event.target;
+    this.setState({
+      data: {
+        ...this.state.data,
+        job: dataTargetJob.value
+      }
+    });
+  }
+
+  writeSocialMediaEmail(event) {
     console.log(event);
   }
 
@@ -74,7 +84,8 @@ class CardGenerator extends Component {
           optionsTypography={this.state.typographyTypes}
           dataObject={this.state.data}
           optionsSkills={this.state.arraySkills}
-          changeInputsData={this.state.writeData}
+          changeInputsDataName={this.writeDataName}
+          changeInputsDataJob={this.writeDataJob}
           />
         <Footer/>
       </div>

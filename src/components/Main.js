@@ -5,39 +5,28 @@ import Preview from './Preview';
 class Main extends Component {
   constructor(props){
     super(props);
+    console.log(props);
   }
 
   render() {
+    console.log(this.props);
     const {optionsSkills, optionsPalettes, optionsTypography, dataObject} = this.props;
-    const {changeInputsData}= this.props;
+    const {changeInputsDataName}= this.props;
+    const {changeInputsDataJob}= this.props;
     return (
     <div className="main__form">
-<<<<<<< HEAD
-    {/*} <Preview
-    //       palette = {paletteTypes[this.state.data.palette]}
-    //       typography = {typographyTypes[this.state.data.typography]}
-    //       name = "Nombre Apellidos"
-    //       job = "Front-end developer"
-    //       photo = {previewPhoto}
-    //       email = ""
-    //       github = ""
-    //       linkedin = ""
-    //       // skills = ["HTML", "SASS"]
-    //       />*/}
-     <Form
-=======
     <Preview
       optionsPalettes={optionsPalettes}
       optionsTypography={optionsTypography}
       dataObject={dataObject}
       optionsSkills={optionsSkills}/>
-     <Form 
->>>>>>> 2f6fa49cffc7c99548e7e3c8a7f3b48542a97227
+     <Form
       optionsPalettes={optionsPalettes}
       optionsTypography={optionsTypography}
       dataObject={dataObject}
       optionsSkills={optionsSkills}
-      changeInputsData={changeInputsData} />
+      changeInputsDataName={changeInputsDataName}
+      changeInputsDataJob={changeInputsDataJob} />
     </div>
   );
   }
