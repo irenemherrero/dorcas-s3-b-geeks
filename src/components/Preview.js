@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 
 class Preview extends Component {
-  render () 
-  {console.log(this.props);
-    const {email, github, image, job, linkedin, name, palette, phone, photo,skills, typography} = this.props.dataObject;
+constructor(props){
+  super(props);
+  console.log(props);
+}
+  render() {
+
+    const {email, github, image, job, linkedin, name, palette, phone, photo, skills, typography} = this.props.dataObjectPreview;
     return (
         <section className="section-card">
           <div className="section-card__container">
@@ -16,9 +20,9 @@ class Preview extends Component {
             </button>
 
 
-              <div id="card" className="card__container paleta-azul">
+              <div id="card" className={`card__container ${palette}`}>
                 <div className="info-personal">
-                  <div id="card__info" className="info-personal__container font-card--comicsans">
+                  <div id="card__info" className={`info-personal__container ${typography}`}>
 
 {/*Datos por props de Main*/}
 

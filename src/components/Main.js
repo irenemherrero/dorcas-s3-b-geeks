@@ -1,31 +1,25 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Form from './Form';
 import Preview from './Preview';
 
 class Main extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    console.log(props);
+    console.log(props.dataObjectPreview);
   }
 
   render() {
-    console.log(this.props);
-    const {optionsSkills, optionsPalettes, optionsTypography, dataObject} = this.props;
+    const { optionsSkills, dataObject } = this.props;
 
     return (
-    <div className="main__form">
-    <Preview
-      optionsPalettes={optionsPalettes}
-      optionsTypography={optionsTypography}
-      dataObject={dataObject}
-      optionsSkills={optionsSkills}/>
-     <Form 
-      optionsPalettes={optionsPalettes}
-      optionsTypography={optionsTypography}
-      dataObject={dataObject}
-      optionsSkills={optionsSkills} />
-    </div>
-  );
+      <div className="main__form">
+        <Preview
+          dataObjectPreview={this.props.dataObjectPreview} />
+        <Form
+          dataObject={dataObject}
+          optionsSkills={optionsSkills} />
+      </div>
+    );
   }
 }
 

@@ -72,40 +72,46 @@
   height: 25px;
 }
 
-.colorp1 {
-  background-color: $color-paleta1-primary;
+.paletteColours1{
+  .colorp1 {
+    background-color: $color-paleta1-primary;
+  }
+
+  .colorp2 {
+    background-color: $color-paleta1-secondary;
+  }
+
+  .colorp3 {
+    background-color: $color-paleta1-terciary;
+  }
 }
 
-.colorp2 {
-  background-color: $color-paleta1-secondary;
+.paletteColours2{
+  .colorp1 {
+    background-color: $color-paleta2-primary;
+  }
+
+  .colorp2 {
+    background-color: $color-paleta2-secondary;
+  }
+
+  .colorp3 {
+   background-color: $color-paleta2-terciary;
+  }
 }
+
+.paletteColours3{
+  .colorp1 {
+    background-color: $color-paleta3-primary;
+  }
+
+  .colorp2 {
+    background-color: $color-paleta3-secondary;
+  }
 
 .colorp3 {
-  background-color: $color-paleta1-terciary;
-}
-
-.colorp4 {
-  background-color: $color-paleta2-primary;
-}
-
-.colorp5 {
-  background-color: $color-paleta2-secondary;
-}
-
-.colorp6 {
-  background-color: $color-paleta2-terciary;
-}
-
-.colorp7 {
-  background-color: $color-paleta3-primary;
-}
-
-.colorp8 {
-  background-color: $color-paleta3-secondary;
-}
-
-.colorp9 {
-  background-color: $color-paleta3-terciary;
+    background-color: $color-paleta3-terciary;
+  } 
 }
 
 //RELLENA
