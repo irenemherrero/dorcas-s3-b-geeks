@@ -9,12 +9,13 @@ class Main extends Component {
   }
 
   render() {
-    const { optionsSkills, dataObject } = this.props;
+    const { optionsSkills, dataObject, dataObjectPreview } = this.props;
 
     return (
       <div className="main__form">
         <Preview
-          dataObjectPreview={this.props.dataObjectPreview} />
+          dataObjectPreview={dataObjectPreview}
+          dataObject={dataObject} />
         <Form
           dataObject={dataObject}
           optionsSkills={optionsSkills} />

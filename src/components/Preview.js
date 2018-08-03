@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ResetButton from './ResetButton';
 
 class Preview extends Component {
 constructor(props){
@@ -8,24 +9,24 @@ constructor(props){
   render() {
 
     const {email, github, image, job, linkedin, name, palette, phone, photo, skills, typography} = this.props.dataObjectPreview;
+    
+    const {dataObjectPreview, dataObject} = this.props;
+    
     return (
         <section className="section-card">
           <div className="section-card__container">
 
 {/*Componente botón */}
 
-            <button className="button-reset">
-              <i className="far fa-trash-alt button-reset__icon"></i>
-                <span className="button-reset__text">reset</span>
-            </button>
+              <ResetButton 
+              dataObjectPreview={dataObjectPreview}
+              dataObject={dataObject}/> 
 
+{/*Datos por props de Main*/}
 
               <div id="card" className={`card__container ${palette}`}>
                 <div className="info-personal">
                   <div id="card__info" className={`info-personal__container ${typography}`}>
-
-{/*Datos por props de Main*/}
-
                     <p id="element-name" className="font-card--bold font-color">{name}</p>
                     <p id="element-role" className="font-card">{job}</p>
                   </div>
