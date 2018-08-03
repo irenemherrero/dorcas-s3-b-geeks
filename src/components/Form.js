@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Collapsible from './Collapsible';
 import SelectSkills from './SelectSkills';
 import RadioButton from './RadioButton';
+import TypographyButton from './TypographyButton';
 
 class Form extends Component {
   constructor(props) {
@@ -71,24 +72,12 @@ class Form extends Component {
 
                 {/*-----------------------------RADIOBUTTONS FUENTES----------------------*/}
 
-                <div className="font font--margin">
-                  <input id="font1" className="input__storage" type="radio" name="typography" radio-cual="4" value="1" />
-                  <label htmlFor="font1" className="text__optional--ubuntu label-design">
-                    <span></span>
-                    Ubuntu</label>
-                </div>
-                <div className="font font--margin">
-                  <input id="font2" className="input__storage" type="radio" name="typography" radio-cual="5" value="2" defaultChecked="checked" />
-                  <label htmlFor="font2" className="text__optional--comic label-design">
-                    <span></span>
-                    Comic Sans</label>
-                </div>
-                <div className="font">
-                  <input id="font3" className="input__storage" type="radio" name="typography" radio-cual="6" value="3" />
-                  <label htmlFor="font3" className="text__optional--mont label-design">
-                    <span></span>
-                    Montserrat</label>
-                </div>
+                <TypographyButton id="font1" radioCual="4" value="1" className="text__optional--ubuntu label-design" label="Ubuntu"/>
+
+                <TypographyButton id="font2" radioCual="5" value="2" className="text__optional--comic label-design" label="Comic Sans"/>
+
+                <TypographyButton id="font3" radioCual="6" value="3" className="text__optional--mont label-design" label="Montserrat"/>
+                
               </div>
             </div>
           </Collapsible>
