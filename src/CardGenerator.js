@@ -9,6 +9,7 @@ class CardGenerator extends Component {
     super(props)
 
     this.makeObjectData = this.makeObjectData.bind(this);
+    this.resetPreview = this.resetPreview.bind(this);
 
     fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
       .then(response => {
@@ -59,7 +60,7 @@ class CardGenerator extends Component {
         palette: "1",
         phone: "",
         photo: previewPhoto,
-        image: 'http://placehold.it/29x29/ffffff/ffffff',
+        image: '',
         skills: [],
         typography: "2"
 
@@ -69,6 +70,11 @@ class CardGenerator extends Component {
 
   resetPreview = () => {
     console.log('oli');
+    this.setState({
+      data: {...this.state.dataDefault,
+      skills: [...this.state.dataDefault.skills]
+      }
+    })
   }
 
   makeObjectData() {
@@ -87,7 +93,6 @@ class CardGenerator extends Component {
     }
   }
   render() {
-    const {resetPreview} = this;
     return (
       <div className="CardGenerator">
         <Header />
@@ -95,7 +100,7 @@ class CardGenerator extends Component {
           dataObjectPreview={this.makeObjectData()}
           dataObject={this.state.data}
           optionsSkills={this.state.arraySkills}
-          actionReset={resetPreview} />
+          actionReset={this.resetPreview} />
         <Footer />
       </div>
     );

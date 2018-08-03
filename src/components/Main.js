@@ -9,18 +9,17 @@ class Main extends Component {
   }
 
   render() {
-    const { optionsSkills, dataObject, dataObjectPreview, resetPreview } = this.props;
+    const { optionsSkills, dataObject, dataObjectPreview, actionReset } = this.props;
 
-//Aquí la función de resetPreview que quiero pasar al botón pierde su valor y es undefined. ¿por qué?
 
-    console.log(resetPreview)
+    console.log(actionReset)
 
     return (
       <div className="main__form">
         <Preview
           dataObjectPreview={dataObjectPreview}
           dataObject={dataObject}
-          actionReset={resetPreview} />
+          actionReset={actionReset} />
         <Form
           dataObject={dataObject}
           optionsSkills={optionsSkills} />

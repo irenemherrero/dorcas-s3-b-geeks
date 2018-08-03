@@ -10,7 +10,7 @@ constructor(props){
 
     const {email, github, image, job, linkedin, name, palette, phone, photo, skills, typography} = this.props.dataObjectPreview;
     
-    const {dataObjectPreview, dataObject, resetPreview} = this.props;
+    const {dataObjectPreview, dataObject, actionReset} = this.props;
     
     return (
         <section className="section-card">
@@ -21,7 +21,7 @@ constructor(props){
               <ResetButton 
               dataObjectPreview={dataObjectPreview}
               dataObject={dataObject}
-              actionReset={resetPreview}/> 
+              actionReset={actionReset}/> 
 
 {/*Datos por props de Main*/}
 
