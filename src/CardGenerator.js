@@ -48,8 +48,27 @@ class CardGenerator extends Component {
         typography: "2"
       },
 
-      dataPreview: {}
+      dataPreview: {},
+
+      dataDefault: {
+        email: "",
+        github: "",
+        job: "Front-end developer",
+        linkedin: "",
+        name: "Nombre Apellidos",
+        palette: "1",
+        phone: "",
+        photo: previewPhoto,
+        image: 'http://placehold.it/29x29/ffffff/ffffff',
+        skills: [],
+        typography: "2"
+
+      }
     }
+  }
+
+  resetPreview = () => {
+    console.log('oli');
   }
 
   makeObjectData() {
@@ -68,13 +87,15 @@ class CardGenerator extends Component {
     }
   }
   render() {
+    const {resetPreview} = this;
     return (
       <div className="CardGenerator">
         <Header />
         <Main
           dataObjectPreview={this.makeObjectData()}
           dataObject={this.state.data}
-          optionsSkills={this.state.arraySkills} />
+          optionsSkills={this.state.arraySkills}
+          actionReset={resetPreview} />
         <Footer />
       </div>
     );
