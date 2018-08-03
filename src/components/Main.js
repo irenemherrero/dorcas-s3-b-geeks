@@ -12,6 +12,7 @@ class Main extends Component {
     const {changeInputsData}= this.props;
     return (
     <div className="main__form">
+<<<<<<< HEAD
     {/*} <Preview
     //       palette = {paletteTypes[this.state.data.palette]}
     //       typography = {typographyTypes[this.state.data.typography]}
@@ -24,6 +25,14 @@ class Main extends Component {
     //       // skills = ["HTML", "SASS"]
     //       />*/}
      <Form
+=======
+    <Preview
+      optionsPalettes={optionsPalettes}
+      optionsTypography={optionsTypography}
+      dataObject={dataObject}
+      optionsSkills={optionsSkills}/>
+     <Form 
+>>>>>>> 2f6fa49cffc7c99548e7e3c8a7f3b48542a97227
       optionsPalettes={optionsPalettes}
       optionsTypography={optionsTypography}
       dataObject={dataObject}
