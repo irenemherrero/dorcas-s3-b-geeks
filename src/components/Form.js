@@ -5,21 +5,14 @@ import SelectSkills from './SelectSkills';
 class Form extends Component {
   constructor (props) {
     super(props);
-<<<<<<< HEAD
-    this.state = {
-      //name: '',
-      image:'http://placehold.it/29x29/ffffff/ffffff'
-    }
-=======
 
     console.log(props);
->>>>>>> 1109902316329479311701415ecce16d7fda7dfe
     this.falseClick = this.falseClick.bind(this);
     this.handleLoadPhoto = this.handleLoadPhoto.bind(this);
     this.fileInput = React.createRef();
   }
 
-  
+
   falseClick (event) {
     this.fileInput.current.click()
 
@@ -38,7 +31,7 @@ class Form extends Component {
 }
   render() {
     const {name, email, github, job, linkedin, phone, image} = this.props.dataObject;
-  
+
     console.log(this.props);
     console.log(this.props);
     const {optionsSkills} = this.props;
