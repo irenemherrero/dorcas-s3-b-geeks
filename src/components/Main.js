@@ -10,6 +10,7 @@ class Main extends Component {
 
   render() {
     const { optionsSkills, dataObject, dataObjectPreview, actionReset } = this.props;
+    const {changeRadioButtonsColor}= this.props;
 
 
     console.log(actionReset)
@@ -22,7 +23,8 @@ class Main extends Component {
           actionReset={actionReset} />
         <Form
           dataObject={dataObject}
-          optionsSkills={optionsSkills} />
+          optionsSkills={optionsSkills}
+          changeRadioButtonsColor= {changeRadioButtonsColor}/>
       </div>
     );
   }

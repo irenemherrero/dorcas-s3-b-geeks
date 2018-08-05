@@ -10,6 +10,9 @@ class CardGenerator extends Component {
 
     this.makeObjectData = this.makeObjectData.bind(this);
     this.resetPreview = this.resetPreview.bind(this);
+
+
+////
     this.sendRaddioPaletteValue=this.sendRaddioPaletteValue.bind(this);
 
     fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
@@ -70,7 +73,7 @@ class CardGenerator extends Component {
   }
 /////
 sendRaddioPaletteValue(event) {
-  console.log(event);
+  console.log('hola');
   const {value} = event.target;
   this.setState({
     data: {
@@ -114,7 +117,10 @@ sendRaddioPaletteValue(event) {
           dataObject={this.state.data}
           optionsSkills={this.state.arraySkills}
           actionReset={this.resetPreview}
-          sendRadio={this.sendRaddioPaletteValue}
+          // sendRadio={this.sendRaddioPaletteValue}
+            ////
+            changeRadioButtonsColor={this.sendRaddioPaletteValue}
+
            />
         <Footer />
       </div>

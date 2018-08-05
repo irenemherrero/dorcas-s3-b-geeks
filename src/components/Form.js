@@ -33,7 +33,9 @@ class Form extends Component {
   }
   render() {
     const { name, email, github, job, linkedin, phone, image } = this.props.dataObject;
-    const {sendRadio}=this.props;
+    // const {sendRadio}=this.props;
+    ///
+    const {changeRadioButtonsColor}=this.props;
     console.log(this.props);
     console.log(this.props);
     const { optionsSkills } = this.props;

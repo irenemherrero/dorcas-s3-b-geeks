@@ -6,19 +6,21 @@ class RadioButton extends Component {
         super(props);
         console.log(props);
     }
-    render() { 
+    render() {
         const {id, radioCual, className} = this.props;
-        return (  
+        const {changeRadioButtonsColor} = this.props;
+        return (
         <div className="palette palette--margin">
         <input id={id} className="input__storage" type="radio" name="palette" radio-cual={radioCual} value={radioCual}/>
         <label htmlFor={id} className="label-design">
         <span></span>
-            <ColorRadioButton className={`${className} palette-box colorp1`} />
-            <ColorRadioButton className={`${className} palette-box colorp2`}/>
-            <ColorRadioButton className={`${className} palette-box colorp3`}/>
+            <ColorRadioButton className={`${className} palette-box colorp1`} onChange={changeRadioButtonsColor}/>
+
+            <ColorRadioButton className={`${className} palette-box colorp2`} onChange={changeRadioButtonsColor}/>
+            <ColorRadioButton className={`${className} palette-box colorp3`} onChange={changeRadioButtonsColor}/>
         </label>
         </div>
         )}
 }
- 
+
 export default RadioButton;
