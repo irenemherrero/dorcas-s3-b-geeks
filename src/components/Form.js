@@ -3,6 +3,7 @@ import Collapsible from './Collapsible';
 import SelectSkills from './SelectSkills';
 import RadioButton from './RadioButton';
 import TypographyButton from './TypographyButton';
+import PropTypes from 'prop-types';
 
 class Form extends Component {
   constructor(props) {
@@ -56,7 +57,7 @@ class Form extends Component {
 
 
                 {/*-----------------------------RADIOBUTTONS COLORES
-  
+
   Falta que salgan los colores en lo cuadraditos y que seleccione por defecto la primera opción,a parte de la funcionalidad*/}
 
 
@@ -77,7 +78,7 @@ class Form extends Component {
                 <TypographyButton id="font2" radioCual="5" value="2" className="text__optional--comic label-design" label="Comic Sans"/>
 
                 <TypographyButton id="font3" radioCual="6" value="3" className="text__optional--mont label-design" label="Montserrat"/>
-                
+
               </div>
             </div>
           </Collapsible>
@@ -165,6 +166,16 @@ class Form extends Component {
 
     );
   }
+}
+Preview.propTypes={
+  email: PropTypes.string,
+  github: PropTypes.string,
+  job: PropTypes.string,
+  linkedin: PropTypes.string,
+  name: PropTypes.string,
+  phone: PropTypes.number,
+  skills: PropTypes.array,
+  typography: PropTypes.string,
 }
 
 export default Form;
