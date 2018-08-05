@@ -39,6 +39,8 @@ class Form extends Component {
     const {changeInputsDataPhone} = this.props;
     const {changeInputsDataLinkedin} = this.props;
     const {changeInputsDataGithub} = this.props;
+    const {deleteCompleteName} = this.props;
+    const {deleteJob} = this.props;
     return (
       <div className="wrapper">
         <form id="form" className="form" action="index.html" method="post" name="form">
@@ -116,11 +118,11 @@ class Form extends Component {
             <div className="js__dropdown-content">
               <div className="item">
                 <label className="item__label" htmlFor="name">Nombre completo</label>
-                <input className="input item__input form-field--name input__storage " value={name} id="name" type="text" name="name" placeholder="Ej: Sally Jill" data-donde="element-name" required="required" onChange={changeInputsDataName} />
+                <input className="input item__input form-field--name input__storage " value={name} id="name" type="text" name="name" placeholder="Ej: Sally Jill" data-donde="element-name" required="required" onChange={changeInputsDataName} onFocus={deleteCompleteName} />
               </div>
               <div className="item">
                 <label className="item__label" htmlFor="job">Puesto</label>
-                <input className="input item__input form-field--role input__storage" id="job" type="text" name="job" placeholder="Ej: Front-end unicorn" data-donde="element-role" required="required" value={job} onChange={changeInputsDataJob} />
+                <input className="input item__input form-field--role input__storage" id="job" type="text" name="job" placeholder="Ej: Front-end unicorn" data-donde="element-role" required="required" value={job} onChange={changeInputsDataJob} onFocus={deleteJob} />
               </div>
               <div className="item">
                 <label className="item__label" htmlFor="image">Imagen de perfil</label>

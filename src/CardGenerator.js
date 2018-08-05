@@ -51,6 +51,8 @@ class CardGenerator extends Component {
     this.writeSocialMediaPhone = this.writeSocialMediaPhone.bind(this);
     this.writeSocialMediaLinkedin = this.writeSocialMediaLinkedin.bind(this);
     this.writeSocialMediaGithub = this.writeSocialMediaGithub.bind(this);
+    this.focusName = this.focusName.bind(this);
+    this.focusJob = this.focusJob.bind(this);
   }
 
   writeDataName(event) {
@@ -63,12 +65,30 @@ class CardGenerator extends Component {
     });
   }
 
+  focusName() {
+    this.setState({
+      data: {
+        ...this.state.data,
+        name: ""
+      }
+    });
+  }
+
   writeDataJob(event) {
     const dataTargetJob = event.target;
     this.setState({
       data: {
         ...this.state.data,
         job: dataTargetJob.value
+      }
+    });
+  }
+
+  focusJob() {
+    this.setState({
+      data: {
+        ...this.state.data,
+        job: ""
       }
     });
   }
@@ -130,6 +150,8 @@ class CardGenerator extends Component {
           changeInputsDataPhone={this.writeSocialMediaPhone}
           changeInputsDataLinkedin={this.writeSocialMediaLinkedin}
           changeInputsDataGithub={this.writeSocialMediaGithub}
+          deleteCompleteName={this.focusName}
+          deleteJob={this.focusJob}
         />
         <Footer />
       </div>

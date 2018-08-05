@@ -17,6 +17,8 @@ class Main extends Component {
     const {changeInputsDataPhone} = this.props;
     const {changeInputsDataLinkedin} = this.props;
     const {changeInputsDataGithub} = this.props;
+    const {deleteCompleteName} = this.props;
+    const {deleteJob} = this.props;
     return (
       <div className="main__form">
         <Preview
@@ -34,9 +36,11 @@ class Main extends Component {
           changeInputsDataEmail={changeInputsDataEmail}
           changeInputsDataPhone={changeInputsDataPhone}
           changeInputsDataLinkedin={changeInputsDataLinkedin}
-          changeInputsDataGithub={changeInputsDataGithub} />
+          changeInputsDataGithub={changeInputsDataGithub}
+          deleteCompleteName={deleteCompleteName}
+          deleteJob={deleteJob} />
       </div>
-    );
+    );  
   }
 }
 
