@@ -167,7 +167,7 @@ class Form extends Component {
     );
   }
 }
-Preview.propTypes={
+Form.propTypes={
   email: PropTypes.string,
   github: PropTypes.string,
   job: PropTypes.string,
