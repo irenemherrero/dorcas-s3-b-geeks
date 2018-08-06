@@ -20,7 +20,6 @@ class Form extends Component {
 
   }
 
-
   handleLoadPhoto(event) {
     console.log(event.target.file)
     event.preventDefault();
@@ -33,8 +32,7 @@ class Form extends Component {
   }
   render() {
     const { name, email, github, job, linkedin, phone, image } = this.props.dataObject;
-    // const {sendRadio}=this.props;
-    ///
+
     const {changeRadioButtonsColor}=this.props;
     console.log(this.props);
     console.log(this.props);
@@ -62,9 +60,9 @@ class Form extends Component {
   Falta que salgan los colores en lo cuadraditos y que seleccione por defecto la primera opción,a parte de la funcionalidad*/}
 
 
-                <RadioButton id="color1" radioCual="1" value="1" defaultChecked="checked" className="paletteColours1" />
-                <RadioButton id="color2" radioCual="2" value="2" className="paletteColours2" />
-                <RadioButton id="color3" radioCual="3" value="3" className="paletteColours3" />
+                <RadioButton id="color1" radioCual="1" value="1" defaultChecked="checked"  className="paletteColours1" onChange={changeRadioButtonsColor} />
+                <RadioButton id="color2" radioCual="2" value="2" className="paletteColours2" onChange={changeRadioButtonsColor} />
+                <RadioButton id="color3" radioCual="3" value="3" className="paletteColours3" onChange={changeRadioButtonsColor} />
 
               </div>
             </div>
