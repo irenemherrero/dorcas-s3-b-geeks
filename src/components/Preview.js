@@ -51,7 +51,7 @@ constructor(props){
   }
 }
 Preview.propTypes={
-  email: PropTypes.string,
+  email: PropTypes.number,
   github: PropTypes.string,
   job: PropTypes.string,
   linkedin: PropTypes.string,

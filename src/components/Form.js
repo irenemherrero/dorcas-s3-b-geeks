@@ -178,7 +178,7 @@ Form.propTypes={
   typography: PropTypes.string,
   image: PropTypes.string,
   photo: PropTypes.string,
-  palette: PropTypes.string,
+  
 }
 
 export default Form;
