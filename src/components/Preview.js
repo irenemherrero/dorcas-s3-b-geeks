@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ResetButton from './ResetButton';
-
+import PropTypes from 'prop-types';
 
 class Preview extends Component {
 constructor(props){
@@ -50,6 +50,18 @@ constructor(props){
       </section>);
   }
 }
-
+Preview.propTypes={
+  email: PropTypes.string,
+  github: PropTypes.string,
+  job: PropTypes.string,
+  linkedin: PropTypes.string,
+  name: PropTypes.string,
+  phone: PropTypes.number,
+  skills: PropTypes.array,
+  typography: PropTypes.string,
+  image: PropTypes.string,
+  photo: PropTypes.string,
+  palette: PropTypes.string,
+}
 
 export default Preview;

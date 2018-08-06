@@ -176,6 +176,9 @@ Form.propTypes={
   phone: PropTypes.number,
   skills: PropTypes.array,
   typography: PropTypes.string,
+  image: PropTypes.string,
+  photo: PropTypes.string,
+  palette: PropTypes.string,
 }
 
 export default Form;
