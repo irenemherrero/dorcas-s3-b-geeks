@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logoAdalab from '../images/awesome-profile-cards-logo-gafas.svg';
 class Header extends Component {
   render () {
-    console.log(logoAdalab);
     return (
       <header className="form-header">
        <a className="header__link"
