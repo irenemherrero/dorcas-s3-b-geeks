@@ -104,6 +104,9 @@ class Form extends Component {
                 <label className="item__label" htmlFor="job">Puesto</label>
                 <input className="input item__input form-field--role input__storage" id="job" type="text" name="job" placeholder="Ej: Front-end unicorn" data-donde="element-role" required="required" value={job} onChange={changeInputsDataJob} onFocus={deleteJob} />
               </div>
+
+              {/*-----------------------------IMAGEN FILEREADER----------------------*/}
+
               <div className="item">
                 <label className="item__label" htmlFor="image">Imagen de perfil</label>
                 <div className="item__addfile">
@@ -114,6 +117,8 @@ class Form extends Component {
                   </div>
                 </div>
               </div>
+
+
               <div className="item">
                 <label className="item__label" htmlFor="email">Email</label>
                 <input className="input item__input form-field--mail input__storage" id="email" type="email" name="email" placeholder="Ej: sally-hill@gmail.com" data-donde="element-mail" required="required" value={email} onChange={changeInputsDataEmail} />
