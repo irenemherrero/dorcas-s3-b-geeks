@@ -41,7 +41,7 @@ class CardGenerator extends Component {
         phone: "",
         photo: previewPhoto,
         image: 'http://placehold.it/29x29/ffffff/ffffff',
-        skills: [],
+        skills: ['HTML', 'CSS'],
         typography: "2"
       },
 
@@ -57,7 +57,7 @@ class CardGenerator extends Component {
         phone: "",
         photo: previewPhoto,
         image: '',
-        skills: [],
+        skills: ['HTML', 'CSS'],
         typography: "2"
       }
     }
@@ -195,7 +195,7 @@ sendTypographyValue(event) {
       phone: this.state.data.phone,
       photo: this.state.data.photo,
       image: 'http://placehold.it/29x29/ffffff/ffffff',
-      skills: [],
+      skills: this.state.data.skills,
       typography: this.state.typographyTypes[this.state.data.typography]
     }
   }
