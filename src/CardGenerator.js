@@ -8,10 +8,6 @@ class CardGenerator extends Component {
   constructor(props) {
     super(props)
 
-    this.makeObjectData = this.makeObjectData.bind(this);
-    this.resetPreview = this.resetPreview.bind(this);
-    this.sendRaddioPaletteValue=this.sendRaddioPaletteValue.bind(this);
-
     fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
       .then(response => {
         return response.json();
@@ -65,6 +61,10 @@ class CardGenerator extends Component {
         typography: "2"
       }
     }
+    this.makeObjectData = this.makeObjectData.bind(this);
+    this.resetPreview = this.resetPreview.bind(this);
+    this.sendRaddioPaletteValue=this.sendRaddioPaletteValue.bind(this);
+    this.sendTypographyValue=this.sendTypographyValue.bind(this);
     this.writeDataName = this.writeDataName.bind(this);
     this.writeDataJob = this.writeDataJob.bind(this);
     this.writeSocialMediaEmail = this.writeSocialMediaEmail.bind(this);
@@ -164,6 +164,17 @@ sendRaddioPaletteValue(event) {
   });
 }
 
+sendTypographyValue(event) {
+  console.log('typography value', event.target.value);
+  const {value} = event.target;
+  this.setState({
+    data: {
+      ...this.state.data,
+      typography: `${value}`
+    }
+  });
+}
+
   resetPreview = () => {
     console.log('oli');
     this.setState({
@@ -197,6 +208,7 @@ sendRaddioPaletteValue(event) {
           optionsTypography={this.state.typographyTypes}
           dataObject={this.state.data}
           optionsSkills={this.state.arraySkills}
+          changeTypography={this.sendTypographyValue}
           changeRadioButtonsColor={this.sendRaddioPaletteValue}
           changeInputsDataName={this.writeDataName}
           changeInputsDataJob={this.writeDataJob}

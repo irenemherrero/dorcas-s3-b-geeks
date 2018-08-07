@@ -32,7 +32,8 @@ class Form extends Component {
   }
   render() {
 
-    const {name, email, github, job, linkedin, phone, image} = this.props.dataObject;
+    const {name, email, github, job, linkedin, phone, image, typography, palette} = this.props.dataObject;
+    const {changeTypography} = this.props;
     const {changeRadioButtonsColor}=this.props;
     const {optionsSkills} = this.props;
     const {changeInputsDataName} = this.props;
@@ -64,9 +65,9 @@ class Form extends Component {
 
   Falta que salgan los colores en lo cuadraditos y que seleccione por defecto la primera opción,a parte de la funcionalidad*/}
 
-                <RadioButton id="color1" radioCual="1" value="1" defaultChecked="checked"  className="paletteColours1" onChange={changeRadioButtonsColor} />
-                <RadioButton id="color2" radioCual="2" value="2" className="paletteColours2" onChange={changeRadioButtonsColor} />
-                <RadioButton id="color3" radioCual="3" value="3" className="paletteColours3" onChange={changeRadioButtonsColor} />
+                <RadioButton id="color1" radioCual="1" value={palette} defaultChecked="checked"  className="paletteColours1" onChange={changeRadioButtonsColor} />
+                <RadioButton id="color2" radioCual="2" value={palette} className="paletteColours2" onChange={changeRadioButtonsColor} />
+                <RadioButton id="color3" radioCual="3" value={palette} className="paletteColours3" onChange={changeRadioButtonsColor} />
       
               </div>
             </div>
@@ -76,11 +77,11 @@ class Form extends Component {
                 
                 {/*-----------------------------RADIOBUTTONS FUENTES----------------------*/}
 
-                <TypographyButton id="font1" radioCual="4" value="1" className="text__optional--ubuntu label-design" label="Ubuntu"/>
+                <TypographyButton id="font1" radioCual="1" value={typography} className="text__optional--ubuntu label-design" label="Ubuntu" onChange={changeTypography}/>
 
-                <TypographyButton id="font2" radioCual="5" value="2" className="text__optional--comic label-design" label="Comic Sans"/>
+                <TypographyButton id="font2" radioCual="2" value={typography} className="text__optional--comic label-design" label="Comic Sans" onChange={changeTypography}/>
 
-                <TypographyButton id="font3" radioCual="6" value="3" className="text__optional--mont label-design" label="Montserrat"/>
+                <TypographyButton id="font3" radioCual="3" value={typography} className="text__optional--mont label-design" label="Montserrat" onChange={changeTypography}/>
 
               </div>
             </div>
