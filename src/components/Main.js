@@ -10,7 +10,7 @@ class Main extends Component {
 
   render() {
     console.log(this.props);
-    const { optionsSkills, optionsPalettes, optionsTypography, dataObject } = this.props;
+    const { optionsSkills, optionsPalettes, optionsTypography, dataObject, dataObjectPreview, actionReset } = this.props;
     const { changeInputsDataName } = this.props;
     const { changeInputsDataJob } = this.props;
     const { changeInputsDataEmail } = this.props;
@@ -22,10 +22,10 @@ class Main extends Component {
     return (
       <div className="main__form">
         <Preview
-          optionsPalettes={optionsPalettes}
-          optionsTypography={optionsTypography}
           dataObject={dataObject}
-          optionsSkills={optionsSkills} />
+          optionsSkills={optionsSkills}
+          dataObjectPreview={dataObjectPreview}
+          actionReset={actionReset} />
         <Form
           optionsPalettes={optionsPalettes}
           optionsTypography={optionsTypography}

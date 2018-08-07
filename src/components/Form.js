@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Collapsible from './Collapsible';
 import SelectSkills from './SelectSkills';
+import RadioButton from './RadioButton';
+import TypographyButton from './TypographyButton';
 
 class Form extends Component {
   constructor(props) {
@@ -44,6 +46,9 @@ class Form extends Component {
     return (
       <div className="wrapper">
         <form id="form" className="form" action="index.html" method="post" name="form">
+      
+          {/*---------------------Primer colapsable----------------------*/}
+      
           <Collapsible
             open={true}
             icon="far fa-object-ungroup icon__primary--medium"
@@ -53,56 +58,28 @@ class Form extends Component {
             <div className="item-container item-container--color">
               <div className="text__dark--small">colores</div>
               <div className="radio-container">
-                <div className="palette palette--margin">
-                  <input id="color1" className="input__storage" type="radio" name="palette" radio-cual="1" value="1" defaultChecked="checked" />
-                  <label htmlFor="color1" className="label-design">
-                    <span></span>
-                    <div className="palette-box colorp1"></div>
-                    <div className="palette-box colorp2"></div>
-                    <div className="palette-box colorp3"></div>
-                  </label>
-                </div>
-                <div className="palette palette--margin">
-                  <input id="color2" className="input__storage" type="radio" name="palette" radio-cual="2" value="2" />
-                  <label htmlFor="color2" className="label-design">
-                    <span></span>
-                    <div className="palette-box colorp4"></div>
-                    <div className="palette-box colorp5"></div>
-                    <div className="palette-box colorp6"></div>
-                  </label>
-                </div>
-                <div className="palette">
-                  <input id="color3" className="input__storage" type="radio" name="palette" radio-cual="3" value="3" />
-                  <label htmlFor="color3" className="label-design">
-                    <span></span>
-                    <div className="palette-box colorp7"></div>
-                    <div className="palette-box colorp8"></div>
-                    <div className="palette-box colorp9"></div>
-                  </label>
-                </div>
+                
+                {/*-----------------------------RADIOBUTTONS COLORES
+  
+  Falta que salgan los colores en lo cuadraditos y que seleccione por defecto la primera opción,a parte de la funcionalidad*/}
+
+
+                <RadioButton id="color1" radioCual="1" value="1" defaultChecked="checked" className="paletteColours1" />
+                <RadioButton id="color2" radioCual="2" value="2" className="paletteColours2" />
+                <RadioButton id="color3" radioCual="3" value="3" className="paletteColours3" />
               </div>
             </div>
             <div className="item-container">
               <div className="text__dark--small">fuentes</div>
               <div className="radio-container">
-                <div className="font font--margin">
-                  <input id="font1" className="input__storage" type="radio" name="typography" radio-cual="4" value="1" />
-                  <label htmlFor="font1" className="text__optional--ubuntu label-design">
-                    <span></span>
-                    Ubuntu</label>
-                </div>
-                <div className="font font--margin">
-                  <input id="font2" className="input__storage" type="radio" name="typography" radio-cual="5" value="2" defaultChecked="checked" />
-                  <label htmlFor="font2" className="text__optional--comic label-design">
-                    <span></span>
-                    Comic Sans</label>
-                </div>
-                <div className="font">
-                  <input id="font3" className="input__storage" type="radio" name="typography" radio-cual="6" value="3" />
-                  <label htmlFor="font3" className="text__optional--mont label-design">
-                    <span></span>
-                    Montserrat</label>
-                </div>
+                
+                {/*-----------------------------RADIOBUTTONS FUENTES----------------------*/}
+
+                <TypographyButton id="font1" radioCual="4" value="1" className="text__optional--ubuntu label-design" label="Ubuntu"/>
+
+                <TypographyButton id="font2" radioCual="5" value="2" className="text__optional--comic label-design" label="Comic Sans"/>
+
+                <TypographyButton id="font3" radioCual="6" value="3" className="text__optional--mont label-design" label="Montserrat"/>
               </div>
             </div>
           </Collapsible>
@@ -150,14 +127,14 @@ class Form extends Component {
                 <label className="item__label" htmlFor="github">Github</label>
                 <input className="input item__input form-field--gh input__storage" id="github" type="text" name="github" placeholder="Ej: sally-hill" data-donde="element-gh" required="required" value={github} onChange={changeInputsDataGithub} />
               </div>
-
               <SelectSkills optionsSkills={optionsSkills} />
-
             </div>
           </section>
 
 
           {/* <!-- Sección Comparte --> */}
+
+          {/*---------------------Tercer colapsable----------------------*/}
 
           <section className="fieldset js__dropdown visible">
             <Collapsible
