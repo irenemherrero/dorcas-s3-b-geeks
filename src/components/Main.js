@@ -13,6 +13,7 @@ class Main extends Component {
     console.log(this.props);
     const {optionsSkills, dataObject, dataObjectPreview, actionReset, optionsPalettes, optionsTypography} = this.props;
     const {changeTypography} = this.props;
+    const {optionsSkills, optionsPalettes, optionsTypography, dataObject, dataObjectPreview, actionReset} = this.props;
     const {changeRadioButtonsColor}= this.props;
     const {changeInputsDataName} = this.props;
     const {changeInputsDataJob} = this.props;
