@@ -20,7 +20,6 @@ class Form extends Component {
 
   }
 
-
   handleLoadPhoto(event) {
     console.log(event.target.file)
     event.preventDefault();
@@ -32,8 +31,9 @@ class Form extends Component {
     console.log(event.target.files[0]);
   }
   render() {
-    const {name, email, github, job, linkedin, phone, image} = this.props.dataObject;
 
+    const {name, email, github, job, linkedin, phone, image} = this.props.dataObject;
+    const {changeRadioButtonsColor}=this.props;
     const {optionsSkills} = this.props;
     const {changeInputsDataName} = this.props;
     const {changeInputsDataJob} = this.props;
@@ -43,6 +43,7 @@ class Form extends Component {
     const {changeInputsDataGithub} = this.props;
     const {deleteCompleteName} = this.props;
     const {deleteJob} = this.props;
+    
     return (
       <div className="wrapper">
         <form id="form" className="form" action="index.html" method="post" name="form">
@@ -60,13 +61,13 @@ class Form extends Component {
               <div className="radio-container">
                 
                 {/*-----------------------------RADIOBUTTONS COLORES
-  
+
   Falta que salgan los colores en lo cuadraditos y que seleccione por defecto la primera opción,a parte de la funcionalidad*/}
 
-
-                <RadioButton id="color1" radioCual="1" value="1" defaultChecked="checked" className="paletteColours1" />
-                <RadioButton id="color2" radioCual="2" value="2" className="paletteColours2" />
-                <RadioButton id="color3" radioCual="3" value="3" className="paletteColours3" />
+                <RadioButton id="color1" radioCual="1" value="1" defaultChecked="checked"  className="paletteColours1" onChange={changeRadioButtonsColor} />
+                <RadioButton id="color2" radioCual="2" value="2" className="paletteColours2" onChange={changeRadioButtonsColor} />
+                <RadioButton id="color3" radioCual="3" value="3" className="paletteColours3" onChange={changeRadioButtonsColor} />
+      
               </div>
             </div>
             <div className="item-container">
@@ -80,6 +81,7 @@ class Form extends Component {
                 <TypographyButton id="font2" radioCual="5" value="2" className="text__optional--comic label-design" label="Comic Sans"/>
 
                 <TypographyButton id="font3" radioCual="6" value="3" className="text__optional--mont label-design" label="Montserrat"/>
+
               </div>
             </div>
           </Collapsible>
