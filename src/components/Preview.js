@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ResetButton from './ResetButton';
+import ListSkills from './ListSkills'
 
 class Preview extends Component {
 constructor(props){
@@ -9,6 +10,7 @@ constructor(props){
   render() {
     const {email, github, image, job, linkedin, name, palette, phone, photo, skills, typography} = this.props.dataObjectPreview;
     const {dataObjectPreview, dataObject, actionReset} = this.props;
+    console.log(skills);
     return (
       <section className="section-card">
         <div className="section-card__container">
@@ -38,6 +40,9 @@ constructor(props){
               </div>
               {/*Faltan las Skills*/}
               <div className="skills">
+                <ListSkills 
+                  className="skills__list text__skills"
+                  arraySkills={skills}/>
               </div>
             </div>
           </div>

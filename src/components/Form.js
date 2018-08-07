@@ -20,7 +20,6 @@ class Form extends Component {
 
   }
 
-
   handleLoadPhoto(event) {
     console.log(event.target.file)
     event.preventDefault();
@@ -32,23 +31,26 @@ class Form extends Component {
     console.log(event.target.files[0]);
   }
   render() {
-    const { name, email, github, job, linkedin, phone, image } = this.props.dataObject;
 
-    const { optionsSkills } = this.props;
-    const { changeInputsDataName } = this.props;
-    const { changeInputsDataJob } = this.props;
-    const { changeInputsDataEmail } = this.props;
-    const { changeInputsDataPhone } = this.props;
-    const { changeInputsDataLinkedin } = this.props;
-    const { changeInputsDataGithub } = this.props;
-    const { deleteCompleteName } = this.props;
-    const { deleteJob } = this.props;
+    const {name, email, github, job, linkedin, phone, image, typography, palette} = this.props.dataObject;
+    const {changeTypography} = this.props;
+    const {changeRadioButtonsColor}=this.props;
+    const {optionsSkills} = this.props;
+    const {changeInputsDataName} = this.props;
+    const {changeInputsDataJob} = this.props;
+    const {changeInputsDataEmail} = this.props;
+    const {changeInputsDataPhone} = this.props;
+    const {changeInputsDataLinkedin} = this.props;
+    const {changeInputsDataGithub} = this.props;
+    const {deleteCompleteName} = this.props;
+    const {deleteJob} = this.props;
+    
     return (
       <div className="wrapper">
         <form id="form" className="form" action="index.html" method="post" name="form">
       
           {/*---------------------Primer colapsable----------------------*/}
-      
+          <section className="fieldset js__dropdown visible">
           <Collapsible
             open={true}
             icon="far fa-object-ungroup icon__primary--medium"
@@ -60,13 +62,13 @@ class Form extends Component {
               <div className="radio-container">
                 
                 {/*-----------------------------RADIOBUTTONS COLORES
-  
+
   Falta que salgan los colores en lo cuadraditos y que seleccione por defecto la primera opción,a parte de la funcionalidad*/}
 
-
-                <RadioButton id="color1" radioCual="1" value="1" defaultChecked="checked" className="paletteColours1" />
-                <RadioButton id="color2" radioCual="2" value="2" className="paletteColours2" />
-                <RadioButton id="color3" radioCual="3" value="3" className="paletteColours3" />
+                <RadioButton id="color1" radioCual="1" value={palette} defaultChecked="checked"  className="paletteColours1" onChange={changeRadioButtonsColor} />
+                <RadioButton id="color2" radioCual="2" value={palette} className="paletteColours2" onChange={changeRadioButtonsColor} />
+                <RadioButton id="color3" radioCual="3" value={palette} className="paletteColours3" onChange={changeRadioButtonsColor} />
+      
               </div>
             </div>
             <div className="item-container">
@@ -75,15 +77,16 @@ class Form extends Component {
                 
                 {/*-----------------------------RADIOBUTTONS FUENTES----------------------*/}
 
-                <TypographyButton id="font1" radioCual="4" value="1" className="text__optional--ubuntu label-design" label="Ubuntu"/>
+                <TypographyButton id="font1" radioCual="1" value={typography} className="text__optional--ubuntu label-design" label="Ubuntu" onChange={changeTypography}/>
 
-                <TypographyButton id="font2" radioCual="5" value="2" className="text__optional--comic label-design" label="Comic Sans"/>
+                <TypographyButton id="font2" radioCual="2" value={typography} className="text__optional--comic label-design" label="Comic Sans" onChange={changeTypography}/>
 
-                <TypographyButton id="font3" radioCual="6" value="3" className="text__optional--mont label-design" label="Montserrat"/>
+                <TypographyButton id="font3" radioCual="3" value={typography} className="text__optional--mont label-design" label="Montserrat" onChange={changeTypography}/>
+
               </div>
             </div>
           </Collapsible>
-
+        </section>
           {/* //FORMULARIO-RELLENA */}
           <section className="fieldset js__dropdown visible">
             <Collapsible
@@ -91,7 +94,7 @@ class Form extends Component {
               icon="icon__primary--medium far fa-keyboard"
               name="Rellena"
               arrow="fas fa-angle-down arrow legend__arrow icon__rotation"
-            />
+            >
             <div className="js__dropdown-content">
               <div className="item">
                 <label className="item__label" htmlFor="name">Nombre completo</label>
@@ -101,6 +104,9 @@ class Form extends Component {
                 <label className="item__label" htmlFor="job">Puesto</label>
                 <input className="input item__input form-field--role input__storage" id="job" type="text" name="job" placeholder="Ej: Front-end unicorn" data-donde="element-role" required="required" value={job} onChange={changeInputsDataJob} onFocus={deleteJob} />
               </div>
+
+              {/*-----------------------------IMAGEN FILEREADER----------------------*/}
+
               <div className="item">
                 <label className="item__label" htmlFor="image">Imagen de perfil</label>
                 <div className="item__addfile">
@@ -111,6 +117,8 @@ class Form extends Component {
                   </div>
                 </div>
               </div>
+
+
               <div className="item">
                 <label className="item__label" htmlFor="email">Email</label>
                 <input className="input item__input form-field--mail input__storage" id="email" type="email" name="email" placeholder="Ej: sally-hill@gmail.com" data-donde="element-mail" required="required" value={email} onChange={changeInputsDataEmail} />
@@ -129,6 +137,7 @@ class Form extends Component {
               </div>
               <SelectSkills optionsSkills={optionsSkills} />
             </div>
+            </Collapsible>
           </section>
 
 
@@ -142,7 +151,7 @@ class Form extends Component {
               icon="icon__primary--medium fas fa-share-alt"
               name="Comparte"
               arrow="fas fa-angle-down arrow legend__arrow icon__rotation"
-            />
+            >
             <div className="js__dropdown-content share__content-parent">
               <div className="share__content">
                 <button id="submit" className="btn-card btn-card--position btn-card--text boton-card--active" type="button" name="button">
@@ -157,6 +166,7 @@ class Form extends Component {
                 </a>
               </div>
             </div>
+            </Collapsible>
           </section>
         </form>
       </div>
