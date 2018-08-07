@@ -1,57 +1,49 @@
 import React, { Component } from 'react';
 
+
+let newNumberSelect= [];
 class SelectSkills extends Component {
   constructor (props) {
     super (props);
     this.state = {
       skill: '',
       numbersSelect: [1],
-      classButton: 'fas fa-plus js__add',
     }
     this.addSelectButtom = this.addSelectButtom.bind(this);
     this.addSelectToCard = this.addSelectToCard.bind(this);
-    this.changeButton = this.changeButton.bind(this);
+    this.getButtonClass = this.getButtonClass.bind(this);
   }
 
 
 
-  addSelectButtom (event) {
-      console.log(event.target);
-     if (this.state.numbersSelect.length < 3 ) {
-       this.setState({
-         numberSelect: this.state.numbersSelect.push(1),
-         classButton: 'fas js__add fa-minus',
-       });
-     this.changeButton();
-    } else {
-      alert ('No es posible introducir más habilidades');
-    }
-    };
-
-
-    changeButton = () => {
-
-      //console.log(this.event);
-      // const button = document.querySelectorAll('.js__add');
-      // for (let i = 0; i < button.length; i++) {
-      //   if (userSelections.length === i) {
-      //     button[i].classList.add('fa-plus');
-      //     button[i].removeEventListener('click', removeSelect);
-      //     button[i].addEventListener('click', addSelect);
-      //   } else {
-      //     button[i].classList.remove('fa-plus');
-      //     button[i].classList.add('fa-minus');
-      //     button[i].removeEventListener('click', addSelect);
-      //     button[i].addEventListener('click', removeSelect);
-      //   }
-      // }
-
-    };
-
+  addSelectButtom (e){
+    console.log(this.state.numbersSelect)
+    this.setState({
+      numberSelect: this.state.numbersSelect.push(1),
+    });
+  }
 
   addSelectToCard (event) {
     //console.log('hola manolo');
   }
+
+  getButtonClass (len, index) {
+    if (len ===1) {
+      return 'fa fa-plus';
+    } else if (len === 2  && index === 0) {
+      return 'fa fa-minus';
+    } else if (len === 2  && index === 1) {
+      return 'fa fa-plus';
+    } else if (len === 3  && index === 0) {
+      return 'fa fa-minus';
+    } else if (len === 3  && index === 1 || index === 2) {
+      return 'fa fa-minus';
+    }  else if (len > 3) {
+      console.log ('El número máximo de habilidades es 3');
+    }
+
+  }
+
 
 
   render () {
@@ -59,100 +51,30 @@ class SelectSkills extends Component {
 
     return (
 
-<div className = "item js__select-container" >
-  <label className="item__label" htmlFor="abilities">Habilidades (máximo 3)</label>
-  {
-    this.state.numbersSelect.map((numberSelect,index) => {
-      const lengthArray = this.state.numbersSelect.length;
-      switch (lengthArray) {
-        case 1:
+      <div className = "item js__select-container" >
+        <label className="item__label" htmlFor="abilities">Habilidades (máximo 3)</label>
         {
-          return (
+          newNumberSelect= this.state.numbersSelect.map((numberSelect,index,arr) =>
+
           <div key={index} className="item__select-container position-${index}">
             <select className="item__select position-${index}" onChange={this.addSelectToCard} value={this.state.skill} name="" id="">
               {
-                optionsSkills.map((skill,indexOption) => {
-                  return (<option key={indexOption} className='js__option'>
+                optionsSkills.map(function(skill,index) {
+                  return (<option key={index} className='js__option'>
                     {skill}
                   </option>)
                 })
               }
             </select>
             <div className="item__select-button" onClick={this.addSelectButtom}>
-              <i className={this.state.classButton}/>
+              <i id= 'buttonSelect' className={this.getButtonClass(arr.length,index)}/>
             </div>
           </div>
-        );
-        }
-
-        break;
-        case 2:
-        {
-          return (
-          <div key={index} className="item__select-container position-${index}">
-            <select className="item__select position-${index}" onChange={this.addSelectToCard} value={this.state.skill} name="" id="">
-              {
-                optionsSkills.map((skill,indexOption) => {
-                  return (<option key={indexOption} className='js__option'>
-                    {skill}
-                  </option>)
-                })
-              }
-            </select>
-            <div className="item__select-button" onClick={this.addSelectButtom}>
-              <i className={this.state.classButton}/>
-            </div>
-          </div>
-        );
-        }
-
-        break;
-        case 3:
-        {
-          return (
-          <div key={index} className="item__select-container position-${index}">
-            <select className="item__select position-${index}" onChange={this.addSelectToCard} value={this.state.skill} name="" id="">
-              {
-                optionsSkills.map((skill,indexOption) => {
-                  return (<option key={indexOption} className='js__option'>
-                    {skill}
-                  </option>)
-                })
-              }
-            </select>
-            <div className="item__select-button" onClick={this.addSelectButtom}>
-              <i className={this.state.classButton}/>
-            </div>
-          </div>
-        );
-        }
-
-        break;
-        case 4:
-        {
-          return (
-          console.log('loretus')
-        );
-        }
-
-        break;
-
+        )
       }
-
-
-
-    }
-
-
-
-)
+    </div>
+  );
 }
-</div>
-
-
-
-    );
-  }
 }
 
 
