@@ -10,15 +10,15 @@ class Main extends Component {
 
   render() {
     console.log(this.props);
-    const {optionsSkills, optionsPalettes, optionsTypography, dataObject} = this.props;
-    const {changeInputsDataName} = this.props;
-    const {changeInputsDataJob} = this.props;
-    const {changeInputsDataEmail} = this.props;
-    const {changeInputsDataPhone} = this.props;
-    const {changeInputsDataLinkedin} = this.props;
-    const {changeInputsDataGithub} = this.props;
-    const {deleteCompleteName} = this.props;
-    const {deleteJob} = this.props;
+    const { optionsSkills, optionsPalettes, optionsTypography, dataObject } = this.props;
+    const { changeInputsDataName } = this.props;
+    const { changeInputsDataJob } = this.props;
+    const { changeInputsDataEmail } = this.props;
+    const { changeInputsDataPhone } = this.props;
+    const { changeInputsDataLinkedin } = this.props;
+    const { changeInputsDataGithub } = this.props;
+    const { deleteCompleteName } = this.props;
+    const { deleteJob } = this.props;
     return (
       <div className="main__form">
         <Preview
@@ -40,7 +40,7 @@ class Main extends Component {
           deleteCompleteName={deleteCompleteName}
           deleteJob={deleteJob} />
       </div>
-    );  
+    );
   }
 }
 

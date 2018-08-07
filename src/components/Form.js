@@ -30,17 +30,17 @@ class Form extends Component {
     console.log(event.target.files[0]);
   }
   render() {
-    const {name, email, github, job, linkedin, phone, image} = this.props.dataObject;
+    const { name, email, github, job, linkedin, phone, image } = this.props.dataObject;
 
-    const {optionsSkills} = this.props;
-    const {changeInputsDataName} = this.props;
-    const {changeInputsDataJob} = this.props;
-    const {changeInputsDataEmail} = this.props;
-    const {changeInputsDataPhone} = this.props;
-    const {changeInputsDataLinkedin} = this.props;
-    const {changeInputsDataGithub} = this.props;
-    const {deleteCompleteName} = this.props;
-    const {deleteJob} = this.props;
+    const { optionsSkills } = this.props;
+    const { changeInputsDataName } = this.props;
+    const { changeInputsDataJob } = this.props;
+    const { changeInputsDataEmail } = this.props;
+    const { changeInputsDataPhone } = this.props;
+    const { changeInputsDataLinkedin } = this.props;
+    const { changeInputsDataGithub } = this.props;
+    const { deleteCompleteName } = this.props;
+    const { deleteJob } = this.props;
     return (
       <div className="wrapper">
         <form id="form" className="form" action="index.html" method="post" name="form">
