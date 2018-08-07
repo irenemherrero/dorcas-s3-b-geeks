@@ -159,7 +159,7 @@ sendRaddioPaletteValue(event) {
   this.setState({
     data: {
       ...this.state.data,
-      palette: {value}
+      palette: `${value}`
     }
   });
 }

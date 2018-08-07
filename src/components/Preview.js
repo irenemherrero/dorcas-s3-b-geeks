@@ -7,7 +7,6 @@ constructor(props){
   console.log(props);
 }
   render() {
-    const { email, github, image, job, linkedin, name, palette, phone, photo, skills, typography } = this.props.dataObject;
     const {email, github, image, job, linkedin, name, palette, phone, photo, skills, typography} = this.props.dataObjectPreview;
     const {dataObjectPreview, dataObject, actionReset} = this.props;
     return (
