@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
-import previewPhoto from './images/card-image.png';
+import Header from './Header';
+import Main from './Main';
+import Footer from './Footer';
+import previewPhoto from '../images/card-image.png';
 
 class CardGenerator extends Component {
   constructor(props) {
@@ -160,6 +160,9 @@ sendRaddioPaletteValue(event) {
     data: {
       ...this.state.data,
       palette: `${value}`
+    }
+  });
+}
 
 sendTypographyValue(event) {
   console.log('typography value', event.target.value);
