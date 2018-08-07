@@ -67,52 +67,59 @@
   display: flex;
 }
 
-.palette-box {
-  width: 30px;
-  height: 25px;
-}
-
-.paletteColours1{
-  .colorp1 {
+.paletteColours1.palette-box.colorp1 {
+    width: 30px;
+    height: 25px;
     background-color: $color-paleta1-primary;
   }
 
-  .colorp2 {
+  .paletteColours1.palette-box.colorp2 {
+    width: 30px;
+    height: 25px;
     background-color: $color-paleta1-secondary;
   }
 
-  .colorp3 {
+  .paletteColours1.palette-box.colorp3 {
+    width: 30px;
+    height: 25px;
     background-color: $color-paleta1-terciary;
   }
-}
 
-.paletteColours2{
-  .colorp1 {
+  .paletteColours2.palette-box.colorp1 {
+    width: 30px;
+    height: 25px;
     background-color: $color-paleta2-primary;
   }
 
-  .colorp2 {
+  .paletteColours2.palette-box.colorp2 {
+    width: 30px;
+    height: 25px;
     background-color: $color-paleta2-secondary;
   }
 
-  .colorp3 {
+  .paletteColours2.palette-box.colorp3 {
+   width: 30px;
+   height: 25px;
    background-color: $color-paleta2-terciary;
   }
-}
 
-.paletteColours3{
-  .colorp1 {
+.paletteColours3.palette-box.colorp1 {
+    width: 30px;
+    height: 25px;
     background-color: $color-paleta3-primary;
   }
 
-  .colorp2 {
+  .paletteColours3.palette-box.colorp2 {
+    width: 30px;
+    height: 25px;
     background-color: $color-paleta3-secondary;
   }
 
-.colorp3 {
+  .paletteColours3.palette-box.colorp3 {
+    width: 30px;
+    height: 25px;
     background-color: $color-paleta3-terciary;
-  } 
-}
+  }
 
 //RELLENA
 
