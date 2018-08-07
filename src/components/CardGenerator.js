@@ -160,9 +160,6 @@ sendRaddioPaletteValue(event) {
     data: {
       ...this.state.data,
       palette: `${value}`
-    }
-  });
-}
 
 sendTypographyValue(event) {
   console.log('typography value', event.target.value);
@@ -171,6 +168,7 @@ sendTypographyValue(event) {
     data: {
       ...this.state.data,
       typography: `${value}`
+
     }
   });
 }
