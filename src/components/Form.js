@@ -8,10 +8,17 @@ class Form extends Component {
   constructor(props) {
     super(props);
 
-    console.log(props);
+    this.state = {
+      openCollapsibleDesign: true,
+      openCollapsibleField: false,
+      openCollapsibleShare: false
+    }
     this.falseClick = this.falseClick.bind(this);
     this.handleLoadPhoto = this.handleLoadPhoto.bind(this);
     this.fileInput = React.createRef();
+    this.handleClickCollapsibleDesign=this.handleClickCollapsibleDesign.bind(this);
+    this.handleClickCollapsibleField=this.handleClickCollapsibleField.bind(this);
+    this.handleClickCollapsibleShare=this.handleClickCollapsibleShare.bind(this);
   }
 
 
@@ -21,15 +28,38 @@ class Form extends Component {
   }
 
   handleLoadPhoto(event) {
-    console.log(event.target.file)
     event.preventDefault();
     const fr = new FileReader();
     fr.addEventListener('load', () => {
       this.setState({ image: fr.result });
     });
     fr.readAsDataURL(event.target.files[0]);
-    console.log(event.target.files[0]);
   }
+
+  handleClickCollapsibleDesign(){
+    if (this.state.openCollapsibleDesign === true) {
+      this.setState({openCollapsibleDesign: false});
+    } else if (this.state.openCollapsibleDesign === false) {
+      this.setState({openCollapsibleDesign: true});
+    }
+  }
+
+  handleClickCollapsibleField() {
+    if (this.state.openCollapsibleField === true) {
+      this.setState({openCollapsibleField: false});
+    } else if (this.state.openCollapsibleField === false) {
+      this.setState({openCollapsibleField: true});
+    }
+  }
+  
+  handleClickCollapsibleShare() {
+    if (this.state.openCollapsibleShare === true) {
+      this.setState({openCollapsibleShare: false});
+    } else if (this.state.openCollapsibleShare === false) {
+      this.setState({openCollapsibleShare: true});
+    }
+  } 
+
   render() {
 
     const {name, email, github, job, linkedin, phone, image, typography, palette} = this.props.dataObject;
@@ -44,18 +74,19 @@ class Form extends Component {
     const {changeInputsDataGithub} = this.props;
     const {deleteCompleteName} = this.props;
     const {deleteJob} = this.props;
-    
+
     return (
       <div className="wrapper">
         <form id="form" className="form" action="index.html" method="post" name="form">
       
           {/*---------------------Primer colapsable----------------------*/}
-      
+          <section className="fieldset js__dropdown visible">
           <Collapsible
-            open={true}
+            open={this.state.openCollapsibleDesign}
             icon="far fa-object-ungroup icon__primary--medium"
             name="Diseña"
             arrow="fas fa-angle-up arrow legend__arrow icon__rotation"
+            handleClickCollapsibles = {this.handleClickCollapsibleDesign}
           >
             <div className="item-container item-container--color">
               <div className="text__dark--small">colores</div>
@@ -86,15 +117,16 @@ class Form extends Component {
               </div>
             </div>
           </Collapsible>
-
+        </section>
           {/* //FORMULARIO-RELLENA */}
           <section className="fieldset js__dropdown visible">
             <Collapsible
-              open={true}
+              open={this.state.openCollapsibleField}
               icon="icon__primary--medium far fa-keyboard"
               name="Rellena"
               arrow="fas fa-angle-down arrow legend__arrow icon__rotation"
-            />
+              handleClickCollapsibles = {this.handleClickCollapsibleField}
+            >
             <div className="js__dropdown-content">
               <div className="item">
                 <label className="item__label" htmlFor="name">Nombre completo</label>
@@ -137,6 +169,7 @@ class Form extends Component {
               </div>
               <SelectSkills optionsSkills={optionsSkills} />
             </div>
+            </Collapsible>
           </section>
 
 
@@ -146,11 +179,12 @@ class Form extends Component {
 
           <section className="fieldset js__dropdown visible">
             <Collapsible
-              open={true}
+              open={this.state.openCollapsibleShare}
               icon="icon__primary--medium fas fa-share-alt"
               name="Comparte"
               arrow="fas fa-angle-down arrow legend__arrow icon__rotation"
-            />
+              handleClickCollapsibles = {this.handleClickCollapsibleShare}
+            >
             <div className="js__dropdown-content share__content-parent">
               <div className="share__content">
                 <button id="submit" className="btn-card btn-card--position btn-card--text boton-card--active" type="button" name="button">
@@ -165,6 +199,7 @@ class Form extends Component {
                 </a>
               </div>
             </div>
+            </Collapsible>
           </section>
         </form>
       </div>

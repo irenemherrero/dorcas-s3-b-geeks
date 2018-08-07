@@ -46,7 +46,7 @@ class Main extends Component {
           deleteJob={deleteJob} />
 
       </div>
-    );  
+    );
   }
 }
 
