@@ -34,8 +34,7 @@ class Main extends Component {
           optionsTypography={optionsTypography}
           dataObject={dataObject}
           optionsSkills={optionsSkills}
-
-          changeRadioButtonsColor= {changeRadioButtonsColor}/>
+          changeRadioButtonsColor= {changeRadioButtonsColor}
           changeInputsDataName={changeInputsDataName}
           changeInputsDataJob={changeInputsDataJob}
           changeInputsDataEmail={changeInputsDataEmail}
