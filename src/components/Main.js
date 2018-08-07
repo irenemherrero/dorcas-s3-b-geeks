@@ -11,6 +11,8 @@ class Main extends Component {
   render() {
 
     console.log(this.props);
+    const {optionsSkills, dataObject, dataObjectPreview, actionReset, optionsPalettes, optionsTypography} = this.props;
+    const {changeTypography} = this.props;
     const {optionsSkills, optionsPalettes, optionsTypography, dataObject, dataObjectPreview, actionReset} = this.props;
     const {changeRadioButtonsColor}= this.props;
     const {changeInputsDataName} = this.props;
@@ -25,7 +27,6 @@ class Main extends Component {
     return (
       <div className="main__form">
         <Preview
-          dataObject={dataObject}
           optionsSkills={optionsSkills}
           dataObjectPreview={dataObjectPreview}
           actionReset={actionReset} />
@@ -34,6 +35,7 @@ class Main extends Component {
           optionsTypography={optionsTypography}
           dataObject={dataObject}
           optionsSkills={optionsSkills}
+          changeTypography={changeTypography}
           changeRadioButtonsColor= {changeRadioButtonsColor}
           changeInputsDataName={changeInputsDataName}
           changeInputsDataJob={changeInputsDataJob}
