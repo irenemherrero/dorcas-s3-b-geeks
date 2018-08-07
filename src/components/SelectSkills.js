@@ -20,7 +20,6 @@ class SelectSkills extends Component {
 
   render () {
     const {optionsSkills} = this.props;
-    console.log(optionsSkills);
     return (
 
 <div className = "item js__select-container" >
