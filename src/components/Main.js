@@ -11,7 +11,7 @@ class Main extends Component {
   render() {
 
     console.log(this.props);
-
+    const {changeTypography} = this.props;
     const {optionsSkills, optionsPalettes, optionsTypography, dataObject, dataObjectPreview, actionReset} = this.props;
     const {changeRadioButtonsColor}= this.props;
     const {changeInputsDataName} = this.props;
@@ -34,6 +34,7 @@ class Main extends Component {
           optionsTypography={optionsTypography}
           dataObject={dataObject}
           optionsSkills={optionsSkills}
+          changeTypography={changeTypography}
           changeRadioButtonsColor= {changeRadioButtonsColor}
           changeInputsDataName={changeInputsDataName}
           changeInputsDataJob={changeInputsDataJob}
