@@ -19,7 +19,6 @@ a {
   text-decoration: none; }
 
 .button-start {
-  color: #fff;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 16px;
@@ -32,6 +31,9 @@ a {
   border-radius: 20px;
   background-color: #438792;
   border: solid 1px #979797; }
+
+.LinkHome {
+  color: #fff; }
 
 .button-reset {
   display: block;
@@ -650,7 +652,8 @@ input[type='radio']:checked + label span {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative; }
+  position: relative;
+  height: 90vh; }
 
 .image {
   width: 250px;
