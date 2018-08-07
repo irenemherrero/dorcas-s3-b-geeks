@@ -10,6 +10,7 @@ class CardGenerator extends Component {
 
     this.makeObjectData = this.makeObjectData.bind(this);
     this.resetPreview = this.resetPreview.bind(this);
+    this.sendRaddioPaletteValue=this.sendRaddioPaletteValue.bind(this);
 
     fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
       .then(response => {
@@ -152,6 +153,17 @@ class CardGenerator extends Component {
     });
   }
 
+sendRaddioPaletteValue(event) {
+  console.log('hola', event.target.value);
+  const {value} = event.target;
+  this.setState({
+    data: {
+      ...this.state.data,
+      palette: {value}
+    }
+  });
+}
+
   resetPreview = () => {
     console.log('oli');
     this.setState({
@@ -185,6 +197,7 @@ class CardGenerator extends Component {
           optionsTypography={this.state.typographyTypes}
           dataObject={this.state.data}
           optionsSkills={this.state.arraySkills}
+          changeRadioButtonsColor={this.sendRaddioPaletteValue}
           changeInputsDataName={this.writeDataName}
           changeInputsDataJob={this.writeDataJob}
           changeInputsDataEmail={this.writeSocialMediaEmail}
