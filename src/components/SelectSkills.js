@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 
 let newNumberSelect= [];
 class SelectSkills extends Component {
-  constructor (props) {
-    super (props);
+  constructor(props) {
+    super(props);
     this.state = {
       skill: '',
       numbersSelect: [1],

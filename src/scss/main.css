@@ -19,7 +19,6 @@ a {
   text-decoration: none; }
 
 .button-start {
-  color: #fff;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 16px;
@@ -32,6 +31,9 @@ a {
   border-radius: 20px;
   background-color: #438792;
   border: solid 1px #979797; }
+
+.LinkHome {
+  color: #fff; }
 
 .button-reset {
   display: block;
@@ -184,35 +186,49 @@ select {
 .label-design {
   display: flex; }
 
-.palette-box {
+.paletteColours1.palette-box.colorp1 {
   width: 30px;
-  height: 25px; }
-
-.colorp1 {
+  height: 25px;
   background-color: #114e4e; }
 
-.colorp2 {
+.paletteColours1.palette-box.colorp2 {
+  width: 30px;
+  height: 25px;
   background-color: #438792; }
 
-.colorp3 {
+.paletteColours1.palette-box.colorp3 {
+  width: 30px;
+  height: 25px;
   background-color: #a2deaf; }
 
-.colorp4 {
+.paletteColours2.palette-box.colorp1 {
+  width: 30px;
+  height: 25px;
   background-color: #420101; }
 
-.colorp5 {
+.paletteColours2.palette-box.colorp2 {
+  width: 30px;
+  height: 25px;
   background-color: #bd1010; }
 
-.colorp6 {
+.paletteColours2.palette-box.colorp3 {
+  width: 30px;
+  height: 25px;
   background-color: #e95626; }
 
-.colorp7 {
+.paletteColours3.palette-box.colorp1 {
+  width: 30px;
+  height: 25px;
   background-color: #3e5b65; }
 
-.colorp8 {
+.paletteColours3.palette-box.colorp2 {
+  width: 30px;
+  height: 25px;
   background-color: #dfe5eb; }
 
-.colorp9 {
+.paletteColours3.palette-box.colorp3 {
+  width: 30px;
+  height: 25px;
   background-color: #a0c0cf; }
 
 .fieldset {
@@ -650,7 +666,8 @@ input[type='radio']:checked + label span {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative; }
+  position: relative;
+  height: 90vh; }
 
 .image {
   width: 250px;

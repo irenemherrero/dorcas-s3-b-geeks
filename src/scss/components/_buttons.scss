@@ -1,5 +1,4 @@
 .button-start {
-  color: $color-light;
   font-family: $font-primary;
   font-weight: $weight-semibold;
   font-size: $size-sm;
@@ -12,6 +11,9 @@
   border-radius: 20px;
   background-color: $color-paleta1-secondary;
   border: solid 1px $color-border-start-button;
+}
+.LinkHome{
+  color: $color-light;
 }
 
 .button-reset {

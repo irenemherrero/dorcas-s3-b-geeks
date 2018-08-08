@@ -25,7 +25,7 @@ class CardGenerator extends Component {
       "2": "paleta-roja",
       "3": "paleta-gris",
     },
-    
+
     typographyTypes: {
       "1":"font-card--ubuntu",
       "2":"font-card--comicsans",
@@ -53,7 +53,7 @@ class CardGenerator extends Component {
     return (
       <div className="CardGenerator">
         <Header/>
-        <Main 
+        <Main
           optionsPalettes={this.state.paletteTypes}
           optionsTypography={this.state.typographyTypes}
           dataObject={this.state.data}
