@@ -10,6 +10,7 @@ class SelectSkills extends Component {
       numbersSelect: [1],
     }
     this.addSelectButtom = this.addSelectButtom.bind(this);
+    this.removeSelectButton = this.removeSelectButton.bind(this);
     this.addSelectToCard = this.addSelectToCard.bind(this);
     this.getButtonClass = this.getButtonClass.bind(this);
   }
@@ -17,10 +18,40 @@ class SelectSkills extends Component {
 
 
   addSelectButtom (e){
-    console.log(this.state.numbersSelect)
-    this.setState({
-      numberSelect: this.state.numbersSelect.push(1),
-    });
+    const lenArr = (this.state.numbersSelect.length);
+    const Arr = (this.state.numbersSelect);
+    if (lenArr === 1) {
+      this.setState({
+        numberSelect: this.state.numbersSelect.push(1),
+      });
+    } else  if (lenArr === 2){
+      if (e.target.className = 'fa fa-plus'){
+        this.setState({
+          numberSelect: this.state.numbersSelect.push(1),
+        });
+        alert('OJO: No puedes introducir más habilidades');
+      } else if (e.target.className = 'fa fa-minus'){
+        this.setState({
+          numberSelect: this.state.numbersSelect.splice(1,1),
+        });
+      }
+    } else if (lenArr === 3){
+        this.setState({
+          numberSelect: this.state.numbersSelect.splice(2,1),
+        });
+      }
+    }
+
+
+  removeSelectButton (e) {
+    if (this.className = 'fa fa-plus') {
+      console.log('loading') ;
+    } else if (this.className = 'fa fa-minus'){
+      console.log('me cago en mi puta madre');
+      this.setState({
+        numberSelect: this.state.numbersSelect.splice(1),
+      });
+    }
   }
 
   addSelectToCard (event) {
@@ -29,19 +60,23 @@ class SelectSkills extends Component {
 
   getButtonClass (len, index) {
     if (len ===1) {
-      return 'fa fa-plus';
+      return this.className='fa fa-plus';
     } else if (len === 2  && index === 0) {
-      return 'fa fa-minus';
+      return this.className='fa fa-minus';
     } else if (len === 2  && index === 1) {
-      return 'fa fa-plus';
+      return this.className='fa fa-plus';
+    } else if (len === 2  && index === 1 && this.className === 'fa fa-minus') {
+      this.setState({
+        numberSelect: this.state.numbersSelect.splice(1,1),
+      });
+      return this.className='fa fa-plus';
     } else if (len === 3  && index === 0) {
-      return 'fa fa-minus';
+      return this.className='fa fa-minus';
     } else if (len === 3  && index === 1 || index === 2) {
-      return 'fa fa-minus';
-    }  else if (len > 3) {
-      console.log ('El número máximo de habilidades es 3');
+      return this.className='fa fa-minus';
+    }  else {
+      alert ('El número máximo de habilidades es 3');
     }
-
   }
 
 
