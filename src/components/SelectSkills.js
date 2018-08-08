@@ -2,20 +2,17 @@ import React, { Component } from 'react';
 
 
 let newNumberSelect= [];
+
 class SelectSkills extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      skill: '',
       numbersSelect: [1],
     }
     this.addSelectButtom = this.addSelectButtom.bind(this);
     this.removeSelectButton = this.removeSelectButton.bind(this);
-    this.addSelectToCard = this.addSelectToCard.bind(this);
     this.getButtonClass = this.getButtonClass.bind(this);
   }
-
-
 
   addSelectButtom (e){
     const lenArr = (this.state.numbersSelect.length);
@@ -54,9 +51,6 @@ class SelectSkills extends Component {
     }
   }
 
-  addSelectToCard (event) {
-    //console.log('hola manolo');
-  }
 
   getButtonClass (len, index) {
     if (len ===1) {
@@ -82,7 +76,13 @@ class SelectSkills extends Component {
 
 
   render () {
-    const {optionsSkills} = this.props;
+
+    const {
+      optionsSkills,
+      changeSelects
+    } = this.props;
+
+
 
     return (
 
@@ -92,10 +92,10 @@ class SelectSkills extends Component {
           newNumberSelect= this.state.numbersSelect.map((numberSelect,index,arr) =>
 
           <div key={index} className="item__select-container position-${index}">
-            <select className="item__select position-${index}" onChange={this.addSelectToCard} value={this.state.skill} name="" id="">
+            <select className="item__select position-${index}" onChange={changeSelects} value={this.state.skill} name="" id="">
               {
                 optionsSkills.map(function(skill,index) {
-                  return (<option key={index} className='js__option'>
+                  return (<option key={index} value={skill} className='js__option'>
                     {skill}
                   </option>)
                 })

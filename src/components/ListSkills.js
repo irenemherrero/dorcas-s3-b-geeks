@@ -5,19 +5,19 @@ class ListSkills extends Component {
         super(props);
         this.state = {  }
     }
-    render() { 
+    render() {
         console.log(this.props.arraySkills)
         const arraySkills = this.props.arraySkills;
-        return ( 
+        return (
             <ul className="skills__list text__skills">
-            {arraySkills.map(function(skill){
+            {arraySkills.map(function(skill, index){
                 return (
-                    <li className="skills__item">{skill}</li>);
+                    <li key={index} className="skills__item">{skill}</li>);
             })
         }
             </ul>
          );
     }
 }
- 
+
 export default ListSkills;

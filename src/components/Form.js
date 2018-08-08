@@ -19,6 +19,7 @@ class Form extends Component {
     this.handleClickCollapsibleDesign=this.handleClickCollapsibleDesign.bind(this);
     this.handleClickCollapsibleField=this.handleClickCollapsibleField.bind(this);
     this.handleClickCollapsibleShare=this.handleClickCollapsibleShare.bind(this);
+
   }
 
 
@@ -60,6 +61,9 @@ class Form extends Component {
     }
   }
 
+
+
+
   render() {
 
     const {name, email, github, job, linkedin, phone, image, typography, palette} = this.props.dataObject;
@@ -74,6 +78,7 @@ class Form extends Component {
     const {changeInputsDataGithub} = this.props;
     const {deleteCompleteName} = this.props;
     const {deleteJob} = this.props;
+    const {addSelectToCard} = this.props;
 
     return (
       <div className="wrapper">
@@ -167,7 +172,9 @@ class Form extends Component {
                 <label className="item__label" htmlFor="github">Github</label>
                 <input className="input item__input form-field--gh input__storage" id="github" type="text" name="github" placeholder="Ej: sally-hill" data-donde="element-gh" required="required" value={github} onChange={changeInputsDataGithub} />
               </div>
-              <SelectSkills optionsSkills={optionsSkills} />
+              <SelectSkills
+                optionsSkills={optionsSkills}
+                changeSelects = {addSelectToCard} />
             </div>
             </Collapsible>
           </section>
