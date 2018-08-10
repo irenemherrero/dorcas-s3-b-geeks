@@ -259,11 +259,12 @@ sendTypographyValue(event) {
           deleteCompleteName={this.focusName}
           deleteJob={this.focusJob}
           dataObjectPreview={this.makeObjectData()}
-          addSelectToCard = {this.addSelectToCard} />
+          addSelectToCard = {this.addSelectToCard}
           actionReset={this.resetPreview} 
           falseClick = {this.falseClick}
           handleLoadPhoto = {this.handleLoadPhoto}
-          fileInput = {this.fileInput}/>
+          fileInput = {this.fileInput}
+          />
         <Footer />
       </div>
     );

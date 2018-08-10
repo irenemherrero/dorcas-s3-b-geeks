@@ -3,7 +3,8 @@ import Collapsible from './Collapsible';
 import SelectSkills from './SelectSkills';
 import RadioButton from './RadioButton';
 import TypographyButton from './TypographyButton';
-
+import BotonCrearTarjeta from './BotonCrearTarjeta';
+BotonCrearTarjeta
 class Form extends Component {
   constructor(props) {
     super(props);
@@ -191,8 +192,10 @@ class Form extends Component {
             >
             <div className="js__dropdown-content share__content-parent">
               <div className="share__content">
-                <button id="submit" className="btn-card btn-card--position btn-card--text boton-card--active" type="button" name="button">
-                  <i className="far fa-address-card icon-card"></i>Crear tarjeta</button>
+
+{/*Boton crear tarjeta*/}
+
+                <BotonCrearTarjeta />
               </div>
               <div className="card-created hidden__item">
                 <h3 className="text__dark--title card-created__title">La tarjeta ha sido creada:</h3>
