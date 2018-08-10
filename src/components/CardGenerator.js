@@ -4,6 +4,8 @@ import Main from './Main';
 import Footer from './Footer';
 import previewPhoto from '../images/card-image.png';
 
+let fr = new FileReader();
+
 class CardGenerator extends Component {
   constructor(props) {
     super(props)
@@ -40,7 +42,6 @@ class CardGenerator extends Component {
         palette: "1",
         phone: "",
         photo: previewPhoto,
-        image: 'http://placehold.it/29x29/ffffff/ffffff',
         skills: ['HTML', 'CSS'],
         typography: "2"
       },
@@ -74,8 +75,33 @@ class CardGenerator extends Component {
     this.focusName = this.focusName.bind(this);
     this.focusJob = this.focusJob.bind(this);
     this.addSelectToCard = this.addSelectToCard.bind(this);
-
+    this.falseClick = this.falseClick.bind(this);
+    this.handleLoadPhoto = this.handleLoadPhoto.bind(this);
+    this.fileInput = React.createRef();
   }
+
+  falseClick(event) {
+    this.fileInput.current.click()
+  }
+
+  handleLoadPhoto(event){   
+
+    this.fileInput.current.files[0];
+  
+    const writePhoto = ()=>{
+        console.log('fr after load',fr);
+        this.setState(
+            {
+                data:{
+                    ...this.state.data,
+                    photo: fr.result
+                }
+            }
+        )
+    }
+    fr.addEventListener('load', writePhoto);
+    fr.readAsDataURL(this.fileInput.current.files[0]);
+}
 
   writeDataName(event) {
     const dataTargetName = event.target;
@@ -233,8 +259,11 @@ sendTypographyValue(event) {
           deleteCompleteName={this.focusName}
           deleteJob={this.focusJob}
           dataObjectPreview={this.makeObjectData()}
-          actionReset={this.resetPreview}
           addSelectToCard = {this.addSelectToCard} />
+          actionReset={this.resetPreview} 
+          falseClick = {this.falseClick}
+          handleLoadPhoto = {this.handleLoadPhoto}
+          fileInput = {this.fileInput}/>
         <Footer />
       </div>
     );
