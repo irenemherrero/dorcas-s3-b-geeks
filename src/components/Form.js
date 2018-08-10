@@ -17,6 +17,7 @@ class Form extends Component {
     this.handleClickCollapsibleDesign=this.handleClickCollapsibleDesign.bind(this);
     this.handleClickCollapsibleField=this.handleClickCollapsibleField.bind(this);
     this.handleClickCollapsibleShare=this.handleClickCollapsibleShare.bind(this);
+
   }
 
   handleClickCollapsibleDesign(){
@@ -34,14 +35,17 @@ class Form extends Component {
       this.setState({openCollapsibleField: true});
     }
   }
-  
+
   handleClickCollapsibleShare() {
     if (this.state.openCollapsibleShare === true) {
       this.setState({openCollapsibleShare: false});
     } else if (this.state.openCollapsibleShare === false) {
       this.setState({openCollapsibleShare: true});
     }
-  } 
+  }
+
+
+
 
   render() {
     console.log(this.props);
@@ -57,6 +61,7 @@ class Form extends Component {
     const {changeInputsDataGithub} = this.props;
     const {deleteCompleteName} = this.props;
     const {deleteJob} = this.props;
+    const {addSelectToCard} = this.props;
     const {handleLoadPhoto} = this.props;
     const {falseClick} = this.props;
     const {fileInput} = this.props;
@@ -64,7 +69,7 @@ class Form extends Component {
     return (
       <div className="wrapper">
         <form id="form" className="form" action="index.html" method="post" name="form">
-      
+
           {/*---------------------Primer colapsable----------------------*/}
           <section className="fieldset js__dropdown visible">
           <Collapsible
@@ -77,7 +82,7 @@ class Form extends Component {
             <div className="item-container item-container--color">
               <div className="text__dark--small">colores</div>
               <div className="radio-container">
-                
+
                 {/*-----------------------------RADIOBUTTONS COLORES
 
   Falta que salgan los colores en lo cuadraditos y que seleccione por defecto la primera opción,a parte de la funcionalidad*/}
@@ -85,13 +90,13 @@ class Form extends Component {
                 <RadioButton id="color1" radioCual="1" value={palette} defaultChecked="checked"  className="paletteColours1" onChange={changeRadioButtonsColor} />
                 <RadioButton id="color2" radioCual="2" value={palette} className="paletteColours2" onChange={changeRadioButtonsColor} />
                 <RadioButton id="color3" radioCual="3" value={palette} className="paletteColours3" onChange={changeRadioButtonsColor} />
-      
+
               </div>
             </div>
             <div className="item-container">
               <div className="text__dark--small">fuentes</div>
               <div className="radio-container">
-                
+
                 {/*-----------------------------RADIOBUTTONS FUENTES----------------------*/}
 
                 <TypographyButton id="font1" radioCual="1" value={typography} className="text__optional--ubuntu label-design" label="Ubuntu" onChange={changeTypography}/>
@@ -164,7 +169,9 @@ class Form extends Component {
                 <label className="item__label" htmlFor="github">Github</label>
                 <input className="input item__input form-field--gh input__storage" id="github" type="text" name="github" placeholder="Ej: sally-hill" data-donde="element-gh" required="required" value={github} onChange={changeInputsDataGithub} />
               </div>
-              <SelectSkills optionsSkills={optionsSkills} />
+              <SelectSkills
+                optionsSkills={optionsSkills}
+                changeSelects = {addSelectToCard} />
             </div>
             </Collapsible>
           </section>
@@ -205,4 +212,4 @@ class Form extends Component {
   }
 }
 
-export default Form;
+            export default Form;

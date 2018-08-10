@@ -6,7 +6,9 @@ class Main extends Component {
   constructor(props) {
     super(props);
     console.log(props);
+
   }
+
 
   render() {
 
@@ -22,10 +24,10 @@ class Main extends Component {
     const {changeInputsDataGithub} = this.props;
     const {deleteCompleteName} = this.props;
     const {deleteJob} = this.props;
+    const {addSelectToCard} = this.props;
     const {falseClick} = this.props;
     const {handleLoadPhoto} = this.props;
     const {fileInput} =this.props;
-
 
     return (
       <div className="main__form">
@@ -47,11 +49,11 @@ class Main extends Component {
           changeInputsDataLinkedin={changeInputsDataLinkedin}
           changeInputsDataGithub={changeInputsDataGithub}
           deleteCompleteName={deleteCompleteName}
+          addSelectToCard={addSelectToCard}
           deleteJob={deleteJob} 
           falseClick = {falseClick}
           handleLoadPhoto = {handleLoadPhoto}
           fileInput = {fileInput}/>
-
       </div>
     );
   }

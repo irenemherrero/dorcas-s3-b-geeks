@@ -74,6 +74,7 @@ class CardGenerator extends Component {
     this.writeSocialMediaGithub = this.writeSocialMediaGithub.bind(this);
     this.focusName = this.focusName.bind(this);
     this.focusJob = this.focusJob.bind(this);
+    this.addSelectToCard = this.addSelectToCard.bind(this);
     this.falseClick = this.falseClick.bind(this);
     this.handleLoadPhoto = this.handleLoadPhoto.bind(this);
     this.fileInput = React.createRef();
@@ -227,6 +228,17 @@ sendTypographyValue(event) {
       typography: this.state.typographyTypes[this.state.data.typography]
     }
   }
+
+  addSelectToCard (e) {
+    console.log(this.state.data.skills);
+    this.setState({
+       data: {
+         ...this.state.data,
+         skills: [e.target.value],
+       }
+  });
+  }
+
   render() {
     return (
       <div className="CardGenerator">
@@ -247,6 +259,7 @@ sendTypographyValue(event) {
           deleteCompleteName={this.focusName}
           deleteJob={this.focusJob}
           dataObjectPreview={this.makeObjectData()}
+          addSelectToCard = {this.addSelectToCard} />
           actionReset={this.resetPreview} 
           falseClick = {this.falseClick}
           handleLoadPhoto = {this.handleLoadPhoto}
