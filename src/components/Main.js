@@ -22,6 +22,10 @@ class Main extends Component {
     const {changeInputsDataGithub} = this.props;
     const {deleteCompleteName} = this.props;
     const {deleteJob} = this.props;
+    const {falseClick} = this.props;
+    const {handleLoadPhoto} = this.props;
+    const {fileInput} =this.props;
+
 
     return (
       <div className="main__form">
@@ -43,7 +47,10 @@ class Main extends Component {
           changeInputsDataLinkedin={changeInputsDataLinkedin}
           changeInputsDataGithub={changeInputsDataGithub}
           deleteCompleteName={deleteCompleteName}
-          deleteJob={deleteJob} />
+          deleteJob={deleteJob} 
+          falseClick = {falseClick}
+          handleLoadPhoto = {handleLoadPhoto}
+          fileInput = {fileInput}/>
 
       </div>
     );
