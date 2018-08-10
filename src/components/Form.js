@@ -50,7 +50,7 @@ class Form extends Component {
 
   render() {
     console.log(this.props);
-    const {name, email, github, job, linkedin, phone, image, typography, palette} = this.props.dataObject;
+    const {name, email, github, job, linkedin, phone, photo, typography, palette} = this.props.dataObject;
     const {changeTypography} = this.props;
     const {changeRadioButtonsColor}=this.props;
     const {optionsSkills} = this.props;
@@ -147,7 +147,7 @@ class Form extends Component {
 
                   <div className="item-preview">
                 
-                    <img className="item-preview__img" src={fileInput}></img>
+                    <img className="item-preview__img" src={photo}></img>
                   
                     </div>
 

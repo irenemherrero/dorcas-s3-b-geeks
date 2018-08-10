@@ -10,14 +10,6 @@ class CardGenerator extends Component {
   constructor(props) {
     super(props)
 
-    fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
-      .then(response => {
-        return response.json();
-      })
-      .then((json) => {
-        this.setState({ arraySkills: json.skills })
-      })
-
     this.state = {
       arraySkills: [],
 
@@ -81,11 +73,26 @@ class CardGenerator extends Component {
     this.falseClick = this.falseClick.bind(this);
     this.handleLoadPhoto = this.handleLoadPhoto.bind(this);
     this.createCard = this.createCard.bind(this);
+    this.saveLocalStorage=this.saveLocalStorage.bind(this);
     this.fileInput = React.createRef();
   }
 
+  componentDidMount(){
+    fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
+    .then(response => {
+      return response.json();
+    })
+    .then((json) => {
+      this.setState({ arraySkills: json.skills })
+    })
+    const jsonFromLocalStorage = JSON.parse
+    (localStorage.getItem('jsonToSend'))
+    if(jsonFromLocalStorage){
+      this.setState({ data: jsonFromLocalStorage })
+    }
+  }
+  
   createCard(){
-      localStorage.setItem('jsonToSend',JSON.stringify(this.state.data));
       fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
         method: 'POST',
         body: JSON.stringify(this.state.data),
@@ -99,6 +106,7 @@ class CardGenerator extends Component {
         .then(result=> {
           this.setState({cardURL: result.cardURL,
           showCardURL:""})
+          localStorage.clear();
         })
         .catch(error=>{
           console.log(error);
@@ -128,6 +136,9 @@ class CardGenerator extends Component {
     fr.readAsDataURL(this.fileInput.current.files[0]);
 }
 
+  saveLocalStorage(){
+    localStorage.setItem('jsonToSend',JSON.stringify(this.state.data));
+  }
   writeDataName(event) {
     const dataTargetName = event.target;
     this.setState({
@@ -135,7 +146,9 @@ class CardGenerator extends Component {
         ...this.state.data,
         name: dataTargetName.value
       }
+      
     });
+    this.saveLocalStorage();
   }
 
   focusName() {
@@ -155,6 +168,7 @@ class CardGenerator extends Component {
         job: dataTargetJob.value
       }
     });
+    this.saveLocalStorage();
   }
 
   focusJob() {
@@ -174,6 +188,7 @@ class CardGenerator extends Component {
         email: dataTargetEmail.value
       }
     });
+    this.saveLocalStorage();
   }
 
   writeSocialMediaPhone(event) {
@@ -184,6 +199,7 @@ class CardGenerator extends Component {
         phone: dataTargetPhone.value
       }
     });
+    this.saveLocalStorage();
   }
 
   writeSocialMediaLinkedin(event) {
@@ -194,6 +210,7 @@ class CardGenerator extends Component {
         linkedin: dataTargetLinkedin.value
       }
     });
+    this.saveLocalStorage();
   }
 
   writeSocialMediaGithub(event) {
@@ -204,6 +221,7 @@ class CardGenerator extends Component {
         github: dataTargetGithub.value
       }
     });
+    this.saveLocalStorage();
   }
 
 sendRaddioPaletteValue(event) {
@@ -215,6 +233,7 @@ sendRaddioPaletteValue(event) {
       palette: `${value}`
     }
   });
+  this.saveLocalStorage();
 }
 
 sendTypographyValue(event) {
@@ -227,6 +246,7 @@ sendTypographyValue(event) {
 
     }
   });
+  this.saveLocalStorage();
 }
 
   resetPreview = () => {
