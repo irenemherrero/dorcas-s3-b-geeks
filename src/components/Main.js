@@ -28,6 +28,9 @@ class Main extends Component {
     const {falseClick} = this.props;
     const {handleLoadPhoto} = this.props;
     const {fileInput} =this.props;
+    const {createCard}=this.props;
+    const {cardURL} =this.props;
+    const {showCardURL}=this.props;
 
     return (
       <div className="main__form">
@@ -53,7 +56,10 @@ class Main extends Component {
           deleteJob={deleteJob} 
           falseClick = {falseClick}
           handleLoadPhoto = {handleLoadPhoto}
-          fileInput = {fileInput}/>
+          fileInput = {fileInput}
+          createCard = {createCard}
+          cardURL = {cardURL}
+          showCardURL = {showCardURL}/>
       </div>
     );
   }

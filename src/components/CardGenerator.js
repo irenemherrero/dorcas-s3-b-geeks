@@ -48,6 +48,9 @@ class CardGenerator extends Component {
 
       dataPreview: {},
 
+      cardURL: "",
+      showCardURL: "hidden__item",
+
       dataDefault: {
         email: "",
         github: "",
@@ -77,7 +80,29 @@ class CardGenerator extends Component {
     this.addSelectToCard = this.addSelectToCard.bind(this);
     this.falseClick = this.falseClick.bind(this);
     this.handleLoadPhoto = this.handleLoadPhoto.bind(this);
+    this.createCard = this.createCard.bind(this);
     this.fileInput = React.createRef();
+  }
+
+  createCard(){
+      localStorage.setItem('jsonToSend',JSON.stringify(this.state.data));
+      fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+        method: 'POST',
+        body: JSON.stringify(this.state.data),
+        headers: {
+          'content-type': 'application/json'
+        },
+      })
+    
+        .then(resp=> {
+          return resp.json(); })
+        .then(result=> {
+          this.setState({cardURL: result.cardURL,
+          showCardURL:""})
+        })
+        .catch(error=>{
+          console.log(error);
+        });
   }
 
   falseClick(event) {
@@ -264,6 +289,9 @@ sendTypographyValue(event) {
           falseClick = {this.falseClick}
           handleLoadPhoto = {this.handleLoadPhoto}
           fileInput = {this.fileInput}
+          createCard={this.createCard}
+          cardURL={this.state.cardURL}
+          showCardURL={this.state.showCardURL}
           />
         <Footer />
       </div>
