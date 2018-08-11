@@ -5,10 +5,6 @@ import LogoAdalab from '../images/logo-adalab.png';
 import LogoPYB from '../images/pyb-logo.png';
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
     render() {
         return (
             <Fragment>
@@ -37,9 +33,7 @@ class Home extends Component {
                     </div>
 
                     <div className="main__section-3">
-                        <a className="button-start" href="form.html">
-                            <Link to='/card-generator' className="LinkHome">comenzar</Link>
-                        </a>
+                            <Link to='/card-generator' className="LinkHome button-start">comenzar</Link>
                     </div>
                 </div>
             </main>
