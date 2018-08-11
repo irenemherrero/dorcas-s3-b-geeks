@@ -8,7 +8,7 @@ class Landing extends Component {
         return (
             <Switch>
                 <Route exact path='/' component={Home} />
-                <Route path='/card-generator' component={CardGenerator} />
+                <Route path='/card-generator/' component={CardGenerator} />
             </Switch>
         );
     }

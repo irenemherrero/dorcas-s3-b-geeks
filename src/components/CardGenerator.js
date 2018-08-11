@@ -85,6 +85,7 @@ class CardGenerator extends Component {
       .then((json) => {
         this.setState({ arraySkills: json.skills })
       })
+
     const jsonFromLocalStorage = JSON.parse
       (localStorage.getItem('jsonToSend'))
     if (jsonFromLocalStorage) {
@@ -125,7 +126,6 @@ class CardGenerator extends Component {
     this.fileInput.current.files[0];
 
     const writePhoto = () => {
-      console.log('fr after load', fr);
       this.setState(
         {
           data: {
