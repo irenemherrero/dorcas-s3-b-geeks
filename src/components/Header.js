@@ -7,7 +7,7 @@ class Header extends Component {
   render() {
     return (
       <header className="form-header">
-          <Link to='./' component={Home} className="header__link">
+          <Link to='./' className="header__link">
             <img className="header--image" src={logoAdalab} alt="awesome-logo" />
           </Link>
       </header>);
