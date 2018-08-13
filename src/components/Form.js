@@ -13,28 +13,11 @@ class Form extends Component {
       openCollapsibleField: false,
       openCollapsibleShare: false
     }
-    this.falseClick = this.falseClick.bind(this);
-    this.handleLoadPhoto = this.handleLoadPhoto.bind(this);
-    this.fileInput = React.createRef();
+
     this.handleClickCollapsibleDesign=this.handleClickCollapsibleDesign.bind(this);
     this.handleClickCollapsibleField=this.handleClickCollapsibleField.bind(this);
     this.handleClickCollapsibleShare=this.handleClickCollapsibleShare.bind(this);
 
-  }
-
-
-  falseClick(event) {
-    this.fileInput.current.click()
-
-  }
-
-  handleLoadPhoto(event) {
-    event.preventDefault();
-    const fr = new FileReader();
-    fr.addEventListener('load', () => {
-      this.setState({ image: fr.result });
-    });
-    fr.readAsDataURL(event.target.files[0]);
   }
 
   handleClickCollapsibleDesign(){
@@ -80,6 +63,10 @@ class Form extends Component {
     const {addSelectToCard} = this.props;
     const {dataObject,
     addSelectButton} = this.props;
+    const {handleLoadPhoto} = this.props;
+    const {falseClick} = this.props;
+    const {fileInput} = this.props;
+
 
     return (
       <div className="wrapper">
@@ -148,11 +135,22 @@ class Form extends Component {
               <div className="item">
                 <label className="item__label" htmlFor="image">Imagen de perfil</label>
                 <div className="item__addfile">
-                  <button className="item__button-file item__button-label" type="button" onClick={this.falseClick}>Añadir imagen</button>
-                  <input className="input input__file--hidden input__storage" id="image" type="file" ref={this.fileInput} onChange={this.handleLoadPhoto} name="photo" required="required" />
+
+{/* Boton de subir imagen*/}
+
+                <button className="item__button-file item__button-label" type="button" onClick={falseClick}>Añadir imagen</button>
+
+{/*Algo escondido*/}
+
+                <input className="input input__file--hidden input__storage" id="image" type="file" ref={fileInput} onChange={handleLoadPhoto} name="photo" required="required" />
+{/*Vista previa de imagen*/}
+
                   <div className="item-preview">
-                    <img className="item-preview__img" src={image}></img>
-                  </div>
+
+                    <img className="item-preview__img" src={fileInput}></img>
+
+                    </div>
+
                 </div>
               </div>
 

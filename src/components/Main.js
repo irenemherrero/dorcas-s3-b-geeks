@@ -22,7 +22,9 @@ class Main extends Component {
     const {deleteCompleteName} = this.props;
     const {deleteJob} = this.props;
     const {addSelectToCard} = this.props;
-    const {numbersSelectSkills} = this.props;
+    const {falseClick} = this.props;
+    const {handleLoadPhoto} = this.props;
+    const {fileInput} =this.props;
 
 
     return (
@@ -36,7 +38,6 @@ class Main extends Component {
           optionsTypography={optionsTypography}
           dataObject={dataObject}
           optionsSkills={optionsSkills}
-          numbersSelectSkills={numbersSelectSkills}
           changeTypography={changeTypography}
           changeRadioButtonsColor= {changeRadioButtonsColor}
           changeInputsDataName={changeInputsDataName}
@@ -46,7 +47,6 @@ class Main extends Component {
           changeInputsDataLinkedin={changeInputsDataLinkedin}
           changeInputsDataGithub={changeInputsDataGithub}
           deleteCompleteName={deleteCompleteName}
-          deleteJob={deleteJob}
           addSelectToCard={addSelectToCard}
           addSelectButton = {addSelectButton}
         />
