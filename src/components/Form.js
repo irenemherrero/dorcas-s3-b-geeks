@@ -174,11 +174,8 @@ Form.propTypes={
   linkedin: PropTypes.string,
   name: PropTypes.string,
   phone: PropTypes.number,
-  skills: PropTypes.array,
-  typography: PropTypes.string,
   image: PropTypes.string,
-  photo: PropTypes.string,
-  
+
 }
 
 export default Form;
