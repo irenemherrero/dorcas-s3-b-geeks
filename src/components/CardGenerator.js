@@ -233,10 +233,9 @@ sendTypographyValue(event) {
   }
 
   addSelectButton (event) {
-    console.log(event)
+    console.log(this)
     const prevSkills = [...this.state.data.skills];
-    if (this.className = 'fa fa-plus') {
-      if (prevSkills.length < 3) {
+    if (this.className = "fa fa-plus" && prevSkills.length < 3) {
         prevSkills.push('React')
         this.setState({
           data: {
@@ -244,10 +243,9 @@ sendTypographyValue(event) {
             skills: prevSkills
           }
         });
-      } else if (this.className = 'fa fa-minus'){
+      } else if (this.className = "fa fa-minus"){
         this.removeSkills(event);
       }
-    }
   }
 
   render() {
