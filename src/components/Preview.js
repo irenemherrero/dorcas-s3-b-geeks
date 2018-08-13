@@ -3,13 +3,9 @@ import ResetButton from './ResetButton';
 import ListSkills from './ListSkills'
 
 class Preview extends Component {
-constructor(props){
-  super(props);
-  console.log(props);
-}
   render() {
-    const {email, github, image, job, linkedin, name, palette, phone, photo, skills, typography} = this.props.dataObjectPreview;
-    const {dataObjectPreview, dataObject, actionReset} = this.props;
+    const { email, github, job, linkedin, name, palette, phone, photo, skills, typography } = this.props.dataObjectPreview;
+    const { dataObjectPreview, dataObject, actionReset } = this.props;
     console.log(skills);
     return (
       <section className="section-card">
@@ -17,20 +13,20 @@ constructor(props){
 
           {/*Componente botón */}
 
-              <ResetButton 
-              dataObjectPreview={dataObjectPreview}
-              dataObject={dataObject}
-              actionReset={actionReset}/> 
+          <ResetButton
+            dataObjectPreview={dataObjectPreview}
+            dataObject={dataObject}
+            actionReset={actionReset} />
 
-                {/*Datos por props de Main*/}
+          {/*Datos por props de Main*/}
 
-              <div id="card" className={`card__container ${palette}`}>
-                <div className="info-personal">
-                  <div id="card__info" className={`info-personal__container ${typography}`}>
-                    <p id="element-name" className="font-card--bold font-color">{name}</p>
-                    <p id="element-role" className="font-card">{job}</p>
-                  </div>
-                  <img className="personal-image" src= {photo} alt="foto personal"/>
+          <div id="card" className={`card__container ${palette}`}>
+            <div className="info-personal">
+              <div id="card__info" className={`info-personal__container ${typography}`}>
+                <p id="element-name" className="font-card--bold font-color">{name}</p>
+                <p id="element-role" className="font-card">{job}</p>
+              </div>
+              <img className="personal-image" src={photo} alt="foto personal" />
 
               <div className="contact">
                 <a id="element-tel" className={`contact-link ${!phone ? "contact__link--inactive" : "contact__link--active"} contact__mobile`} href={`tel:${phone}`} target="_blank"><i className="fas fa-mobile-alt icon-mobile icon__contact"></i></a>
@@ -40,9 +36,9 @@ constructor(props){
               </div>
               {/*Faltan las Skills*/}
               <div className="skills">
-                <ListSkills 
+                <ListSkills
                   className="skills__list text__skills"
-                  arraySkills={skills}/>
+                  arraySkills={skills} />
               </div>
             </div>
           </div>

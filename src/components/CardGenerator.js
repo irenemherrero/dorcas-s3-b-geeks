@@ -10,14 +10,6 @@ class CardGenerator extends Component {
   constructor(props) {
     super(props)
 
-    fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
-      .then(response => {
-        return response.json();
-      })
-      .then((json) => {
-        this.setState({ arraySkills: json.skills })
-      })
-
     this.state = {
       arraySkills: [],
 
@@ -48,6 +40,9 @@ class CardGenerator extends Component {
 
       dataPreview: {},
 
+      cardURL: "",
+      showCardURL: "hidden__item",
+
       dataDefault: {
         email: "",
         github: "",
@@ -64,8 +59,8 @@ class CardGenerator extends Component {
     }
     this.makeObjectData = this.makeObjectData.bind(this);
     this.resetPreview = this.resetPreview.bind(this);
-    this.sendRaddioPaletteValue=this.sendRaddioPaletteValue.bind(this);
-    this.sendTypographyValue=this.sendTypographyValue.bind(this);
+    this.sendRaddioPaletteValue = this.sendRaddioPaletteValue.bind(this);
+    this.sendTypographyValue = this.sendTypographyValue.bind(this);
     this.writeDataName = this.writeDataName.bind(this);
     this.writeDataJob = this.writeDataJob.bind(this);
     this.writeSocialMediaEmail = this.writeSocialMediaEmail.bind(this);
@@ -77,32 +72,76 @@ class CardGenerator extends Component {
     this.addSelectToCard = this.addSelectToCard.bind(this);
     this.falseClick = this.falseClick.bind(this);
     this.handleLoadPhoto = this.handleLoadPhoto.bind(this);
+    this.createCard = this.createCard.bind(this);
+    this.saveLocalStorage = this.saveLocalStorage.bind(this);
     this.fileInput = React.createRef();
   }
 
-  falseClick(event) {
+  componentDidMount() {
+    fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
+      .then(response => {
+        return response.json();
+      })
+      .then((json) => {
+        this.setState({ arraySkills: json.skills })
+      })
+
+    const jsonFromLocalStorage = JSON.parse
+      (localStorage.getItem('jsonToSend'))
+    if (jsonFromLocalStorage) {
+      this.setState({ data: jsonFromLocalStorage })
+    }
+  }
+
+  createCard() {
+    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+      method: 'POST',
+      body: JSON.stringify(this.state.data),
+      headers: {
+        'content-type': 'application/json'
+      },
+    })
+
+      .then(resp => {
+        return resp.json();
+      })
+      .then(result => {
+        this.setState({
+          cardURL: result.cardURL,
+          showCardURL: ""
+        })
+        localStorage.clear();
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  falseClick() {
     this.fileInput.current.click()
   }
 
-  handleLoadPhoto(event){   
+  handleLoadPhoto() {
 
     this.fileInput.current.files[0];
-  
-    const writePhoto = ()=>{
-        console.log('fr after load',fr);
-        this.setState(
-            {
-                data:{
-                    ...this.state.data,
-                    photo: fr.result
-                }
-            }
-        )
+
+    const writePhoto = () => {
+      this.setState(
+        {
+          data: {
+            ...this.state.data,
+            photo: fr.result
+          }
+        }
+      )
     }
     fr.addEventListener('load', writePhoto);
     fr.readAsDataURL(this.fileInput.current.files[0]);
-}
+  }
 
+  saveLocalStorage() {
+    localStorage.setItem('jsonToSend', JSON.stringify(this.state.data));
+  }
   writeDataName(event) {
     const dataTargetName = event.target;
     this.setState({
@@ -110,7 +149,9 @@ class CardGenerator extends Component {
         ...this.state.data,
         name: dataTargetName.value
       }
+
     });
+    this.saveLocalStorage();
   }
 
   focusName() {
@@ -130,6 +171,7 @@ class CardGenerator extends Component {
         job: dataTargetJob.value
       }
     });
+    this.saveLocalStorage();
   }
 
   focusJob() {
@@ -149,6 +191,7 @@ class CardGenerator extends Component {
         email: dataTargetEmail.value
       }
     });
+    this.saveLocalStorage();
   }
 
   writeSocialMediaPhone(event) {
@@ -159,6 +202,7 @@ class CardGenerator extends Component {
         phone: dataTargetPhone.value
       }
     });
+    this.saveLocalStorage();
   }
 
   writeSocialMediaLinkedin(event) {
@@ -169,6 +213,7 @@ class CardGenerator extends Component {
         linkedin: dataTargetLinkedin.value
       }
     });
+    this.saveLocalStorage();
   }
 
   writeSocialMediaGithub(event) {
@@ -179,36 +224,40 @@ class CardGenerator extends Component {
         github: dataTargetGithub.value
       }
     });
+    this.saveLocalStorage();
   }
 
-sendRaddioPaletteValue(event) {
-  console.log('hola', event.target.value);
-  const {value} = event.target;
-  this.setState({
-    data: {
-      ...this.state.data,
-      palette: `${value}`
-    }
-  });
-}
+  sendRaddioPaletteValue(event) {
+    console.log('hola', event.target.value);
+    const { value } = event.target;
+    this.setState({
+      data: {
+        ...this.state.data,
+        palette: `${value}`
+      }
+    });
+    this.saveLocalStorage();
+  }
 
-sendTypographyValue(event) {
-  console.log('typography value', event.target.value);
-  const {value} = event.target;
-  this.setState({
-    data: {
-      ...this.state.data,
-      typography: `${value}`
+  sendTypographyValue(event) {
+    console.log('typography value', event.target.value);
+    const { value } = event.target;
+    this.setState({
+      data: {
+        ...this.state.data,
+        typography: `${value}`
 
-    }
-  });
-}
+      }
+    });
+    this.saveLocalStorage();
+  }
 
   resetPreview = () => {
     console.log('oli');
     this.setState({
-      data: {...this.state.dataDefault,
-      skills: [...this.state.dataDefault.skills]
+      data: {
+        ...this.state.dataDefault,
+        skills: [...this.state.dataDefault.skills]
       }
     })
   }
@@ -223,31 +272,31 @@ sendTypographyValue(event) {
       palette: this.state.paletteTypes[this.state.data.palette],
       phone: this.state.data.phone,
       photo: this.state.data.photo,
-      image: 'http://placehold.it/29x29/ffffff/ffffff',
       skills: this.state.data.skills,
       typography: this.state.typographyTypes[this.state.data.typography]
     }
   }
 
-  addSelectToCard (e) {
+  addSelectToCard(e) {
     console.log(this.state.data.skills);
     this.setState({
-       data: {
-         ...this.state.data,
-         skills: [e.target.value],
-       }
-  });
+      data: {
+        ...this.state.data,
+        skills: [e.target.value],
+      }
+    });
   }
 
   render() {
+    const {paletteTypes, typographyTypes, data, arraySkills, cardURL, showCardURL } = this.state;
     return (
       <div className="CardGenerator">
         <Header />
         <Main
-          optionsPalettes={this.state.paletteTypes}
-          optionsTypography={this.state.typographyTypes}
-          dataObject={this.state.data}
-          optionsSkills={this.state.arraySkills}
+          optionsPalettes={paletteTypes}
+          optionsTypography={typographyTypes}
+          dataObject={data}
+          optionsSkills={arraySkills}
           changeTypography={this.sendTypographyValue}
           changeRadioButtonsColor={this.sendRaddioPaletteValue}
           changeInputsDataName={this.writeDataName}
@@ -259,12 +308,15 @@ sendTypographyValue(event) {
           deleteCompleteName={this.focusName}
           deleteJob={this.focusJob}
           dataObjectPreview={this.makeObjectData()}
-          addSelectToCard = {this.addSelectToCard}
-          actionReset={this.resetPreview} 
-          falseClick = {this.falseClick}
-          handleLoadPhoto = {this.handleLoadPhoto}
-          fileInput = {this.fileInput}
-          />
+          addSelectToCard={this.addSelectToCard}
+          actionReset={this.resetPreview}
+          falseClick={this.falseClick}
+          handleLoadPhoto={this.handleLoadPhoto}
+          fileInput={this.fileInput}
+          createCard={this.createCard}
+          cardURL={cardURL}
+          showCardURL={showCardURL}
+        />
         <Footer />
       </div>
     );

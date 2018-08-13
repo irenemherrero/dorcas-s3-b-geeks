@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 class Collapsible extends Component {
   render() {
-    const {open} = this.props;
-    const {handleClickCollapsibles} = this.props;
+    const { open, handleClickCollapsibles } = this.props;
     console.log("OPEN COLAPSIBLE", open);
     return (
       <section className="fieldset js__dropdown visible">
@@ -15,11 +14,11 @@ class Collapsible extends Component {
           <i className={this.props.arrow}></i>
         </div>
         <div className="design__container js__dropdown-content">
-          {!open ? null :this.props.children}
+          {!open ? null : this.props.children}
         </div>
       </section>
     );
-    
+
   }
 }
 
