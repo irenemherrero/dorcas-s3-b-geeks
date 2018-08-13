@@ -9,7 +9,7 @@ let fr = new FileReader();
 class CardGenerator extends Component {
   constructor(props) {
     super(props)
-    
+
     this.state = {
       arraySkills: [],
 
@@ -38,11 +38,13 @@ class CardGenerator extends Component {
         typography: "2"
       },
 
+      numbersSelect: [1],
+
       dataPreview: {},
-      
+
       cardURL: "",
       showCardURL: "hidden__item",
-      
+
       dataDefault: {
         email: "",
         github: "",
@@ -70,6 +72,8 @@ class CardGenerator extends Component {
     this.focusName = this.focusName.bind(this);
     this.focusJob = this.focusJob.bind(this);
     this.addSelectToCard = this.addSelectToCard.bind(this);
+    this.addSelectButton = this.addSelectButton.bind(this);
+    this.removeSkills = this.removeSkills.bind(this);
     this.falseClick = this.falseClick.bind(this);
     this.handleLoadPhoto = this.handleLoadPhoto.bind(this);
     this.createCard = this.createCard.bind(this);
@@ -253,7 +257,6 @@ class CardGenerator extends Component {
   }
 
   resetPreview = () => {
-    console.log('oli');
     this.setState({
       data: {
         ...this.state.dataDefault,
@@ -277,14 +280,48 @@ class CardGenerator extends Component {
     }
   }
 
-  addSelectToCard(e) {
-    console.log(this.state.data.skills);
+  addSelectToCard (e) {
+    const selectedSkill = e.target.value;
+    const skillIndex = e.target.id;
+    const prevSkills = [...this.state.data.skills];
+    const newSkills = [...prevSkills];
+    newSkills.splice(skillIndex, 1, selectedSkill);
+      this.setState({
+        data: {
+          ...this.state.data,
+          skills: newSkills
+        }
+      })
+  }
+
+  removeSkills(event) {
+    const prevSkills = [...this.state.data.skills];
+    const removedSkill = event.target.value;
+    const removedSkillIndex = event.target.id;
+    const newSkills = [...prevSkills];
+    newSkills.splice(removedSkillIndex,1);
     this.setState({
       data: {
         ...this.state.data,
-        skills: [e.target.value],
+        skills: newSkills
       }
-    });
+    })
+  }
+
+  addSelectButton (event) {
+    console.log(this)
+    const prevSkills = [...this.state.data.skills];
+    if (this.className = "fa fa-plus" && prevSkills.length < 3) {
+        prevSkills.push('React')
+        this.setState({
+          data: {
+            ...this.state.data,
+            skills: prevSkills
+          }
+        });
+      } else if (this.className = "fa fa-minus"){
+        this.removeSkills(event);
+      }
   }
 
   render() {
@@ -294,10 +331,10 @@ class CardGenerator extends Component {
       <div className="CardGenerator">
         <Header />
         <Main
-          optionsPalettes={paletteTypes}
-          optionsTypography={typographyTypes}
-          dataObject={data}
-          optionsSkills={arraySkills}
+          optionsPalettes={this.state.paletteTypes}
+          optionsTypography={this.state.typographyTypes}
+          dataObject={this.state.data}
+          optionsSkills={this.state.arraySkills}
           changeTypography={this.sendTypographyValue}
           changeRadioButtonsColor={this.sendRaddioPaletteValue}
           changeInputsDataName={this.writeDataName}
@@ -310,6 +347,7 @@ class CardGenerator extends Component {
           deleteJob={this.focusJob}
           dataObjectPreview={this.makeObjectData()}
           addSelectToCard={this.addSelectToCard}
+          addSelectButton = {this.addSelectButton}
           actionReset={this.resetPreview}
           falseClick={this.falseClick}
           handleLoadPhoto={this.handleLoadPhoto}

@@ -3,10 +3,35 @@ import Form from './Form';
 import Preview from './Preview';
 
 class Main extends Component {
+
   render() {
 
     console.log(this.props);
-    const {optionsSkills, optionsPalettes, optionsTypography, dataObject, dataObjectPreview, actionReset, changeTypography, changeRadioButtonsColor, changeInputsDataName, changeInputsDataJob, changeInputsDataEmail, changeInputsDataPhone, changeInputsDataLinkedin, changeInputsDataGithub, deleteCompleteName, deleteJob, addSelectToCard, falseClick, handleLoadPhoto, fileInput, createCard, cardURL, showCardURL} = this.props;
+    const {optionsSkills,
+           optionsPalettes,
+           optionsTypography,
+           dataObject,
+           dataObjectPreview,
+           actionReset,
+           changeTypography,
+           changeRadioButtonsColor,
+           changeInputsDataName,
+           changeInputsDataJob,
+           changeInputsDataEmail,
+           changeInputsDataPhone,
+           changeInputsDataLinkedin,
+           changeInputsDataGithub,
+           deleteCompleteName,
+           deleteJob,
+           addSelectToCard,
+           falseClick,
+           handleLoadPhoto,
+           fileInput,
+           createCard,
+           cardURL,
+           addSelectButton,
+           showCardURL} = this.props;
+
 
     return (
       <div className="main__form">
@@ -29,13 +54,15 @@ class Main extends Component {
           changeInputsDataGithub={changeInputsDataGithub}
           deleteCompleteName={deleteCompleteName}
           addSelectToCard={addSelectToCard}
-          deleteJob={deleteJob} 
+          addSelectButton = {addSelectButton}
+          deleteJob={deleteJob}
           falseClick = {falseClick}
           handleLoadPhoto = {handleLoadPhoto}
           fileInput = {fileInput}
           createCard = {createCard}
           cardURL = {cardURL}
-          showCardURL = {showCardURL}/>
+          showCardURL = {showCardURL}
+        />
       </div>
     );
   }

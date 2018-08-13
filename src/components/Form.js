@@ -17,6 +17,7 @@ class Form extends Component {
       openCollapsibleShare: false,
     }
 
+
     this.handleClickCollapsibleDesign = this.handleClickCollapsibleDesign.bind(this);
     this.handleClickCollapsibleField = this.handleClickCollapsibleField.bind(this);
     this.handleClickCollapsibleShare = this.handleClickCollapsibleShare.bind(this);
@@ -47,9 +48,34 @@ class Form extends Component {
   }
 
   render() {
-    console.log(this.props);
-    const { name, email, github, job, linkedin, phone, photo, typography, palette } = this.props.dataObject;
-    const { changeTypography, changeRadioButtonsColor, optionsSkills, changeInputsDataName, changeInputsDataJob, changeInputsDataEmail, changeInputsDataPhone, changeInputsDataLinkedin, changeInputsDataGithub, deleteCompleteName, deleteJob, addSelectToCard, handleLoadPhoto, falseClick, fileInput, createCard } = this.props;
+    const { name,
+            email,
+            github,
+            job,
+            linkedin,
+            phone,
+            photo,
+            typography,
+            palette } = this.props.dataObject;
+    const { changeTypography,
+            changeRadioButtonsColor,
+            optionsSkills,
+            changeInputsDataName,
+            changeInputsDataJob,
+            changeInputsDataEmail,
+            changeInputsDataPhone,
+            changeInputsDataLinkedin,
+            changeInputsDataGithub,
+            deleteCompleteName,
+            deleteJob,
+            addSelectToCard,
+            handleLoadPhoto,
+            falseClick,
+            fileInput,
+            createCard,
+            addSelectButton,
+            dataObject } = this.props;
+
 
     return (
       <div className="wrapper">
@@ -113,13 +139,13 @@ class Form extends Component {
 
                 {/*-----------------------------IMAGEN FILEREADER----------------------*/}
 
-                <div className="item">
-                  <label className="item__label" htmlFor="image">Imagen de perfil</label>
-                  <div className="item__addfile">
+              <div className="item">
+                <label className="item__label" htmlFor="image">Imagen de perfil</label>
+                <div className="item__addfile">
 
-                    {/* Boton de subir imagen*/}
+{/* Boton de subir imagen*/}
 
-                    <button className="item__button-file item__button-label" type="button" onClick={falseClick}>Añadir imagen</button>
+                <button className="item__button-file item__button-label" type="button" onClick={falseClick}>Añadir imagen</button>
 
                     {/*Algo escondido*/}
 
@@ -133,7 +159,6 @@ class Form extends Component {
                     </div>
                   </div>
                 </div>
-
 
                 <div className="item">
                   <label className="item__label" htmlFor="email">Email</label>
@@ -151,10 +176,13 @@ class Form extends Component {
                   <label className="item__label" htmlFor="github">Github</label>
                   <input className="input item__input form-field--gh input__storage" id="github" type="text" name="github" placeholder="Ej: sally-hill" data-donde="element-gh" required="required" value={github} onChange={changeInputsDataGithub} />
                 </div>
-                <SelectSkills
-                  optionsSkills={optionsSkills}
-                  changeSelects={addSelectToCard} />
-              </div>
+              <SelectSkills
+                addSelectButton = {addSelectButton}
+                userSkills={dataObject.skills}
+                optionsSkills={optionsSkills}
+                changeSelects = {addSelectToCard}
+              />
+            </div>
             </Collapsible>
           </section>
 
