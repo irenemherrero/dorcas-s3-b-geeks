@@ -5,22 +5,22 @@ import ListSkills from './ListSkills'
 class Preview extends Component {
 constructor(props){
   super(props);
-  console.log(props);
 }
   render() {
-    const {email, github, image, job, linkedin, name, palette, phone, photo, skills, typography} = this.props.dataObjectPreview;
+    const {
+      email,
+      github, image, job, linkedin, name, palette, phone, photo, skills, typography} = this.props.dataObjectPreview;
     const {dataObjectPreview, dataObject, actionReset} = this.props;
-    console.log(skills);
     return (
       <section className="section-card">
         <div className="section-card__container">
 
           {/*Componente botón */}
 
-              <ResetButton 
+              <ResetButton
               dataObjectPreview={dataObjectPreview}
               dataObject={dataObject}
-              actionReset={actionReset}/> 
+              actionReset={actionReset}/>
 
                 {/*Datos por props de Main*/}
 
@@ -40,7 +40,7 @@ constructor(props){
               </div>
               {/*Faltan las Skills*/}
               <div className="skills">
-                <ListSkills 
+                <ListSkills
                   className="skills__list text__skills"
                   arraySkills={skills}/>
               </div>

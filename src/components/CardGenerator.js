@@ -45,6 +45,8 @@ class CardGenerator extends Component {
         typography: "2"
       },
 
+      numbersSelect: [1],
+
       dataPreview: {},
 
       dataDefault: {
@@ -74,6 +76,8 @@ class CardGenerator extends Component {
     this.focusName = this.focusName.bind(this);
     this.focusJob = this.focusJob.bind(this);
     this.addSelectToCard = this.addSelectToCard.bind(this);
+    this.addSelectButton = this.addSelectButton.bind(this);
+    this.removeSkills = this.removeSkills.bind(this);
 
   }
 
@@ -156,7 +160,6 @@ class CardGenerator extends Component {
   }
 
 sendRaddioPaletteValue(event) {
-  console.log('hola', event.target.value);
   const {value} = event.target;
   this.setState({
     data: {
@@ -167,7 +170,6 @@ sendRaddioPaletteValue(event) {
 }
 
 sendTypographyValue(event) {
-  console.log('typography value', event.target.value);
   const {value} = event.target;
   this.setState({
     data: {
@@ -179,7 +181,6 @@ sendTypographyValue(event) {
 }
 
   resetPreview = () => {
-    console.log('oli');
     this.setState({
       data: {...this.state.dataDefault,
       skills: [...this.state.dataDefault.skills]
@@ -204,13 +205,49 @@ sendTypographyValue(event) {
   }
 
   addSelectToCard (e) {
-    console.log(this.state.data.skills);
+    const selectedSkill = e.target.value;
+    const skillIndex = e.target.id;
+    const prevSkills = [...this.state.data.skills];
+    const newSkills = [...prevSkills];
+    newSkills.splice(skillIndex, 1, selectedSkill);
+      this.setState({
+        data: {
+          ...this.state.data,
+          skills: newSkills
+        }
+      })
+  }
+
+  removeSkills(event) {
+    const prevSkills = [...this.state.data.skills];
+    const removedSkill = event.target.value;
+    const removedSkillIndex = event.target.id;
+    const newSkills = [...prevSkills];
+    newSkills.splice(removedSkillIndex,1);
     this.setState({
-       data: {
-         ...this.state.data,
-         skills: [e.target.value],
-       }
-  });
+      data: {
+        ...this.state.data,
+        skills: newSkills
+      }
+    })
+  }
+
+  addSelectButton (event) {
+    console.log(event)
+    const prevSkills = [...this.state.data.skills];
+    if (this.className = 'fa fa-plus') {
+      if (prevSkills.length < 3) {
+        prevSkills.push('React')
+        this.setState({
+          data: {
+            ...this.state.data,
+            skills: prevSkills
+          }
+        });
+      } else if (this.className = 'fa fa-minus'){
+        this.removeSkills(event);
+      }
+    }
   }
 
   render() {
@@ -222,6 +259,7 @@ sendTypographyValue(event) {
           optionsTypography={this.state.typographyTypes}
           dataObject={this.state.data}
           optionsSkills={this.state.arraySkills}
+          numbersSelectSkills={this.state.numbersSelect}
           changeTypography={this.sendTypographyValue}
           changeRadioButtonsColor={this.sendRaddioPaletteValue}
           changeInputsDataName={this.writeDataName}
@@ -234,7 +272,9 @@ sendTypographyValue(event) {
           deleteJob={this.focusJob}
           dataObjectPreview={this.makeObjectData()}
           actionReset={this.resetPreview}
-          addSelectToCard = {this.addSelectToCard} />
+          addSelectToCard = {this.addSelectToCard}
+          addSelectButton = {this.addSelectButton}
+         />
         <Footer />
       </div>
     );

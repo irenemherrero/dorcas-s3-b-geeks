@@ -4,7 +4,6 @@ import ColorRadioButton from './ColorRadioButton';
 class RadioButton extends Component {
     constructor(props) {
         super(props);
-        console.log(props);
     }
     render() {
         const {id, radioCual, className, onChange} = this.props;

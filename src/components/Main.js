@@ -5,15 +5,12 @@ import Preview from './Preview';
 class Main extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
-
   }
 
 
   render() {
 
-    console.log(this.props);
-    const {changeTypography} = this.props;
+    const {changeTypography, addSelectButton} = this.props;
     const {optionsSkills, optionsPalettes, optionsTypography, dataObject, dataObjectPreview, actionReset} = this.props;
     const {changeRadioButtonsColor}= this.props;
     const {changeInputsDataName} = this.props;
@@ -25,6 +22,8 @@ class Main extends Component {
     const {deleteCompleteName} = this.props;
     const {deleteJob} = this.props;
     const {addSelectToCard} = this.props;
+    const {numbersSelectSkills} = this.props;
+
 
     return (
       <div className="main__form">
@@ -37,6 +36,7 @@ class Main extends Component {
           optionsTypography={optionsTypography}
           dataObject={dataObject}
           optionsSkills={optionsSkills}
+          numbersSelectSkills={numbersSelectSkills}
           changeTypography={changeTypography}
           changeRadioButtonsColor= {changeRadioButtonsColor}
           changeInputsDataName={changeInputsDataName}
@@ -48,6 +48,7 @@ class Main extends Component {
           deleteCompleteName={deleteCompleteName}
           deleteJob={deleteJob}
           addSelectToCard={addSelectToCard}
+          addSelectButton = {addSelectButton}
         />
       </div>
     );

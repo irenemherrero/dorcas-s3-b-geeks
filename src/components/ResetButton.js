@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class ResetButton extends Component {
     constructor(props) {
         super(props);
-        console.log(this.props);
     }
     render() {
         const {actionReset} = this.props;

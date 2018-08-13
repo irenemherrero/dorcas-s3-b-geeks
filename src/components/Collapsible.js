@@ -4,7 +4,6 @@ class Collapsible extends Component {
   render() {
     const {open} = this.props;
     const {handleClickCollapsibles} = this.props;
-    console.log("OPEN COLAPSIBLE", open);
     return (
       <section className="fieldset js__dropdown visible">
         <div className="legend__container js__dropdown-title" onClick={handleClickCollapsibles}>
@@ -46,7 +45,7 @@ class Collapsible extends Component {
 
 
 
-    
+
   }
 }
 

@@ -65,7 +65,6 @@ class Form extends Component {
 
 
   render() {
-
     const {name, email, github, job, linkedin, phone, image, typography, palette} = this.props.dataObject;
     const {changeTypography} = this.props;
     const {changeRadioButtonsColor}=this.props;
@@ -79,6 +78,8 @@ class Form extends Component {
     const {deleteCompleteName} = this.props;
     const {deleteJob} = this.props;
     const {addSelectToCard} = this.props;
+    const {dataObject,
+    addSelectButton} = this.props;
 
     return (
       <div className="wrapper">
@@ -173,8 +174,11 @@ class Form extends Component {
                 <input className="input item__input form-field--gh input__storage" id="github" type="text" name="github" placeholder="Ej: sally-hill" data-donde="element-gh" required="required" value={github} onChange={changeInputsDataGithub} />
               </div>
               <SelectSkills
+                addSelectButton = {addSelectButton}
+                userSkills={dataObject.skills}
                 optionsSkills={optionsSkills}
-                changeSelects = {addSelectToCard} />
+                changeSelects = {addSelectToCard}
+              />
             </div>
             </Collapsible>
           </section>
