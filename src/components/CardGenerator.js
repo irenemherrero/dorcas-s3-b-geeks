@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
-import previewPhoto from '../images/card-image.png';
+import previewPhoto from '../images/b-geeks-image.jpeg';
 
 let fr = new FileReader();
 
 class CardGenerator extends Component {
   constructor(props) {
     super(props)
-
+    
     this.state = {
       arraySkills: [],
 
@@ -39,10 +39,10 @@ class CardGenerator extends Component {
       },
 
       dataPreview: {},
-
+      
       cardURL: "",
       showCardURL: "hidden__item",
-
+      
       dataDefault: {
         email: "",
         github: "",
@@ -59,8 +59,8 @@ class CardGenerator extends Component {
     }
     this.makeObjectData = this.makeObjectData.bind(this);
     this.resetPreview = this.resetPreview.bind(this);
-    this.sendRaddioPaletteValue = this.sendRaddioPaletteValue.bind(this);
-    this.sendTypographyValue = this.sendTypographyValue.bind(this);
+    this.sendRaddioPaletteValue=this.sendRaddioPaletteValue.bind(this);
+    this.sendTypographyValue=this.sendTypographyValue.bind(this);
     this.writeDataName = this.writeDataName.bind(this);
     this.writeDataJob = this.writeDataJob.bind(this);
     this.writeSocialMediaEmail = this.writeSocialMediaEmail.bind(this);
@@ -142,6 +142,7 @@ class CardGenerator extends Component {
   saveLocalStorage() {
     localStorage.setItem('jsonToSend', JSON.stringify(this.state.data));
   }
+
   writeDataName(event) {
     const dataTargetName = event.target;
     this.setState({
@@ -149,7 +150,6 @@ class CardGenerator extends Component {
         ...this.state.data,
         name: dataTargetName.value
       }
-
     });
     this.saveLocalStorage();
   }
@@ -289,6 +289,7 @@ class CardGenerator extends Component {
 
   render() {
     const {paletteTypes, typographyTypes, data, arraySkills, cardURL, showCardURL } = this.state;
+
     return (
       <div className="CardGenerator">
         <Header />

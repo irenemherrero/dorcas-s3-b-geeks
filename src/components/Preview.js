@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ResetButton from './ResetButton';
+import PropTypes from 'prop-types';
 import ListSkills from './ListSkills'
 
 class Preview extends Component {
@@ -46,6 +47,18 @@ class Preview extends Component {
       </section>);
   }
 }
-
+Preview.propTypes={
+  email: PropTypes.number,
+  github: PropTypes.string,
+  job: PropTypes.string,
+  linkedin: PropTypes.string,
+  name: PropTypes.string,
+  phone: PropTypes.number,
+  skills: PropTypes.array,
+  typography: PropTypes.string,
+  image: PropTypes.string,
+  photo: PropTypes.string,
+  palette: PropTypes.string,
+}
 
 export default Preview;

@@ -3,8 +3,10 @@ import Collapsible from './Collapsible';
 import SelectSkills from './SelectSkills';
 import RadioButton from './RadioButton';
 import TypographyButton from './TypographyButton';
+import PropTypes from 'prop-types';
 import BotonCrearTarjeta from './BotonCrearTarjeta';
-BotonCrearTarjeta
+
+
 class Form extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +20,6 @@ class Form extends Component {
     this.handleClickCollapsibleDesign = this.handleClickCollapsibleDesign.bind(this);
     this.handleClickCollapsibleField = this.handleClickCollapsibleField.bind(this);
     this.handleClickCollapsibleShare = this.handleClickCollapsibleShare.bind(this);
-
   }
 
   handleClickCollapsibleDesign() {
@@ -68,7 +69,6 @@ class Form extends Component {
                 <div className="radio-container">
 
                   {/*-----------------------------RADIOBUTTONS COLORES
-
   Falta que salgan los colores en lo cuadraditos y que seleccione por defecto la primera opción,a parte de la funcionalidad*/}
 
                   <RadioButton id="color1" radioCual="1" value={palette} className="paletteColours1" onChange={changeRadioButtonsColor} />
@@ -86,7 +86,6 @@ class Form extends Component {
                   <TypographyButton id="font1" radioCual="1" value={typography} className="text__optional--ubuntu label-design" label="Ubuntu" onChange={changeTypography} />
 
                   <TypographyButton id="font2" radioCual="2" value={typography} className="text__optional--comic label-design" label="Comic Sans" onChange={changeTypography} />
-
                   <TypographyButton id="font3" radioCual="3" value={typography} className="text__optional--mont label-design" label="Montserrat" onChange={changeTypography} />
 
                 </div>
@@ -132,7 +131,6 @@ class Form extends Component {
                       <img className="item-preview__img" src={photo}></img>
 
                     </div>
-
                   </div>
                 </div>
 
@@ -199,6 +197,16 @@ class Form extends Component {
 
     );
   }
+}
+Form.propTypes={
+  email: PropTypes.string,
+  github: PropTypes.string,
+  job: PropTypes.string,
+  linkedin: PropTypes.string,
+  name: PropTypes.string,
+  phone: PropTypes.number,
+  image: PropTypes.string,
+
 }
 
 export default Form;
