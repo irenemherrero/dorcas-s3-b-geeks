@@ -12,7 +12,7 @@ class Form extends Component {
     this.state = {
       openCollapsibleDesign: true,
       openCollapsibleField: false,
-      openCollapsibleShare: false
+      openCollapsibleShare: false,
     }
     
     this.handleClickCollapsibleDesign=this.handleClickCollapsibleDesign.bind(this);
@@ -50,7 +50,7 @@ class Form extends Component {
 
   render() {
     console.log(this.props);
-    const {name, email, github, job, linkedin, phone, image, typography, palette} = this.props.dataObject;
+    const {name, email, github, job, linkedin, phone, photo, typography, palette} = this.props.dataObject;
     const {changeTypography} = this.props;
     const {changeRadioButtonsColor}=this.props;
     const {optionsSkills} = this.props;
@@ -66,6 +66,7 @@ class Form extends Component {
     const {handleLoadPhoto} = this.props;
     const {falseClick} = this.props;
     const {fileInput} = this.props;
+    const {createCard} =this.props;
 
     return (
       <div className="wrapper">
@@ -146,7 +147,7 @@ class Form extends Component {
 
                   <div className="item-preview">
                 
-                    <img className="item-preview__img" src={fileInput}></img>
+                    <img className="item-preview__img" src={photo}></img>
                   
                     </div>
 
@@ -195,12 +196,15 @@ class Form extends Component {
 
 {/*Boton crear tarjeta*/}
 
-                <BotonCrearTarjeta />
+                <BotonCrearTarjeta createCard={createCard}/>
               </div>
-              <div className="card-created hidden__item">
-                <h3 className="text__dark--title card-created__title">La tarjeta ha sido creada:</h3>
-                <p className="card-link text__card-link response"></p>
-                <a className="link-twitter" href="" target="_blank">
+              
+  
+              <div className={`card-created ${this.props.showCardURL}`}>
+                
+              <h3 className="text__dark--title card-created__title">La tarjeta ha sido creada:</h3>
+                <a className="card-link text__card-link response" href={this.props.cardURL} target="_blank">{this.props.cardURL} </a>
+                <a className="link-twitter" href={`https://twitter.com/intent/tweet?url=${this.props.cardURL}&text=Acabo%20de%20crear%20mi%20tarjeta%20con%20Font%20Awesome%20de%20Peak-y-blinded&hashtags=WomenInTech`} target="_blank">
                   <button className="btn-twitter btn-twitter--position btn-twitter--text" type="button" name="button">
                     <i className="fab fa-twitter icon-twitter"></i>Compartir en twitter</button>
                 </a>
