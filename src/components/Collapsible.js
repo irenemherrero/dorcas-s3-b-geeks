@@ -18,7 +18,6 @@ class Collapsible extends Component {
         </div>
       </section>
     );
-
   }
 }
 
