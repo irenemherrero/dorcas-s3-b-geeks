@@ -48,8 +48,33 @@ class Form extends Component {
   }
 
   render() {
-    const { name, email, github, job, linkedin, phone, photo, typography, palette } = this.props.dataObject;
-    const { changeTypography, changeRadioButtonsColor, optionsSkills, changeInputsDataName, changeInputsDataJob, changeInputsDataEmail, changeInputsDataPhone, changeInputsDataLinkedin, changeInputsDataGithub, deleteCompleteName, deleteJob, addSelectToCard, handleLoadPhoto, falseClick, fileInput, createCard, addSelectButton } = this.props;
+    const { name,
+            email,
+            github,
+            job,
+            linkedin,
+            phone,
+            photo,
+            typography,
+            palette } = this.props.dataObject;
+    const { changeTypography,
+            changeRadioButtonsColor,
+            optionsSkills,
+            changeInputsDataName,
+            changeInputsDataJob,
+            changeInputsDataEmail,
+            changeInputsDataPhone,
+            changeInputsDataLinkedin,
+            changeInputsDataGithub,
+            deleteCompleteName,
+            deleteJob,
+            addSelectToCard,
+            handleLoadPhoto,
+            falseClick,
+            fileInput,
+            createCard,
+            addSelectButton,
+            dataObject } = this.props;
 
 
     return (
@@ -134,7 +159,6 @@ class Form extends Component {
                     </div>
                   </div>
                 </div>
-
 
                 <div className="item">
                   <label className="item__label" htmlFor="email">Email</label>

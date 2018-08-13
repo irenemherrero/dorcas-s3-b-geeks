@@ -29,7 +29,7 @@ class Main extends Component {
            fileInput,
            createCard,
            cardURL,
-           addSelectButton
+           addSelectButton,
            showCardURL} = this.props;
 
 
