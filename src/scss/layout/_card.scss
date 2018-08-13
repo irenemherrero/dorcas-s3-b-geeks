@@ -1,7 +1,7 @@
 .section-card {
   display: flex;
   flex-direction: column;
-  background-image:  url('./../images/pattern-glasses.svg'), linear-gradient(#fccf31, #f55555);
+  background-image: url('./../images/pineapple.jpg'), linear-gradient(#fccf31, #f55555);
   background-repeat: repeat;
   background-position: center;
   align-items: center;
@@ -133,7 +133,8 @@
 }
 
 .personal-image {
-  width: 100%;
+  width: 240px;
+  height: 200px;
   display: block;
 }
 
@@ -176,7 +177,7 @@
   border-bottom: 1px solid $color-medium-light;
   text-align: center;
 
-  @media all and (min-width:768px) {
+  @media all and (min-width: 768px) {
     margin-bottom: 20px;
   }
 }
@@ -201,7 +202,7 @@
 }
 
 input[type='radio'] {
-    display:none;
+  display: none;
 }
 
 .label-design {
@@ -211,15 +212,15 @@ input[type='radio'] {
 }
 
 input[type='radio'] + label span {
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    background-color: $color-light;
-    border: 1px solid $color-medium-light;
-    border-radius: 20px;
-    margin-right: 5px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: $color-light;
+  border: 1px solid $color-medium-light;
+  border-radius: 20px;
+  margin-right: 5px;
 }
 
 input[type='radio']:checked + label span {
-    background-image: linear-gradient(#fccf31, #f55555);
+  background-image: linear-gradient(#fccf31, #f55555);
 }

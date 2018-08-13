@@ -2,13 +2,9 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import LogoGlasses from '../images/awesome-profile-cards-logo-gafas.svg';
 import LogoAdalab from '../images/logo-adalab.png';
-import LogoPYB from '../images/pyb-logo.png';
+
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
     render() {
         return (
             <Fragment>
@@ -37,20 +33,17 @@ class Home extends Component {
                     </div>
 
                     <div className="main__section-3">
-                        <a className="button-start" href="form.html">
-                            <Link to='/card-generator' className="LinkHome">comenzar</Link>
-                        </a>
+                            <Link to='/card-generator' className="LinkHome button-start">comenzar</Link>
                     </div>
                 </div>
             </main>
             <footer className="footer">
                 <div className="footer__content">
                     <p className="footer__copyrigth">Awesome profile-cards @2018</p>
-                    <img src={LogoPYB} alt="Peak-y-blinded logo" className="pyb-logo" />
-                    <a className="footer__link-adalab" href="http://adalab.es/" target="_blank"> 
+                    <a className="footer__link-adalab" href="http://adalab.es/" target="_blank">
                     <img className="adalab-logo" src={LogoAdalab} alt="adalab-logo" /> </a>
                 </div>
-            </footer> 
+            </footer>
         </Fragment>);
     }
 }

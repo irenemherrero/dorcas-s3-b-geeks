@@ -2,21 +2,13 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
-import previewPhoto from '../images/card-image.png';
+import previewPhoto from '../images/b-geeks-image.jpeg';
 
 let fr = new FileReader();
 
 class CardGenerator extends Component {
   constructor(props) {
     super(props)
-
-    fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
-      .then(response => {
-        return response.json();
-      })
-      .then((json) => {
-        this.setState({ arraySkills: json.skills })
-      })
 
     this.state = {
       arraySkills: [],
@@ -50,6 +42,9 @@ class CardGenerator extends Component {
 
       dataPreview: {},
 
+      cardURL: "",
+      showCardURL: "hidden__item",
+
       dataDefault: {
         email: "",
         github: "",
@@ -81,32 +76,76 @@ class CardGenerator extends Component {
     this.removeSkills = this.removeSkills.bind(this);
     this.falseClick = this.falseClick.bind(this);
     this.handleLoadPhoto = this.handleLoadPhoto.bind(this);
+    this.createCard = this.createCard.bind(this);
+    this.saveLocalStorage = this.saveLocalStorage.bind(this);
     this.fileInput = React.createRef();
   }
 
+  componentDidMount() {
+    fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
+      .then(response => {
+        return response.json();
+      })
+      .then((json) => {
+        this.setState({ arraySkills: json.skills })
+      })
 
-  falseClick(event) {
+    const jsonFromLocalStorage = JSON.parse
+      (localStorage.getItem('jsonToSend'))
+    if (jsonFromLocalStorage) {
+      this.setState({ data: jsonFromLocalStorage })
+    }
+  }
+
+  createCard() {
+    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+      method: 'POST',
+      body: JSON.stringify(this.state.data),
+      headers: {
+        'content-type': 'application/json'
+      },
+    })
+
+      .then(resp => {
+        return resp.json();
+      })
+      .then(result => {
+        this.setState({
+          cardURL: result.cardURL,
+          showCardURL: ""
+        })
+        localStorage.clear();
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  falseClick() {
     this.fileInput.current.click()
   }
 
-  handleLoadPhoto(event){
+  handleLoadPhoto() {
 
     this.fileInput.current.files[0];
 
-    const writePhoto = ()=>{
-        console.log('fr after load',fr);
-        this.setState(
-            {
-                data:{
-                    ...this.state.data,
-                    photo: fr.result
-                }
-            }
-        )
+    const writePhoto = () => {
+      this.setState(
+        {
+          data: {
+            ...this.state.data,
+            photo: fr.result
+          }
+        }
+      )
     }
     fr.addEventListener('load', writePhoto);
     fr.readAsDataURL(this.fileInput.current.files[0]);
-}
+  }
+
+  saveLocalStorage() {
+    localStorage.setItem('jsonToSend', JSON.stringify(this.state.data));
+  }
 
   writeDataName(event) {
     const dataTargetName = event.target;
@@ -116,6 +155,7 @@ class CardGenerator extends Component {
         name: dataTargetName.value
       }
     });
+    this.saveLocalStorage();
   }
 
   focusName() {
@@ -135,6 +175,7 @@ class CardGenerator extends Component {
         job: dataTargetJob.value
       }
     });
+    this.saveLocalStorage();
   }
 
   focusJob() {
@@ -154,6 +195,7 @@ class CardGenerator extends Component {
         email: dataTargetEmail.value
       }
     });
+    this.saveLocalStorage();
   }
 
   writeSocialMediaPhone(event) {
@@ -164,6 +206,7 @@ class CardGenerator extends Component {
         phone: dataTargetPhone.value
       }
     });
+    this.saveLocalStorage();
   }
 
   writeSocialMediaLinkedin(event) {
@@ -174,6 +217,7 @@ class CardGenerator extends Component {
         linkedin: dataTargetLinkedin.value
       }
     });
+    this.saveLocalStorage();
   }
 
   writeSocialMediaGithub(event) {
@@ -184,33 +228,39 @@ class CardGenerator extends Component {
         github: dataTargetGithub.value
       }
     });
+    this.saveLocalStorage();
   }
 
-sendRaddioPaletteValue(event) {
-  const {value} = event.target;
-  this.setState({
-    data: {
-      ...this.state.data,
-      palette: `${value}`
-    }
-  });
-}
+  sendRaddioPaletteValue(event) {
+    console.log('hola', event.target.value);
+    const { value } = event.target;
+    this.setState({
+      data: {
+        ...this.state.data,
+        palette: `${value}`
+      }
+    });
+    this.saveLocalStorage();
+  }
 
-sendTypographyValue(event) {
-  const {value} = event.target;
-  this.setState({
-    data: {
-      ...this.state.data,
-      typography: `${value}`
+  sendTypographyValue(event) {
+    console.log('typography value', event.target.value);
+    const { value } = event.target;
+    this.setState({
+      data: {
+        ...this.state.data,
+        typography: `${value}`
 
-    }
-  });
-}
+      }
+    });
+    this.saveLocalStorage();
+  }
 
   resetPreview = () => {
     this.setState({
-      data: {...this.state.dataDefault,
-      skills: [...this.state.dataDefault.skills]
+      data: {
+        ...this.state.dataDefault,
+        skills: [...this.state.dataDefault.skills]
       }
     })
   }
@@ -225,7 +275,6 @@ sendTypographyValue(event) {
       palette: this.state.paletteTypes[this.state.data.palette],
       phone: this.state.data.phone,
       photo: this.state.data.photo,
-      image: 'http://placehold.it/29x29/ffffff/ffffff',
       skills: this.state.data.skills,
       typography: this.state.typographyTypes[this.state.data.typography]
     }
@@ -276,6 +325,8 @@ sendTypographyValue(event) {
   }
 
   render() {
+    const {paletteTypes, typographyTypes, data, arraySkills, cardURL, showCardURL } = this.state;
+
     return (
       <div className="CardGenerator">
         <Header />
@@ -284,7 +335,6 @@ sendTypographyValue(event) {
           optionsTypography={this.state.typographyTypes}
           dataObject={this.state.data}
           optionsSkills={this.state.arraySkills}
-          numbersSelectSkills={this.state.numbersSelect}
           changeTypography={this.sendTypographyValue}
           changeRadioButtonsColor={this.sendRaddioPaletteValue}
           changeInputsDataName={this.writeDataName}
@@ -296,12 +346,16 @@ sendTypographyValue(event) {
           deleteCompleteName={this.focusName}
           deleteJob={this.focusJob}
           dataObjectPreview={this.makeObjectData()}
+          addSelectToCard={this.addSelectToCard}
+          addSelectButton = {this.addSelectButton}
           actionReset={this.resetPreview}
-          falseClick = {this.falseClick}
-          handleLoadPhoto = {this.handleLoadPhoto}
-          fileInput = {this.fileInput}
-          addSelectToCard = {this.addSelectToCard}
-          addSelectButton = {this.addSelectButton}/>
+          falseClick={this.falseClick}
+          handleLoadPhoto={this.handleLoadPhoto}
+          fileInput={this.fileInput}
+          createCard={this.createCard}
+          cardURL={cardURL}
+          showCardURL={showCardURL}
+        />
         <Footer />
       </div>
     );

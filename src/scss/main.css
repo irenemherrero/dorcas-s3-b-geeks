@@ -30,7 +30,8 @@ a {
   height: 42px;
   border-radius: 20px;
   background-color: #438792;
-  border: solid 1px #979797; }
+  border: solid 1px #979797;
+  outline: none; }
 
 .LinkHome {
   color: #fff; }
@@ -42,10 +43,11 @@ a {
   padding-left: 10px;
   padding-right: 10px;
   color: #54585a;
-  background-color: transparent;
+  background-color: #fff;
   border: 1px solid #fff;
   border-radius: 15px;
-  cursor: pointer; }
+  cursor: pointer;
+  outline: none; }
 
 .button-reset__text {
   border: none;
@@ -61,7 +63,8 @@ a {
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
   color: #fff;
   cursor: pointer;
-  display: block; }
+  display: block;
+  outline: none; }
 
 .btn-card--inactive {
   height: 50px;
@@ -73,7 +76,8 @@ a {
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
   color: #fff;
   cursor: pointer;
-  display: block; }
+  display: block;
+  outline: none; }
 
 .btn-card--position {
   margin: 30px auto; }
@@ -87,7 +91,8 @@ a {
   border-radius: 3px;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
   color: #fff;
-  cursor: pointer; }
+  cursor: pointer;
+  outline: none; }
 
 .btn-twitter--position {
   display: block;
@@ -484,7 +489,7 @@ select {
 .section-card {
   display: flex;
   flex-direction: column;
-  background-image: url("./../images/pattern-glasses.svg"), linear-gradient(#fccf31, #f55555);
+  background-image: url("./../images/pineapple.jpg"), linear-gradient(#fccf31, #f55555);
   background-repeat: repeat;
   background-position: center;
   align-items: center;
@@ -579,7 +584,8 @@ select {
   width: 240px; }
 
 .personal-image {
-  width: 100%;
+  width: 240px;
+  height: 200px;
   display: block; }
 
 .icon__contact {

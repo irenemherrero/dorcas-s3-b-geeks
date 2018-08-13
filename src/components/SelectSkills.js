@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-let newNumberSelect= [];
 
 class SelectSkills extends Component {
   constructor(props) {
@@ -19,9 +18,7 @@ class SelectSkills extends Component {
     }
   }
 
-
-
-  render () {
+  render() {
 
     const {
       optionsSkills,
