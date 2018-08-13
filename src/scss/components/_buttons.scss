@@ -11,6 +11,7 @@
   border-radius: 20px;
   background-color: $color-paleta1-secondary;
   border: solid 1px $color-border-start-button;
+  outline: none;
 }
 .LinkHome{
   color: $color-light;
@@ -23,10 +24,11 @@
   padding-left: 10px;
   padding-right: 10px;
   color: $color-medium-dark-dark;
-  background-color: transparent;
+  background-color: $color-light;
   border: 1px solid $color-light;
   border-radius: 15px;
   cursor: pointer;
+  outline: none;
 }
 
 .button-reset__text {
@@ -45,6 +47,7 @@
   color: $color-light;
   cursor: pointer;
   display: block;
+  outline: none;
 }
 
 .btn-card--inactive {
@@ -58,6 +61,7 @@
   color: $color-light;
   cursor: pointer;
   display: block;
+  outline: none;
 }
 
 .btn-card--position {
@@ -74,6 +78,7 @@
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
   color: $color-light;
   cursor: pointer;
+  outline: none;
 }
 
 .btn-twitter--position {
