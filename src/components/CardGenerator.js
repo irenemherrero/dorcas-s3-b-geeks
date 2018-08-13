@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
-import previewPhoto from '../images/card-image.png';
+import previewPhoto from '../images/b-geeks-image.jpeg';
 
 let fr = new FileReader();
 
