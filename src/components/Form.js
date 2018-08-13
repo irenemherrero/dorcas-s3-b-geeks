@@ -4,6 +4,8 @@ import SelectSkills from './SelectSkills';
 import RadioButton from './RadioButton';
 import TypographyButton from './TypographyButton';
 import BotonCrearTarjeta from './BotonCrearTarjeta';
+
+
 BotonCrearTarjeta
 class Form extends Component {
   constructor(props) {
@@ -18,7 +20,6 @@ class Form extends Component {
     this.handleClickCollapsibleDesign = this.handleClickCollapsibleDesign.bind(this);
     this.handleClickCollapsibleField = this.handleClickCollapsibleField.bind(this);
     this.handleClickCollapsibleShare = this.handleClickCollapsibleShare.bind(this);
-
   }
 
   handleClickCollapsibleDesign() {
@@ -132,7 +133,6 @@ class Form extends Component {
                       <img className="item-preview__img" src={photo}></img>
 
                     </div>
-
                   </div>
                 </div>
 
