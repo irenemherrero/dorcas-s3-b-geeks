@@ -5,9 +5,21 @@ import ListSkills from './ListSkills'
 
 class Preview extends Component {
   render() {
-    const { email, github, job, linkedin, name, palette, phone, photo, skills, typography } = this.props.dataObjectPreview;
-    const { dataObjectPreview, dataObject, actionReset } = this.props;
-    console.log(skills);
+    const { email,
+            github,
+            job,
+            linkedin,
+            name,
+            palette,
+            phone,
+            photo,
+            skills,
+            typography } = this.props.dataObjectPreview;
+
+    const { dataObjectPreview,
+            dataObject,
+            actionReset } = this.props;
+
     return (
       <section className="section-card">
         <div className="section-card__container">
@@ -35,7 +47,9 @@ class Preview extends Component {
                 <a id="element-lin" className={`contact-link ${!linkedin ? "contact__link--inactive" : "contact__link--active"} contact__linkedin`} href={`https://linkedin.com/in/${linkedin}`} target="_blank"><i className="fab fa-linkedin-in icon-linkedin icon__contact"></i></a>
                 <a id="element-gh" className={`contact-link ${!github ? "contact__link--inactive" : "contact__link--active"} contact__github`} href={`https://github.com/${github}`} target="_blank"><i className="fab fa-github-alt icon-github icon__contact"></i></a>
               </div>
+
               {/*Faltan las Skills*/}
+
               <div className="skills">
                 <ListSkills
                   className="skills__list text__skills"
@@ -47,6 +61,7 @@ class Preview extends Component {
       </section>);
   }
 }
+
 Preview.propTypes={
   email: PropTypes.number,
   github: PropTypes.string,

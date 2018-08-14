@@ -117,7 +117,6 @@ class CardGenerator extends Component {
         localStorage.clear();
       })
       .catch(error => {
-        console.log(error);
       });
   }
 
@@ -126,9 +125,7 @@ class CardGenerator extends Component {
   }
 
   handleLoadPhoto() {
-
     this.fileInput.current.files[0];
-
     const writePhoto = () => {
       this.setState(
         {
@@ -250,7 +247,6 @@ class CardGenerator extends Component {
       data: {
         ...this.state.data,
         typography: `${value}`
-
       }
     });
     this.saveLocalStorage();

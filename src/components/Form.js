@@ -118,7 +118,9 @@ class Form extends Component {
               </div>
             </Collapsible>
           </section>
+
           {/* //FORMULARIO-RELLENA */}
+
           <section className="fieldset js__dropdown visible">
             <Collapsible
               open={this.state.openCollapsibleField}
@@ -143,20 +145,17 @@ class Form extends Component {
                 <label className="item__label" htmlFor="image">Imagen de perfil</label>
                 <div className="item__addfile">
 
-{/* Boton de subir imagen*/}
-
+                   {/* Boton de subir imagen*/}
                 <button className="item__button-file item__button-label" type="button" onClick={falseClick}>Añadir imagen</button>
 
                     {/*Algo escondido*/}
-
                     <input className="input input__file--hidden input__storage" id="image" type="file" ref={fileInput} onChange={handleLoadPhoto} name="photo" required="required" />
+
                     {/*Vista previa de imagen*/}
-
                     <div className="item-preview">
-
                       <img className="item-preview__img" src={photo}></img>
-
                     </div>
+
                   </div>
                 </div>
 
