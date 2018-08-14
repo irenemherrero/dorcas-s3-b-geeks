@@ -12,8 +12,8 @@ class TypographyButton extends Component {
                 <input id={id}
                        className="input__storage"
                        type="radio"
-                       name="typography" r
-                       adio-cual={radioCual}
+                       name="typography" 
+                       radio-cual={radioCual}
                        value={radioCual}
                        onChange={onChange} />
                 <label htmlFor={id} className={className}>

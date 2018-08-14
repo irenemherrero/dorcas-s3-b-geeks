@@ -206,9 +206,7 @@ class Form extends Component {
                   <BotonCrearTarjeta createCard={createCard} />
                 </div>
 
-
                 <div className={`card-created ${this.props.showCardURL}`}>
-
                   <h3 className="text__dark--title card-created__title">La tarjeta ha sido creada:</h3>
                   <a className="card-link text__card-link response" href={this.props.cardURL} target="_blank">{this.props.cardURL} </a>
                   <a className="link-twitter" href={`https://twitter.com/intent/tweet?url=${this.props.cardURL}&text=Acabo%20de%20crear%20mi%20tarjeta%20con%20Font%20Awesome%20de%20Peak-y-blinded&hashtags=WomenInTech`} target="_blank">
