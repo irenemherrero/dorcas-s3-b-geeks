@@ -87,7 +87,7 @@ class Form extends Component {
               open={this.state.openCollapsibleDesign}
               icon="far fa-object-ungroup icon__primary--medium"
               name="Diseña"
-              arrow="fas fa-angle-up arrow legend__arrow icon__rotation"
+              arrow={`fas ${!this.state.openCollapsibleDesign ? "fa-angle-down" : "fa-angle-up"} arrow legend__arrow`}
               handleClickCollapsibles={this.handleClickCollapsibleDesign}
             >
               <div className="item-container item-container--color">
@@ -126,7 +126,7 @@ class Form extends Component {
               open={this.state.openCollapsibleField}
               icon="icon__primary--medium far fa-keyboard"
               name="Rellena"
-              arrow="fas fa-angle-down arrow legend__arrow icon__rotation"
+              arrow={`fas ${!this.state.openCollapsibleField ? "fa-angle-down" : "fa-angle-up"} arrow legend__arrow`}
               handleClickCollapsibles={this.handleClickCollapsibleField}
             >
               <div className="js__dropdown-content">
@@ -195,7 +195,7 @@ class Form extends Component {
               open={this.state.openCollapsibleShare}
               icon="icon__primary--medium fas fa-share-alt"
               name="Comparte"
-              arrow="fas fa-angle-down arrow legend__arrow icon__rotation"
+              arrow={`fas ${!this.state.openCollapsibleShare ? "fa-angle-down" : "fa-angle-up"} arrow legend__arrow`}
               handleClickCollapsibles={this.handleClickCollapsibleShare}
             >
               <div className="js__dropdown-content share__content-parent">
