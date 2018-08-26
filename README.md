@@ -1,5 +1,8 @@
 Proyecto grupal - Sprint 3 - BGeeks
 ----------------
+
+Ejercicio realizado en el Sprint 3 del curso de Programación Front-End de Adalab por un grupo de 5 alumnas en el que se demustran los conocimientos adquiridos durante dicho periodo.
+
 Descripción del proyecto
 ------
 
