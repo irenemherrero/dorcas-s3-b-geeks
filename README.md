@@ -24,30 +24,20 @@ La aplicación funciona siguiendo estos pasos:
 
 Objetivos
 --------
--Lidiar con código heredado y ser capaces de refactorizarlo
-
--Saber identificar y generar los componentes de una página, separarlos y crear componentes visualmente similares a partir de estos
-
--Aprender a usar React para crear una aplicación web sencilla
-
--Exponer en la sesión final y seguir adquiriendo habilidades de desarrollo personal
-
--Aprender a buscar información en la documentación de librerías externas
+- Lidiar con código heredado y ser capaces de refactorizarlo
+- Saber identificar y generar los componentes de una página, separarlos y crear componentes visualmente similares a partir de estos
+- Aprender a usar React para crear una aplicación web sencilla
+- Exponer en la sesión final y seguir adquiriendo habilidades de desarrollo personal
+- Aprender a buscar información en la documentación de librerías externas
 
 Especificaciones
 ------
 En el proyecto se utilizan las siguientes tecnologías:
 
--Sass para los estilos
-
--ES6 y React para la estructuración del JS de la aplicación
-
--Mediaqueries para que el diseño sea adaptable al dispositivo
-
--Estrategia mobile first
-
--Git para el control de versiones del proyecto, con ramas y pull-requests para revisar los cambios de las compañeras
-
--Publicación del resultado en Internet usando GitHub Pages
-
--React router para navegar de la página de bienvenida a la aplicación. Ambas tendrán su propia ruta.
+- Sass para los estilos
+- ES6 y React para la estructuración del JS de la aplicación
+- Mediaqueries para que el diseño sea adaptable al dispositivo
+- Estrategia mobile first
+- Git para el control de versiones del proyecto, con ramas y pull-requests para revisar los cambios de las compañeras
+- Publicación del resultado en Internet usando GitHub Pages
+- React router para navegar de la página de bienvenida a la aplicación. Ambas tendrán su propia ruta.
